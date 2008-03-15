@@ -1,0 +1,33 @@
+
+<div class="event_list_item">
+
+<table id="event_list_item_<%= h event_list_item.id %>" class="event_calendar" border="0" cellspacing="0" cellpadding="0" width="100%">
+
+<tr id="event_body_<%= h event_list_item.id %>">
+
+    <td width="120px" valign="top">
+      <div class="date <%= timeframe_to event_list_item.start_date %>">
+      <span class="month"><%= event_list_item.start_date.strftime("%B").upcase %></span>
+      <span class="day"><%= event_list_item.start_date.strftime("%d") %></span>
+      <span class="year"><%= event_list_item.start_date.strftime("%Y") %></span>
+      <span class="time_away"><%= time_away(event_list_item.start_date) %></span>
+      </div>
+    </td>
+  
+  <td class="description" valign="top">
+      <%= admin_tools_for event_list_item, event_list_item.project unless (event_list_item.project.archived? or @params[:controller] == "public") %>
+      <h3><span class="summary" id="event_summary_<%= h event_list_item.id %>"><%= h event_list_item.name %></span></h3>
+      <p><strong><%= event_date_and_time_for(event_list_item) %></strong></p>
+      <%= auto_link event_list_item.body_html %>
+    </div>
+
+  </td>
+  
+
+
+</tr>
+</table>
+
+<%= content_tag("div", "", :id => "event_edit_form_#{event_list_item.id}", :style => "display:none;") if event_list_item.project.user.can_edit_projects? %>
+
+</div>

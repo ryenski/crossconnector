@@ -1,0 +1,18 @@
+<% object = homebase_list.class.name.to_s.downcase %>
+
+<h3><%= link_to_function("#{image_tag("/images/icons/arrow-right.gif")} Connections", "new Effect.BlindDown('people', {duration:0.1}),Element.show('people-arrow-down'),Element.hide('people-arrow-right')", :id => "people-arrow-right") %>
+<%= link_to_function("#{image_tag("/images/icons/arrow-down.gif")} Connections", "new Effect.BlindUp('people', {duration:0.1}),Element.show('people-arrow-right'),Element.hide('people-arrow-down')", :id => "people-arrow-down", :style => "display:none;") %></h3>
+       
+       
+<div id="people" style="display:none;" class="indent">
+  <p><small><a href="#">What is a connection?</a> Connections are people in your <%= link_to "address book", {:controller => "/admin/teams"}, :onClick => "return confirm('Are you sure you want to go away from this page? If you click OK, this project will not be saved.');" %> who have CrossConnector accounts.</small></p>
+  <dl class="people">
+
+<% for homebase in list_of_addresses_with_homebase %>
+  <input type="checkbox" class="connection" name="project[connected_to_ids][]" value="<%= homebase.id %>" <% if homebase_list.connected_to.include?(homebase) -%> checked="checked" <% end -%> /> <%= homebase.name %><br />
+  
+<% end %>
+
+</dl>
+
+</div>

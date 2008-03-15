@@ -1,0 +1,10 @@
+<%= render :partial => "nav" %>
+
+<%= content_tag("div", "This project is archived.", :id => "archiveNotice") if @project.archived? %>
+
+<%= render :partial => "archive_form", :object => @project %>
+
+<%= render :partial => "/shared/delete_confirmation", :object => @project %>
+
+<%= render :partial => "controls", :object => @project if user_can_edit?(@project.class) %>
+

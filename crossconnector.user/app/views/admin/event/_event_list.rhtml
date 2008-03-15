@@ -1,0 +1,28 @@
+
+<div id="event_list">
+
+  <% if @request.parameters[:controller] != "public" and @user.can_edit_projects? %>  
+
+    <%= link_to_function("Add new event", visual_effect(:blind_down, "new_event_form", :duration => 0.5), :class => "event_add icon") %>
+    
+    <div id="new_event_form" style="display:none">
+      <%= render :partial => "admin/event/new_event" %>
+    </div>
+  <% end %>
+  
+  
+  
+  
+  <%= render :partial => "admin/event/event_list_item", :collection => event_list.events %>
+
+  <% if event_list.events.empty? and event_list.past_events.empty? and @request.parameters[:controller] != "public" %>
+    <%= render :partial => "admin/event/intro_related" %>
+  <% else %>
+  <% end %>
+
+  <% unless event_list.past_events.empty? %>  
+    <h3>Past Events</h3>  
+    <%= render :partial => "admin/event/events_summary_list", :object => event_list.past_events unless event_list.past_events.empty?%>
+  <% end %>
+
+</div>

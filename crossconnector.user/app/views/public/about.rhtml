@@ -1,0 +1,36 @@
+
+<div class="left wide">
+
+  <% if @homebase.profile.blank? and @homebase.profile_extended.blank? %>
+
+    <p class="intro">We haven't posted our profile yet. </p>
+    
+  <% else %>
+    <h2>About Us</h2>
+    <%= auto_link(RedCloth.new(h(@homebase.profile)).to_html) %>
+    <%= auto_link(RedCloth.new(h(@homebase.profile_extended)).to_html) %>
+  <% end %>
+  
+
+
+</div>
+
+<div class="right narrow">
+  
+  <% if mailing_address_for?(@homebase) %>
+  <h3>Contact Us</h3>
+  
+  <%= mailing_address_for(@homebase) %>
+  
+  <% end %>
+  
+  <%= content_tag("p", "Phone: #{@homebase.phone}") if @homebase.phone %>
+  
+  
+  
+  <% if @homebase.website %>
+    <h3>Our official website</h3>
+    <%= content_tag("p", link_to(h(@homebase.website), h(@homebase.website))) %>
+  <% end %>
+</div>
+

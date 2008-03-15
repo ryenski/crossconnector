@@ -1,0 +1,35 @@
+
+<table id="addressbook_table" border="0">
+  <tr>
+
+    <td width="25%">
+      <div id="addressbook_groups" class="addressbook_section">
+      <%= render :partial => "/admin/teams/addressbook/group_list", :object => addressbook.groups %>
+      </div>
+      <%= link_to_function("Add team", 
+                           "new Effect.BlindDown('add_group',{duration:0.3})", 
+                            {:class => "add icon",
+                             :href => "#group_form"}) %>
+    </td>
+
+    <td width="35%">
+      <div id="addressbook_people" class="addressbook_section">
+        <% addressbook.name = "All Names" %>
+        <%= render :partial => "/admin/teams/addressbook/address_list", :object => addressbook %>
+      </div>
+      <%= link_to_function("Add name", 
+                           "new Effect.BlindDown('add_address',{duration:0.3})", 
+                            {:class => "add icon", 
+                             :href => "#address_form"}) %>
+    </td>
+
+    <td width="45%">
+      <div id="addressbook_detail" class="addressbook_section">
+        <%= render :partial => "/admin/teams/addressbook/address_detail" %>
+      </div>
+    </td>
+
+  </tr>
+</table>
+
+

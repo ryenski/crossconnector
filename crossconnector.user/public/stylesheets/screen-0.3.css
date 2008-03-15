@@ -1,0 +1,653 @@
+/* - - - - - - - - - - - - - - - - - - - - -
+
+CrossConnector
+(c) Copyright 2005-2006 Art of Mission, Inc.
+www.artofmission.com
+info@artofmission.com
+
+- - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+body,html{
+  background:#A5D2F2 url(/images/bkg.jpg) repeat-x;
+  margin:0;
+  padding:0;
+}
+
+
+#container{
+  clear:left;
+}
+
+#main_container,
+#header_container,
+#footer_container{
+  min-width:700px;
+  max-width:1400px;
+}
+
+
+
+/* 
+Header and menu 
+*/
+#header_container{
+  margin:0 20px 0 190px;
+}
+#header{
+  background:#E0720E;
+  margin:0;
+  padding:0;
+  width:100%;
+  float:left;
+}
+#header ul{
+  margin:0;
+  list-style:none;
+  float:right;
+  padding:0 30px;
+  display:block;
+}
+#header li{
+  float:left;
+  margin:16px 10px;
+  color:#fff;
+  font-weight:bold;
+  font-size:95%;
+  cursor:default;
+}
+#header a{
+  float:left;
+  display:block;
+  color:#fff;
+  cursor:pointer;
+}
+
+#header #siteid{
+  color:#fff;
+  float:left;
+  line-height:50px;
+  padding-left:30px;
+  font-family:Helvetica,Arial,sans-serif;
+  font-weight:normal;
+}
+
+/*
+Navigation
+*/
+#menu{
+  width:180px;
+  margin:0 0 0 10px;
+  padding:0;
+  display:inline;
+position:absolute;
+left:0;
+}
+
+#menu ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#menu li{
+  color:#fff;
+  margin:0 0 5px 0;
+  color:#fff;
+  text-shadow: #268 0px 0px 4px;
+}
+#menu li a{
+  display:block;
+  height:50px;
+  width:150px;
+  font:bold 180%/50px Helvetica,Arial,sans-serif;
+  text-decoration:none;
+  letter-spacing:-1pt;
+  padding:0 0 0 30px;
+  margin:0;
+  background:transparent url(/images/blue-tabs.gif) no-repeat;
+  color:#fff;
+  overflow:hidden;
+}
+
+#menu li a:hover{
+  background:transparent url(/images/blue-tabs.gif) no-repeat 0 -100px;
+  color:#fff;
+}
+
+/* 
+Menu Tab Active States 
+*/
+body#homebase #menu li#homebase_tab a,
+body#blog #menu li#blog_tab a,
+body#plan #menu li#plan_tab a,
+body#share #menu li#share_tab a,
+body#teams #menu li#teams_tab a{
+  background:transparent url(/images/blue-tabs.gif) no-repeat 0 -50px;
+  color:#3E3E34;
+  text-shadow: #729EB3 0px 0px 2px;
+}
+
+
+
+
+
+
+/*
+Main Content
+*/
+
+
+#main_container{
+  background:#fff url(/images/bkg-page.jpg) bottom right no-repeat;
+  margin:0 20px 0 190px;
+
+}
+
+#main{
+  background:transparent url(/images/bkg-page.jpg) bottom left no-repeat;
+  padding:40px 30px;  
+    min-height:300px;
+}
+
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+.wide{
+  width:64%;
+}
+.narrow{
+  width:30%;
+}
+.half{
+  width:48%;
+}
+
+
+/*
+Footer
+*/
+#footer_container{
+  margin:0 20px 10px 190px;
+}
+#footer{
+  /* background:transparent url(/images/bkg-bottom-right.jpg) bottom right no-repeat; */
+  background:transparent url(/images/bkg-bottom-left.gif) bottom left no-repeat;
+  height:40px;
+  padding:0;
+  clear:left;
+  margin-right:40px;
+  display:block;
+}
+#footer_right{
+  background:transparent url(/images/bkg-bottom-right.gif) bottom right no-repeat;
+  width:40px;
+  height:40px;
+  float:right;
+  margin-top:-40px;
+}
+
+
+
+
+/*
+  Warning & Notice
+*/
+div.warning{
+  /* background:#fff url(/images/bkg-private-2.gif) repeat-x; */
+  background:#FCEEED;
+  border:solid #F0BFB7;
+  border-width:3px 1px 1px 1px;
+  padding:0 10px 1em 10px;
+  margin-top:0.5em;
+}
+
+div.warning.soft{
+  background:#fff url(/images/bkg-draft.jpg) no-repeat;
+  border-color:#66A0BB;
+}
+
+h2.warning{
+  color:#B63A25; 
+  margin-bottom:10px;
+}
+
+
+
+/* 
+  Menus
+*/
+
+#account_nav,
+#project_nav{
+  float:left;
+  width:96%;
+  margin:0 0 20px 0;
+  padding:10px 0 0 4%;
+  list-style:none;
+  background:#fff url(../images/tab-bottom.gif) repeat-x bottom left;
+
+}
+#account_nav li,
+#project_nav li{
+  float:left;
+  margin:0;
+  padding:0;
+  font-size:85%;
+  font-family:verdana,arial,sans-serif; 
+}
+#account_nav a,
+#project_nav a{
+  float:left;
+  display:block;
+  font-weight:bold;
+  margin:0 1px 0 0;
+  padding:5px 8px;
+  color:#333;
+  text-decoration:none;
+  border:1px solid #97DB22;
+  border-bottom:none;
+  background:#fff url(/images/bkg-tab.gif) repeat-x 0 1px;
+}
+
+#account_nav a:hover,
+#account_nav.account_index #account_index a,
+#account_nav.account_profile #account_profile a,
+#account_nav.account_your_info #account_your_info a,
+#account_nav.account_password #account_password a,
+#account_nav.account_editors #account_editors a,
+#account_nav.account_new_editor #account_editors a,
+#account_nav.account_edit_editor #account_editors a,
+#project_nav a:hover,
+#project_nav.project_show #project_index a,
+#project_nav.project_events #project_events a,
+#project_nav.project_messages #project_messages a,
+#project_nav.project_files #project_files a{
+  padding-bottom:6px;
+  background:#fff;
+  color:#333;
+  border:1px solid #97DB22;
+  border-bottom:none;
+}
+
+
+/*
+  Subscription Plans
+*/
+table.plans{
+  width:100%;
+  font-size:90%;
+  font-weight:normal;
+  line-height:1.6em;
+  margin:0;
+  border:solid #C7D18A;
+  border-width:2px 0;
+}
+table.plans .plan_title td{
+  background:#F6FAFB url(../images/bkg-plans.jpg) repeat-x;
+}
+table.plans th{
+  font-weight:normal;
+  text-align:left;
+}
+table.plans td{
+  text-align:center;
+}
+table.plans td,
+table.plans th{
+  padding:.6em;
+  border-bottom:1px solid #ddd;
+}
+table.plans .current{
+  background:#EFF6F8 !important;
+  font-weight:bold;
+}
+table.plans strong{
+  font-size:1.5em;
+}
+
+table.plans .plan_name{
+  font-size:1.4em;
+  font-weight:bold;
+  color:#8FA214;
+}
+table.plans .plan_price{
+  color:#900;
+}
+
+
+
+
+/* 
+  Address Book
+*/
+
+#addressbook_table{
+  width:100%;
+}
+
+#addressbook_table td{
+  vertical-align:top;
+}
+.addressbook_section{
+  overflow:auto;
+  background:#F0F5D6 url(../images/bkg-connections.jpg) repeat-x;
+  background:#fff;
+  border:1px solid #ddd;
+  margin:0;
+  padding:0;
+  height:300px;
+}
+
+.addressbook_section .padding{
+  margin:0 5px;
+}
+
+#addressbook_groups{}
+#addressbook_people{}
+#addressbook_detail{}
+
+
+.addressbook_section ul{
+  padding:0;
+  font-family:Verdana,sans-serif;
+  font-size:80%;
+  line-height:1.1em;
+}
+
+#addressbook_people ul{
+  list-style-image:url(../images/icons/silk_gif/vcard.gif);
+  list-style-image:url(../images/icons/helsinki_gif/contacts_16.gif);
+  list-style-position:inside;
+}
+#addressbook_groups ul{}
+
+#addressbook_detail p{
+  line-height:1em;
+  font-family:Verdana,sans-serif;
+  font-size:.8em;
+}
+#addressbook_people a,
+#addressbook_groups a{
+  cursor:pointer;
+}
+
+#addressbook_people li:hover,
+#addressbook_groups li:hover{
+  background-color:#FFFF99;
+  /* cursor:move; */
+}
+
+.addressbook_controls{}
+
+.group_list {
+  list-style-type:none;
+  margin:10px 0 10px 0;
+  padding:0;
+}
+.group_list .current {
+  background:#ffa;
+  border:1px solid #ff0;
+}
+.group_list .current a {
+  color:#900;
+}
+
+.group_list_item{
+  background: transparent url(../images/icons/silk_gif/folder_user.gif) left center no-repeat;
+  padding:2px 0 2px 20px;
+  font-weight:bold;
+}
+.addressbook_controls{
+  font-weight:normal;
+}
+
+.group_delete_form{
+  border:1px solid #ccc;
+  background:#eee;
+  padding:4px;
+  margin:4px 0;
+}
+
+#addressbook_groups li,
+#addressbook_people li{
+  line-height:18px;
+}
+#addressbook_groups form{
+  margin:0;
+}
+.admin_tools_for_addressbook{
+  float:right;
+}
+.admin_tools_for_addressbook input{}
+.addressbook_groups li a{}
+
+#address_detail_form form dl{}
+#address_detail_form form dl dt{
+  font-size:80%;
+  font-weight:bold;
+  margin:5px 0 0 0;
+  line-height:1em;
+}
+#address_detail_form form dl dd{
+  margin:0;
+  font-size:85%;
+}
+
+a.control{
+  color:#999;
+  font-size:90%;
+  text-decoration:none;
+}
+
+
+/*
+  Account
+*/
+
+
+
+/*
+  Forms
+*/
+
+fieldset {
+  clear:both;
+  padding:0 1em 1em 1em;
+  margin:3em 0;
+
+  border:1px solid #dcdcdc;
+  background:#F5F5F5;
+}
+fieldset legend{
+  font-family:"Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size:140%;
+}
+fieldset label{
+  font-weight:bold;
+}
+fieldset label small{
+  font-weight:normal;
+}
+fieldset input.large,
+fieldset input.regular,
+fieldset textarea{
+  font-family:Verdana,Helvetica,Arial,sans-serif;
+  font-size:100%;
+  margin:1px 1%;
+  padding:4px;
+  width:98%;
+}
+
+
+form dl{
+  margin:0.5em 0;
+}
+
+form dd{
+  margin:0 1em;
+}
+
+form dt{
+  font-weight:bold;
+  padding:12px 4px 0;
+}
+
+/*
+  Old Forms
+
+fieldset input.regular{
+  font-size:100%;
+}
+
+fieldset .notes{
+  display:block;
+  margin:0 2% 2em 2%;
+  padding:0;
+  font-size:85%;
+  line-height:1em;
+}
+
+fieldset table{
+  margin-top:1em;
+}
+
+fieldset table th {
+  font-size:100%;
+  width:25%;
+  text-align:right;
+  
+}
+fieldset table th,
+fieldset table td{
+  padding: 1em 0.2em;
+  vertical-align:top;
+}
+
+fieldset table th label{
+  margin:0;
+  padding:0;
+  padding-top:2px;
+}
+fieldset table small{
+  font-weight:normal;
+  font-size:85%;
+}
+fieldset table td input{
+  float:left;
+}
+
+fieldset dl{
+  margin:0;
+  padding:0;
+}
+
+fieldset dt{
+  margin:0;
+  padding:0;
+}
+fieldset dd{
+  margin:0;
+  padding:0;
+}
+*/
+
+
+.addressbook_form fieldset{
+  margin:10px 0;
+  background:#eee;
+  padding:4px;
+  border:1px solid #ccc;
+}
+
+.addressbook_form fieldset dt,
+.addressbook_form fieldset dd,
+.addressbook_form fieldset label{
+  font-weight:normal;
+  margin:0;
+  padding:0;
+}
+.addressbook_form fieldset label{
+  font-size:90%;
+}
+
+/*
+  Address List
+*/
+
+
+dl.people{
+  margin:0;
+  padding:0 0 1em 0;
+}
+.people dt{
+  clear:both;
+  font-weight:bold;
+  margin-top:1em;
+  
+}
+.people dd{
+  margin-left:2em;
+  line-height:1.2em;
+}
+.address_check_box{
+  float:left;
+  width:280px;
+  white-space:nowrap;
+  margin:1px 1px 4px 1px;
+  overflow:hidden;
+  font-size:90%;
+  line-height:1.1em;
+}
+.address_check_box small{
+  padding-left:18px;
+}
+
+
+.address_in_group{
+  font-size:85%;
+  margin-right:2em;
+}
+
+/* 
+  Editors
+*/
+.editor_list_item{
+  border:1px solid #ddd;
+  margin:5px 2px;
+  padding: 5px 25px;
+  background:transparent url(/images/icons/silk_gif/user.gif) no-repeat 5px 5px;
+  width:220px;
+  float:left;
+}
+
+/*
+  Controls
+*/
+.controls{
+  display:block;
+  border-top:2px solid #2E526B;
+  border-bottom:1px solid #2E526B;
+  padding:0;
+  margin-top:6px;
+  margin-bottom:12px;
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+}
+.controls .control_button{
+  display:block;
+  padding:0 2px;
+  margin:0 0;
+  background:#fff url(/images/bkg-controlbutton.gif) center left repeat-x;
+  border-bottom:1px solid #98D5FF;
+}
+
+.controls .control_button a{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+

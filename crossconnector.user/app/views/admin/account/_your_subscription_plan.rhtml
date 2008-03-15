@@ -1,0 +1,28 @@
+<hr />
+
+<h2><a name="subscription_plans"></a>Your Subscription Plan</h2>
+
+<div class="small">
+  
+  <p>Your current plan: <strong><%= @homebase.subscription.plan.name %></strong><% if @homebase.subscription.plan.price > 0 -%> (<%= "$#{@homebase.subscription.money} #{@homebase.subscription.periodicity}" %>)<% end -%></p>
+  
+  <% if @homebase.subscription.next_billing_date and !@homebase.subscription.free? and !@homebase.subscription.trial? %>
+
+    <p>Your next bill will be on: <strong><%= @homebase.subscription.next_billing_date.strftime("%D") %></strong> (that's <%= distance_of_time_in_words_to_now(@homebase.subscription.next_billing_date) %> from now).</p>
+
+  <% end %>
+  
+  <% if @homebase.subscription.status == "trial" %>
+
+    <p>You have <strong><%= distance_of_time_in_words_to_now(@homebase.subscription.trial_ends_at) %> left</strong> in your free trial.</p>
+    <p>You can <%= link_to("update your billing information", :controller => "account", :action => "subscription", :plan => @homebase.subscription.plan.name) %> now to ensure uninterrupted service.</p>
+  
+  <% elsif @homebase.subscription.status == "pending"  %>
+
+    <p>You subscribed to the <%= @homebase.subscription.plan.name %> plan on <%= @homebase.subscription.updated_at.strftime("%D") %>, and we're just waiting for your invoice to come through. </p>
+
+  <% end %>
+
+  <p>Please email <%= email_support_link %> if you have any questions about your account. </p>
+
+</div>

@@ -1,0 +1,42 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  homebase_id         :integer       not null
+#  created_by          :integer       
+#  name                :string(255)   
+#  file                :string(255)   
+#  description         :text          
+#  content_type        :string(255)   
+#  size                :integer       
+#  data                :binary        
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  updated_by          :integer       
+#  private             :integer       default(0)
+#  access_logs_count   :integer       default(0)
+#  type                :string(20)    
+#  permalink           :string(255)   
+#  salted_password     :string(255)   
+#  salt                :string(255)   
+#  project_id          :integer       
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+pdf_file_for_haiti:
+  id: 1
+  homebase_id: 1
+  created_by: 1001
+  name: My PDF File
+  permalink: my-pdf-file
+  created_at: <%= Time.now - 2.weeks %>
+  
+  
+private_file:
+  id: 2
+  homebase_id: 1
+  created_by: 1001
+  name: Private File
+  private: 1
+  permalink: private-file
+  created_at: <%= Time.now - 2.weeks %>

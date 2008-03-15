@@ -1,0 +1,10 @@
+    <div class="info_box">
+      <h3>Archived Projects</h3>
+      <small>Archived projects can't be edited and don't count against your total projects.</small>
+      <dl class="recent projects">
+      <% for project in archived_projects %>
+        <dt><%= link_to(truncate(h(project.name), 20), :action => "show", :permalink => project.permalink) %></dt>
+        <dd><%= pluralize(project.events.count, "event") %></dd>
+      <% end %>
+      </dl>
+    </div>

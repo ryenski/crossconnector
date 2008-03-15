@@ -1,0 +1,28 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  homebase_id         :integer       not null
+#  created_by          :integer       
+#  name                :string(255)   not null
+#  position            :integer       
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+group_one:
+  id:          1
+  homebase_id: 1
+  created_by:  1001
+  name:        Haiti Group 1
+  
+group_two:
+  id:          2
+  homebase_id: 1
+  created_by:  1002
+  name:        Created by Editor
+
+private_group:
+  id:          3
+  homebase_id: 1
+  created_by:  1001
+  name:        Designed to see private things

@@ -1,0 +1,19 @@
+
+<div class="smallform">
+
+<%= form_remote_tag(:url => {:controller => "/admin/comment", :action => "edit"},
+                    :update => "comment_list_item_#{edit_comment.id}",
+                    :loading => "Element.show('edit_comment_indicator_#{edit_comment.id}')"
+                    ) %>
+
+<%= render :partial => "form", :object => edit_comment %>
+
+<div style="padding:10px 0 0 90px;">
+<%= submit_tag "Save this comment", :class => "small button" %> 
+<%= image_tag("/images/spinner.gif", :style => "display:none", :id => "edit_comment_indicator_#{edit_comment.id}") %> or 
+<%= link_to_function "Cancel", "Element.hide('comment_edit_form_#{edit_comment.id}'); Element.show('comment_body_#{edit_comment.id}')" %>
+</div>
+
+<%= end_form_tag %>
+
+</div>

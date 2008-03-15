@@ -1,0 +1,17 @@
+<%= form_remote_tag(:url => {:action => "update_address"},
+                    :update => "addressbook_detail",
+                    :loading => "Element.show('update_mailing_indicator')") %>
+  <%= text_field("address", "address1", :value => h(address_detail_form.address1 || "Address line 1"), :style => "width:80%;")  %>
+  <%= text_field("address", "address2", :value => h(address_detail_form.address2 || "Address line 2"), :style => "width:80%;")  %>
+  <%= text_field("address", "city", :value => h(address_detail_form.city || "City"), :style => "width:80%;")  %>
+  <%= text_field("address", "state", :value => h(address_detail_form.state || "State/Province"), :style => "width:40%;")  %>
+  <%= text_field("address", "postal", :value => h(address_detail_form.postal || "Zip/Postal"), :style => "width:30%;")  %>
+  <%= text_field("address", "country", :value => h(address_detail_form.country || "Country"), :style => "width:80%;")  %>
+  
+  <%= hidden_field("address", "id", :value => address_detail_form.id) %>
+  <%= image_tag("/images/spinner.gif", :id => "update_mailing_indicator", :style => "display:none;")  %>
+  <%= submit_tag("Save address") %> or <%= link_to_function("Cancel", "Element.toggle('address_detail_mailing'), Element.toggle('address_detail_mailing_form')") %>
+
+<%= end_form_tag %>
+
+

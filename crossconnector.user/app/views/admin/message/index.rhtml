@@ -1,0 +1,17 @@
+
+<% if @homebase.messages.empty? %>
+  
+  <%= render :partial => "intro"  %>
+  
+<% else -%>
+
+  <div class="left wide">
+    <%= render :partial => "message_excerpt", :collection => @messages %>
+    <%= render :partial => "shared/pagination_links", :object => @message_pages %>    
+  </div>
+
+  <div class="right narrow">
+    <%= render :partial => 'draft_messages', :object => @user.draft_messages unless @user.draft_messages.empty? %>
+  </div>
+
+<% end -%>

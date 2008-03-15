@@ -1,0 +1,22 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  name                :string(255)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+
+projects_subscription_plan_priveleges:
+  id: 1
+  name: Active projects you can plan
+  
+  
+storage_subscription_plan_priveleges:
+  id: 2
+  name: Disk storage you can use
+  
+  
+message_subscription_plan_priveleges:
+  id: 3
+  name: Blog messages you can post

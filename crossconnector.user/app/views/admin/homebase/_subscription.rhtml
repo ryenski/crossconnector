@@ -1,0 +1,15 @@
+
+ <% if @homebase.subscription.trial? and @homebase.subscription.plan.price > 0  %>
+    <hr class="clear" />
+    <div class="flash information">
+      <% if @homebase.subscription.trial_ends_at > Time.now %>
+      <p>You have <%= distance_of_time_in_words_to_now(@homebase.subscription.trial_ends_at) %> left in your free trial. (Your trial ends on <%= @homebase.subscription.trial_ends_at.strftime("%D") %>).<br />
+        <small>You can either <%= link_to("upgrade", :controller => "/admin/account") %> or automatically downgrade to the free version at the end of your trial.</small>
+      </p>
+      <% else %>
+        <p><strong>Your free trial ended <%= distance_of_time_in_words_to_now(@homebase.subscription.trial_ends_at) %> ago.</strong> Please <%= link_to("upgrade", :controller => "/admin/account") %> soon. <br />
+          <small>We've put a lot of hard work and love into CrossConnector, and your support is appreciated. </small>
+          </p>
+      <% end %>
+    </div>
+  <% end %>

@@ -1,0 +1,225 @@
+/* - - - - - - - - - - - - - - - - - - - - -
+
+   Crossconnector.com
+   
+   Copyright(c) 2005 Art of Mission, Inc.
+   All Rights Reserved 
+   
+   Art of Mission
+   1450 Barton Rd #300
+   Redlands, CA 92373
+   USA
+   
+   http://www.artofmission.com
+   info@artofmission.com
+
+- - - - - - - - - - - - - - - - - - - - - */
+
+
+*{
+  margin:0;
+  padding:0; 
+}
+
+body,html{
+  background:#606060;
+  background:#606060 url(../../images/theme/bkg.gif) repeat-y top center;
+}
+
+
+/*
+  Layout
+------------------------------------------------*/
+#container{
+  width:780px;
+  margin:0 auto;
+  padding:0;
+background:#fff;
+}
+.content{
+  margin:0 20px;
+  background:#fff;
+}
+
+.wide{ width:480px; padding-right:20px; border-right:1px solid #ccc;}
+.narrow{ width:220px;}
+.left{ float:left; clear:left; }
+.right{ float:right; clear:right; }
+.half{ width:49%; }
+.full{ width:100%; }
+
+
+/*
+  Header
+------------------------------------------------*/
+
+
+#public_nav{
+  float:left;
+  background:#E0720E;
+  width:800px;
+  padding:0;
+  margin:0 -10px;
+  display:inline;
+}
+
+#public_nav ul{
+  float:left;
+  color:#fff;
+  margin:0 20px;
+  padding:0;
+  list-style:none;
+  display:inline;
+}
+
+#public_nav li{
+  float:left;
+  margin:16px 10px;
+  color:#fff;
+  font-weight:bold;
+  cursor:default;
+}
+#public_nav li a{
+  float:left;
+  display:block;
+  color:#fff;
+  cursor:pointer;
+  text-decoration:none;
+  border:solid #fff;
+  border-width:0 0 2px 0;
+}
+#header a:hover{
+  border-color: #E0720E;
+}
+
+#homebase #public_nav #public_homebase a,
+#projects #public_nav #public_projects a,
+#project #public_nav #public_projects a,
+#messages #public_nav #public_messages a,
+#message #public_nav #public_messages a,
+#files #public_nav #public_files a,
+#about #public_nav #public_about a
+{
+  border-color: #E0720E;
+}
+
+#public_nav #login{
+  float:right;
+  margin:16px 20px;
+  display:block;
+  width:260px;
+}
+#public_nav #login a{
+  float:right;
+  color:#fff;
+  display:block;
+  background:transparent url(../../images/theme/lock.gif) 0 0 no-repeat;
+  padding:2px 0 2px 20px;
+}
+
+
+#siteid{  
+  clear:both;
+  font-weight:normal;
+  font-size:100%;
+  padding:10px 0 20px;
+}
+
+#siteid h1{
+  margin:0;
+}
+
+#siteid p{
+  margin:0;
+}
+
+/*
+  Content
+------------------------------------------------*/
+
+#content{
+
+}
+
+
+
+/*
+  Typography
+------------------------------------------------*/
+
+p{
+  font-size:90%;
+}
+a{
+  color:#166EAC;
+}
+a:hover{
+  text-decoration:none;
+  border:0;
+}
+a:visited{
+  color:#B85F0A;
+}
+h1,h2,h3,h4,dt{
+  font-family:"Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-weight:normal;
+}
+
+h1{
+  font-size:200%;
+}
+
+h2{
+  font-size:160%;
+  font-weight:normal;
+  margin-top:0;
+}
+h3{
+  font-size:130%;
+}
+h4{
+  font-size:100%;
+  font-weight:bold;
+}
+
+hr.clear{
+  clear:both;
+  visibility:hidden;
+  margin:0;
+  padding:0;
+}
+
+hr{
+  margin:2em 0;
+  padding:0;
+  color:#ccc;
+  background-color:#ddd;
+  height:1px;
+  border:none;
+}
+
+
+.intro{
+  border-color:#9FD94F;
+  background:#F3FAEA;
+  padding:2em 1em;
+}
+
+
+
+/*
+  Footer
+------------------------------------------------*/
+#footer{
+  background:#fff;
+  border-width: 0 4px 4px 4px;
+  padding:25px 0;
+  clear:both;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+#search{
+  margin:30px 0;
+}
+

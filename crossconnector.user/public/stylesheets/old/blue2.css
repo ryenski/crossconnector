@@ -1,0 +1,87 @@
+
+
+body,html{
+  background:#fff url(/images/blue-bkg.jpg) repeat-x;
+}
+#header{
+  background:transparent url(/images/blue-bkg-top.jpg) repeat-x;
+}
+
+#logo {
+  background:transparent url(/images/blue-bkg-beta.gif) no-repeat;
+}
+#logo a,
+#addressbook_link a,
+#menu li a{ 
+  border:none !important;
+}
+#siteid{
+  color:#333333;
+}
+#siteid h2{
+  margin:0;
+  padding:0;
+  font-family:Helvetica,Arial,sans-serif;
+}
+#addressbook_link{
+  background:transparent url(../images/blue-bkg-addressbook.gif) right top no-repeat;
+  border:none;
+}
+body#addressbook #addressbook_link,
+#addressbook_link:hover{
+  background:transparent url(../images/blue-bkg-addressbook-hover.gif) right top no-repeat;
+}
+
+#main{
+  background:#fff;
+  border:solid #1A8AD6;
+  border-width:0 10px 10px 10px ! important;
+  margin:0 0 0 170px ! important;
+}
+#menu li{
+  color:#fff;
+  text-shadow: #268 0px 0px 4px;
+}
+#menu li a{
+  background:transparent url(../images/blue-tabs.gif) no-repeat;
+  color:#fff;
+}
+#menu li a:hover{
+  background:transparent url(../images/blue-tabs.gif) no-repeat 0 -100px;
+  color:#fff;
+}
+
+
+/* Links */
+a{
+  color:#166EAC;
+  /*text-decoration:none;
+  border-bottom:1px solid #1A8DDC;*/
+}
+#main a:hover{
+  text-decoration:none;
+  border:0;
+
+}
+a img{
+  border:none;
+}
+a.help{
+  cursor:help;
+}
+
+
+
+
+/* Tab Active States */
+body#homebase #menu li#homebase_tab a,
+body#blog #menu li#blog_tab a,
+body#plan #menu li#plan_tab a,
+body#share #menu li#share_tab a,
+body#addressbook #menu li#people_tab a{
+  background:transparent url(../images/blue-tabs.gif) no-repeat 0 -50px;
+  color:#3E3E34;
+  text-shadow: #729EB3 0px 0px 2px;
+}
+
+

@@ -1,0 +1,1109 @@
+/* 
+   Crossconnector.com
+   
+   copyright(c) 2005 Art of Mission, Inc.
+   1450 Barton Rd #300
+   Redlands, CA 92373
+   USA
+   
+   http://www.artofmission.com
+   ryan@artofmission.com
+
+*/
+
+/* 
+  Typography
+*/
+body,html{
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+  /* font:small/1.6em "Lucida Grande",Verdana,Arial,sans-serif; */
+  font-size:small;
+  color:#222;
+  line-height:1em;
+}
+
+h1,h2,h3,h4,h5{margin:0;}
+
+h1{ font-size:200%; }
+h2{ font-size:150%; }
+h3{ font-size:120%; }
+
+h2,h3{
+  padding:1em 0 0 0;
+}
+h4,h5{
+  margin-bottom:5px;
+  margin-top:1em;
+}
+p{
+  font-size:100%;
+  line-height:1.6em;
+  color:#333;
+}
+p small{
+  line-height:1.3em;
+}
+
+.page_title{
+  border-bottom:4px solid #D6E8F5;
+  padding-bottom:4px;
+}
+
+
+
+.faded{
+  color:#ccc;
+}
+
+.strong{
+  font-weight:bold;
+}
+
+dl.list{
+  padding:.5em .5em;
+  margin:0;
+}
+dl.list dt{
+  font-weight:bold;
+  margin-bottom:0;
+}
+dl.list dd{
+  font-size:85%;
+  margin-left:1em;
+  margin-bottom:.2em;
+}
+
+ul.upcoming_events{
+  list-style:none;
+  font-size:70%;
+  padding-left:0;
+  font-family:verdana,sans-serif;
+}
+
+ul.upcoming_events li{
+  margin-left:0;
+  padding:.5em 0 .5em 1.5em;
+  background:url(../images/icons/arrow2.png) left center no-repeat ;
+}
+
+
+
+
+
+
+
+#system_alert{
+  border:solid #ABC7ED;
+  border-width:1px 1px 1px 4px;
+  background: #EAF0FB;
+  margin:5px 0;
+  padding:1px 10px;
+  font-size:85%;
+}
+#system_alert p{
+  line-height:1.1em;
+}
+
+.intro{
+  border:solid #0071BD;
+  border-width:2px 0;
+  background: #EBF4FA;
+  margin:40px 0;
+  padding:0 10px;
+}
+
+
+/*
+  MISC
+*/
+hr{
+  margin:2em 0;
+  padding:0;
+  color:#ccc;
+  background-color:#ddd;
+  height:1px;
+  border:none;
+}
+hr.clear{
+  clear:both;
+  visibility:hidden;
+  margin:0;
+}
+hr.space{
+  margin:1em 0;
+}
+hr.small{
+  margin:.5em 0;
+}
+
+div.warning{
+  background:#fff url(/images/bkg-private.jpg) repeat-x;
+  border-top:solid #F0BFB7 3px;
+  padding:0 10px 0 10px;
+  margin-bottom:20px;
+}
+
+div.warning.soft{
+  background:#fff url(/images/bkg-draft.jpg) no-repeat;
+  border:solid #66A0BB;
+  border-width: 3px 0 1px 0;
+
+}
+
+h2.warning{
+  color:#B63A25; 
+  margin:10px 0;
+}
+
+.red{
+  color: #B63A25;
+}
+div.feature_info{
+  font-size:80%;
+  line-height:1.3em;
+  padding:10px 0;
+  border-bottom:1px solid #ddd;
+  border:0;
+  font-family:verdana,sans-serif;
+}
+
+
+div.explanation{
+  line-height:1em;
+  margin:20px 0;
+  background-position:top left !important;
+}
+div.explanation strong{
+  display:block;
+}
+
+
+.small{
+  font-size:85%;
+}
+
+del{
+	color:red;
+}
+ins{
+	color:green;
+	text-decoration:none;
+}
+
+
+/* 
+  Forms
+*/
+
+
+
+.form  {
+  width:100%;
+  background:#EFF6F8;
+  background:#F0F5D6 url(../images/bkg-event-info.gif) repeat-y top left;
+  border:solid #E2E79C;
+  border-width:4px 1px 1px 1px;
+  padding-bottom:1em;
+  margin:1em 0 1em 0;
+}
+.form p{
+  padding:0 20px;
+}
+
+form label{
+	font-family:verdana,sans-serif;
+	font-size:90%;
+  padding-bottom:0;
+  font-weight:bold;
+}
+table.form th{
+  vertical-align:top;
+  font-size:110%;
+  width:20%;
+  padding-top:1em;
+  border:solid #E2E79C;
+  border-width:0 3px 0 0;
+}
+th{
+  text-align:right;
+  padding-right: 0.5em;
+}
+.form th small{
+  font-weight:normal;
+  font-size:75%;
+}
+.form td{
+  padding:1em .5em;
+}
+.required{
+  color:#900;
+}
+label{
+  margin-top:1em;
+}
+form table p{
+  line-height:1em;
+  font-size:1em;
+}
+form table p small{
+  color:#444;
+}
+
+input{
+  margin:1px 0;
+  
+}
+input.biginput{
+  font-size:140%;
+  font-weight:bold;
+  margin:0 0;
+  padding:6px;
+  width:90%;
+  border-top: #555;
+  border-left: #555;
+  border-right: #ddd;
+  border-bottom: #ddd;
+  border-width:2px;
+  border-style:solid;
+  
+}
+input.fancybutton{
+  border: 3px double #555;
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  padding:0.25em;
+  background:#fff url(../images/bkg-button.gif) 0 -1px repeat-x;
+  color:#222;
+  margin:0;
+  font-size:120%;
+  font-weight:bold;
+  padding:3px 12px;
+}
+
+input.fancybutton:active {
+  border: 3px double #ccc;
+  border-top-color: #555;
+  border-left-color: #555;
+  background-position:0 0;
+}
+input.button{
+  font-size:120%;
+  font-weight:bold;
+  padding:3px 12px;
+}
+input.button.delete{
+
+}
+input.button.small{
+  border: 3px double #555;
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  padding:0.25em;
+  background:#fff url(../images/bkg-button.gif) 0 -1px repeat-x;
+  color:#222;
+
+  font-size:100%;
+  font-weight:bold;
+  padding:0 3px;
+}
+
+textarea.description{
+  width:95%;
+  margin:0;
+  display:block
+}
+
+
+dl.people{
+  margin:0 20px;
+}
+.people dt{
+  clear:both;
+  font-weight:bold;
+  font-size:.9em;
+  margin-top:1em;
+}
+.people dd{
+  margin-left:10px;
+  line-height:1.2em;
+}
+.address_check_box{
+  float:left;
+  width:160px;
+  white-space:nowrap;
+  margin:2px 2px 5px 2px;
+  overflow:hidden;
+  font-size:90%;
+  line-height:1.1em;
+}
+.address_check_box small{
+  padding-left:18px;
+}
+
+.address_in_group{ 
+  font-size:55%;
+  font-family:verdana;
+  color:#333;
+  display:inline;
+  margin:0 2px;
+  padding:0 2px;
+}
+
+.nowrap{
+  white-space:nowrap;
+}
+
+.smallform{
+  padding:5px 20px;
+  background: #f7f7f7;
+  border:1px solid #ccc;  
+}
+
+.smallform dt,
+.smallform dd{
+  margin:0;
+}
+.smallform dt{
+  margin-top:10px;
+}
+.smallform input{
+
+}
+.form h3 a{
+  text-decoration:none;
+  /*margin:0 20px;*/
+}
+.form a img{
+  border:0;
+}
+.form .indent{
+  margin-left:20px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+  Messages
+*/
+
+table.message_list{
+  border-top:1px solid #D6E8F5;
+  margin-top:2em;
+  padding-top:1em;
+}
+.message_list th{
+  text-align:left !important;
+}
+.message_list td{
+  font-size:70%;
+  line-height:1.2em;
+  padding:4px 2px;
+}
+.message_list .subject{
+  padding-left:18px;
+  color:#666;
+  font-size:85%;
+  line-height:1.3em;
+}
+
+.message_list .row_0 td {
+  background:#EEF4FC;
+  border:solid #D6E3F5;
+  border-width: 1px 0;
+}
+.message_list .row_1 td{
+  border:0;
+  background:#fff;
+}
+
+.message_list .row_0.private .subject{
+  background:#EEF4FC url('/images/icons/helsinki/security-lock-red_16.gif') left center no-repeat;
+}
+.message_list .row_1.private .subject{
+  background:#fff url('/images/icons/helsinki/security-lock-red_16.gif') left center no-repeat;
+  background:#fff url('/images/icons/silk/lock.png') no-repeat left center;
+}
+
+.message_list .subject a.title{
+  font-weight:bold;
+}
+.message_list .date{
+  font-size:70%;
+}
+
+
+
+
+
+dl.message_excerpt{
+  margin-bottom:0px;
+}
+
+dl.message_excerpt dt{
+  font-size:130%;
+  font-weight:bold;
+  margin: 0;
+  padding:0;
+}
+dl.message_excerpt dt a {
+  text-decoration: none; 
+}
+dl.message_excerpt dd{
+  margin: 0;
+  padding: 0;
+  font-size:95%;
+  color:#222;
+}
+
+dl.message_excerpt.private {
+  background:#fff url(../images/bkg-private-4.jpg) 0 0 no-repeat;
+  padding:5px 20px 5px 5px;
+  border-right:8px solid #FAD9CF;
+}
+dl.message_excerpt.private dt{
+  background:transparent url(../images/icons/silk/lock.png) no-repeat top right;
+}
+
+dl.message_excerpt.draft {
+  background:#fff url(../images/bkg-draft.jpg) 0 0 no-repeat;
+  padding:5px 20px 5px 5px;
+  border-right:8px solid #C9E1F9;
+}
+dl.message_excerpt.draft dt{
+  background:transparent url(../images/icons/silk/note.png) no-repeat top right;
+}
+
+dl.message_excerpt.private.draft dt{
+  background:transparent url(../images/icons/private_draft2.png) no-repeat top right;
+}
+dl.message_excerpt.private.draft {
+  border-right:8px solid #FAD9CF;
+}
+
+
+dl.message_excerpt .message_info{
+	margin: 0;
+	padding: 4px 0 0 0;
+	font-size: 80%;
+	color: #aaa;
+  background-color: #EFF6F8;
+  border-bottom: 1px dashed #ddd;
+}
+dl.message_excerpt.private .message_info,
+dl.message_excerpt.draft .message_info{
+  background:transparent;
+}
+dl.message_excerpt .message_project{
+  padding-left:12px;
+  background:transparent url(../images/icons2/envelope_ver2.gif) no-repeat left center;
+  font-size:.9em;
+  color:#aaa;
+}
+dl.message_excerpt .message_project a{
+  color:#aaa;
+}
+
+dl.message_excerpt a.permalink{
+  padding-left:12px;
+  background:transparent url(../images/icons2/envelope_ver1.gif) no-repeat left center;
+  text-decoration:none;
+  color:#666;
+  margin:0 1em;
+}
+.message_excerpt a.permalink:hover{
+  border-bottom:1px dotted #333;
+  color:#333;
+}
+dl.message_excerpt .message_comments{
+  padding-left:12px;
+  background:transparent url(../images/icons2/documents.gif) no-repeat left center;
+  text-decoration:none;
+  color:#666;
+  margin:0 1em;
+}
+dl.message_excerpt a.message_comments:hover{
+  border-bottom:1px dotted #333;
+  color:#333;
+}
+dl.message_excerpt a.more{
+  padding-right:12px;
+  background:transparent url(../images/icons2/arrow_C_ver2.gif) no-repeat right center;
+  font-size:90%;
+  text-decoration:none;
+  white-space:nowrap;
+}
+dl.message_excerpt a.more:hover{
+  border-bottom:1px dotted #333;
+}
+
+
+
+dl.message_inbox,
+dl.project_inbox{
+  font-size:90%;
+}
+dl.message_inbox dt,
+dl.project_inbox dt,
+dl.file_inbox dt{
+  font-weight:bold;
+  margin-top:10px;
+}
+
+dl.message_inbox dd,
+dl.project_inbox dd,
+dl.file_inbox dd{
+  font-size:80%;
+  margin:0;
+  line-height:1.2em;
+}
+dd.message_body p {
+	font-size: 100%;
+	margin: 4px 0 40px 0;
+}
+
+
+.message_title{
+  font-family:Helvetica,Arial,sans-serif;
+  color:#333;
+  text-shadow: #ccc 2px 2px 0px;
+}
+.message_author{
+  color: #A4B73E;
+  font-size:80%;
+}
+
+/* 
+  Stats Table
+*/
+table.stats{
+  padding-left:10px;
+  padding-bottom:3em;
+  line-height:1.3em;
+  font-size:.8em;
+  width:100%;
+  margin:1em 0;
+  padding:0;
+  font-size:85%;
+}
+table.stats th{
+  text-align:right;
+  padding-right:10px;
+	vertical-align: top;
+	color:#1A8DDC;
+}
+table.stats td,
+table.stats th{
+  border-bottom:1px solid #ddd;
+  padding-top:2px;
+  padding-bottom:2px;
+  margin:0;
+}
+table.stats caption{
+  font-weight:bold;
+  text-align:left;
+}
+
+
+
+.data{
+  background:#EFF6F8;
+  border:solid #D5E3F6;
+  border-width:1px 0;
+  padding:0 5px;
+}
+.data p{
+  font-size:85%;
+  padding:0 15px;
+  margin-top:0;
+  color:#111;
+}
+
+
+
+
+
+
+
+
+.message_list_small{
+  font-size:85%;
+  line-height:1.2em;
+}
+.message_list_small dl{
+  border-top:2px solid #B0C74D;
+}
+.message_list_small dt{
+  padding-top:10px;
+}
+.message_list_small dd{
+  padding-bottom:6px;
+  border-bottom:1px solid #F0F5D6;
+  margin:0;
+  padding:0 0 10px 12px;
+}
+.message_list_small span.mls_date{
+  float:right;
+}
+
+/*
+  Comments
+*/
+#comment_list{
+  margin-top: 2em;
+  border-top:1px dotted #ddd;
+  padding-top:2em;
+}
+#comment_list dt{
+  font-size:1.1em;
+  font-weight:bold;
+  color:#900;
+  background:transparent url(../images/comment.gif) no-repeat bottom left;
+  padding:0 0 6px 40px;
+  margin:0;
+  z-index:20;
+}
+#comment_list dd{
+  background:#EFF6F8;
+  border:solid #D5E3F6;
+  border-width:0 1px 1px 1px;
+  font-size:.85em;
+  margin:0 0 3em 0;
+  padding:.1em 1em;
+  z-index:19;
+}
+.comments_title{
+  background:url(../images/icons/comments-right.gif) no-repeat left top;
+  padding-left:16px;
+  padding-bottom:1em;
+}
+.commentbox{
+  padding:10px 20px;
+  background-color:#F0F5D6;
+  border:1px solid #CDE54E;
+}
+div.admin_tools{
+  float:right;
+  padding:1px;
+  margin: 0 0 2px 2px;
+}
+div.admin_tools a{
+  margin:0 5px;
+
+}
+
+/* 
+  Address Book
+*/
+
+#addressbook_table{
+  width:100%;
+}
+
+#addressbook_table td{
+  vertical-align:top;
+}
+.addressbook_section{
+  overflow:auto;
+  background:#F0F5D6 url(../images/bkg-connections.jpg) repeat-x;
+  background:#fff;
+  border:1px solid #ddd;
+  margin:0;
+  padding:0;
+  height:300px;
+}
+
+.addressbook_section .padding{
+  margin:0 5px;
+}
+
+#addressbook_groups{
+}
+
+#addressbook_people{
+}
+
+#addressbook_detail{
+}
+
+
+.addressbook_form{
+  margin:10px 0;
+  background:#eee;
+  padding:4px;
+  border:1px solid #ccc;
+}
+
+
+
+.addressbook_section ul{
+  padding:0;
+  font-family:Verdana,sans-serif;
+  font-size:80%;
+  line-height:1.1em;
+}
+
+#addressbook_people ul{
+  list-style-image:url(../images/icons/silk/vcard.png);
+  list-style-image:url(../images/icons/helsinki/contacts_16.png);
+  list-style-position:inside;
+}
+#addressbook_groups ul{
+
+}
+
+#addressbook_detail p{
+  line-height:1em;
+  font-family:Verdana,sans-serif;
+  font-size:.8em;
+}
+#addressbook_people a,
+#addressbook_groups a{
+  cursor:pointer;
+}
+
+#addressbook_people li:hover,
+#addressbook_groups li:hover{
+  background-color:#FFFF99;
+  cursor:move;
+}
+
+.addressbook_controls{
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+.group_list {
+  list-style-type:none;
+  margin:10px 0 10px 0;
+  padding:0;
+}
+.group_list .current {
+  background:#ffa;
+  border:1px solid #ff0;
+}
+.group_list .current a {
+  color:#900;
+}
+
+.group_list_item{
+  background: transparent url(../images/icons/silk/folder_user.png) left center no-repeat;
+  padding:2px 0 2px 20px;
+  font-weight:bold;
+}
+.addressbook_controls{
+  font-weight:normal;
+}
+
+.group_delete_form{
+  border:1px solid #ccc;
+  background:#eee;
+  padding:4px;
+  margin:4px 0;
+}
+
+
+
+
+
+
+
+
+#addressbook_groups li,
+#addressbook_people li{
+  line-height:18px;
+}
+#addressbook_groups form{
+  margin:0;
+}
+.admin_tools_for_addressbook{
+  float:right;
+}
+.admin_tools_for_addressbook input{
+
+}
+.addressbook_groups li a{
+
+}
+
+#address_detail_form form dl{}
+#address_detail_form form dl dt{
+  font-size:80%;
+  font-weight:bold;
+  margin:5px 0 0 0;
+  line-height:1em;
+}
+#address_detail_form form dl dd{
+  margin:0;
+  font-size:85%;
+}
+
+a.control{
+  color:#999;
+  font-size:90%;
+  text-decoration:none;
+}
+
+
+
+/* 
+  Files
+*/
+table.filelist{
+  width:100%;
+  margin:2em 0;
+}
+.filelist td {
+  padding-top:.5em;
+  padding-bottom:.5em;
+  border-bottom:1px solid #ddd;
+}
+
+.filelist .gif{
+  background:url(../images/icons/file-gif.gif) no-repeat left center;
+}
+.filelist .jpg{
+  background:url(../images/icons/file-jpg.gif) no-repeat left center;
+}
+.filelist .pages{
+  background:url(../images/icons/file-pages.gif) no-repeat left center;
+}
+.filelist .pdf{
+  background:url(../images/icons/file-pdf.gif) no-repeat left center;
+}
+.filelist .png{
+  background:url(../images/icons/file-png.gif) no-repeat left center;
+}
+.filelist .rtf{
+  background:url(../images/icons/file-rtf.gif) no-repeat left center;
+}
+.filelist .txt{
+  background:url(../images/icons/file-txt.gif) no-repeat left center;
+}
+.filelist .word{
+  background:url(../images/icons/file-word.gif) no-repeat left center;
+}
+
+#storage_usage{
+  width:100%;
+  margin:1em;
+}
+#storage_available{
+  background:#ffc;
+  width:60%;
+  padding:2px;
+  border:1px solid #ff0;
+}
+#storage_used{
+  background:#1A8AD6;
+  height:12px;
+  color:#fff;
+  font:bold .8em/12px verdana,sans-serif;
+  text-align:right;
+}
+
+/*
+  Account
+*/
+table.plans{
+  width:100%;
+  font-size:90%;
+  font-weight:normal;
+  line-height:1.6em;
+  margin:0;
+  border:solid #C7D18A;
+  border-width:2px 0;
+}
+table.plans .plan_title td{
+  background:#F6FAFB url(../images/bkg-plans.jpg) repeat-x;
+}
+table.plans th{
+  font-weight:normal;
+  text-align:left;
+}
+table.plans td{
+  text-align:center;
+}
+table.plans td,
+table.plans th{
+  padding:.6em;
+  border-bottom:1px solid #ddd;
+}
+table.plans .current{
+  background:#EFF6F8 !important;
+  font-weight:bold;
+}
+table.plans strong{
+  font-size:1.5em;
+}
+
+table.plans .plan_name{
+  font-size:1.4em;
+  font-weight:bold;
+  color:#8FA214;
+}
+table.plans .plan_price{
+  color:#900;
+}
+
+.personal_info{
+
+}
+.personal_info h2{
+  color: #1A8DDC;
+}
+.profile.form th{
+
+}
+.profile.form th small{
+  display:block;
+    line-height:1.1em;
+}
+
+
+
+#account_nav,
+#project_nav{
+  float:left;
+  width:96%;
+  margin:0 0 20px 0;
+  padding:10px 0 0 4%;
+  list-style:none;
+  background:#fff url(../images/tab-bottom.gif) repeat-x bottom left;
+
+}
+#account_nav li,
+#project_nav li{
+  float:left;
+  margin:0;
+  padding:0;
+  font-size:85%;
+  font-family:verdana,arial,sans-serif; 
+}
+#account_nav a,
+#project_nav a{
+  float:left;
+  display:block;
+  font-weight:bold;
+  margin:0 1px 0 0;
+  padding:5px 8px;
+  color:#333;
+  text-decoration:none;
+  border:1px solid #97DB22;
+  border-bottom:none;
+  background:#fff url(/images/bkg-tab.gif) repeat-x 0 1px;
+}
+
+#account_nav a:hover,
+#account_nav.account_index #account_index a,
+#account_nav.account_profile #account_profile a,
+#account_nav.account_your_info #account_your_info a,
+#account_nav.account_password #account_password a,
+#account_nav.account_editors #account_editors a,
+#account_nav.account_new_editor #account_editors a,
+#account_nav.account_edit_editor #account_editors a,
+#project_nav a:hover,
+#project_nav.project_show #project_index a,
+#project_nav.project_events #project_events a,
+#project_nav.project_messages #project_messages a,
+#project_nav.project_files #project_files a{
+  padding-bottom:6px;
+  background:#fff;
+  color:#333;
+  border:1px solid #97DB22;
+  border-bottom:none;
+}
+
+
+
+/* 
+Project Archives
+*/
+#archiveNotice{
+  background:#555;
+  color:#ddd;
+  padding:4px 30px;
+}
+
+
+
+/* 
+  Help
+*/
+.help.mouseover{
+  color:#666;
+  font-size:.9em;
+  font-weight:bold;
+}
+
+
+/* 
+  Editors
+*/
+.editor_list_item{
+  border:1px solid #ddd;
+  margin:5px 2px;
+  padding: 5px 25px;
+  background:transparent url(/images/icons/silk/user.png) no-repeat 5px 5px;
+  width:220px;
+  float:left;
+}
+
+/*
+  Search Results
+*/
+#search_results{
+  
+}
+#search_results dt{
+  font-weight:bold;
+  margin-top:5px;
+}
+#search_results dd{
+  margin:2px 10px;
+}
+
+/*
+  Change Password
+*/
+dl.password{
+  border:2px #E4EDB5 solid;
+  background:#F0F5D6 url(../images/bkg-event-info.gif) repeat-y top left;
+  padding-bottom:10px;
+
+}
+dl.password dt{
+  float:left;
+  clear:left;
+  font-weight:bold;
+  width:250px;
+  text-align:right;
+  font-size:110%;
+  margin:15px 10px 0 0;
+}
+dl.password dd{
+  margin:0 0 0 260px;
+}
+dl.password input{
+  margin-top:15px;
+}
+
+/*
+  Footer
+*/
+

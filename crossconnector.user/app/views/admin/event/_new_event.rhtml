@@ -1,0 +1,14 @@
+
+
+ <%= form_remote_tag :url => {:controller => "/admin/event", :action => "new"}, 
+                     :update => "event_list",
+                     :loading => "Element.show('new_event_indicator')"
+                     %>
+
+<%= render :partial => "admin/event/form" %>
+
+<%= submit_tag "Add Event", :class => "button" %> <%= image_tag("/images/spinner.gif", :style => "display:none", :id => "new_event_indicator") %> or <%= link_to_function("cancel", visual_effect(:blind_up, "new_event_form", :duration => 0.5)) %>
+
+<%= end_form_tag %>
+
+<hr />

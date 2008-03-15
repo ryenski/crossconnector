@@ -1,0 +1,10 @@
+
+<dl class="message_excerpt<%= " private" if message_excerpts.private == 1 -%><%= " draft" if message_excerpts.draft == 1 -%>">
+  
+  <dt class="message_subject"><%= link_to message_excerpts.subject, :action => "show", :id => message_excerpts.id %><%= content_tag("small"," (draft)") if message_excerpts.draft == 1 %><%= content_tag("small"," (private)") if message_excerpts.private == 1 %></dt>
+  
+  <dd class="message_info"><%= link_to(localized_date(message_excerpts.created_at), {:action => "show", :id => message_excerpts.id}, :class => "sent") %> | <% if message_excerpts.disable_comments == 1 -%>Comments are turned off<% end -%><% if message_excerpts.disable_comments == 0 -%><%= link_to("#{pluralize(message_excerpts.comments.size, "comment")}", {:action => "show", :id => message_excerpts.id}, :class => "message_comments") %><% end -%><% if message_excerpts.private == 1 -%> | Private<% end -%></dd>
+  
+  <dd class="message_body"><p><%= auto_link(message_excerpts.body) %> <%= link_to("Read the full message", {:action => "show", :id => message_excerpts.id}, :class => "more") %></p></dd>
+  
+</dl>

@@ -1,0 +1,34 @@
+
+<div id="project_events_summary">
+  
+  
+  <% for event in events_summary_list %>
+    
+    <div id="event_list_item_<%= event.id %>">
+      
+    <dl class="summary_list" id="event_body_<%= event.id %>">  
+
+      <dt class="calendar icon"><%= event.name %><%= admin_tools_for(event, @project) if (@request.parameters[:action] != "show" and @request.parameters[:controller].split("/").first == "plan") %> </dt>    
+      
+      <dd><%= admin_tools_for event, event.project unless (event.project.archived? or @params[:controller] == "public") %></dd>
+      
+      <dd><div id="event_body_<%= event.id %>"><%= event.start_date.strftime("%A, %B %d, %Y") %></div></dd>
+    
+      <dd><%= event.body_html %></dd>
+    
+      <%= content_tag("div", "", :id => "event_edit_form_#{event.id}", :style => "display:none;") if user_can_edit? "project" and (@request.parameters[:action] != "show" and @request.parameters[:controller].split("/").first == "plan") %>
+      
+    </dl>
+    
+    <%= content_tag("div", "", :id => "event_edit_form_#{event.id}", :style => "display:none;") if event.project.user.can_edit_projects? %>
+    
+    </div>
+  <% end %>
+
+  
+</div>
+
+
+
+
+

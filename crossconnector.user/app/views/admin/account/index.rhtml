@@ -1,0 +1,38 @@
+
+<%= render :partial => "nav" %>
+
+<div class="left half">
+  <%= render :partial => "account_summary" %>
+</div>
+
+<div class="right half">
+  <%= render :partial => "personal_information" %>
+</div>
+
+<hr class="clear" />
+
+<%= render :partial => 'donate' %>
+
+
+<%= 
+# render :partial => "subscription_plans" if session[:user].class == User 
+%>
+
+<%= 
+# render :partial => 'your_subscription_plan' if session[:user].class == User 
+%>
+
+
+<%= render :partial => 'your_invoices'  if session[:user].class == User %>
+
+
+
+<%  if session[:user].class == User %>
+
+  <hr />
+  <p style="margin:4em 0;">
+    <%= "Need to #{link_to("cancel your account", :action => "cancel")}?" %><br />
+    <small class="light">Tip: Keep all your messages and projects by downgrading to the Free version instead of canceling. </small>
+  </p> 
+
+<% end %>

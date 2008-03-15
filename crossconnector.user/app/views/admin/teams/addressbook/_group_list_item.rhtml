@@ -1,0 +1,20 @@
+
+<li id="item_<%= group_list_item.id %>">
+
+<div id="group_list_item_<%= group_list_item.id %>_content" class="group_list_item">
+
+  <%= link_to_remote group_list_item.name,
+          :update => "addressbook_people",
+          :loading => "Element.show('group_loading')",
+          :complete => "new Effect.Highlight('addressbook_people'), Element.hide('group_loading')",
+          :url => { :action => :get_group,
+                    :id => group_list_item.id
+                  } %>
+                  
+  </span>
+</div>
+
+
+
+
+</li>

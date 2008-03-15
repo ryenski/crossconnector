@@ -1,0 +1,62 @@
+<div class="padding">
+  
+  <% unless address_list %>
+      <h4>Select a team</h4>
+      <%= content_tag("span", "#{image_tag("/images/spinner.gif")} loading...", :id => "group_loading", :style => "display:none;") %>
+  <% else %>
+  
+  
+    <% if address_list.class == Homebase %>
+      <h3><%= address_list.name %></h3>
+    <% else %>
+
+
+      <span class="controls_hover" style="display:block; position:relative; "
+        onmouseover="Element.show('group_controls');"  
+        onmouseout="Element.hide('group_controls');" >
+        
+        <h3 id="group_name"><%= address_list.name %>
+        
+        <small id="group_controls" style="display:none;">
+          <%= link_to_function("edit", "Element.show('group_edit_form'); Element.hide('group_controls'); Element.hide('group_name')") %>
+          <%= link_to_function("delete", "new Effect.BlindDown('group_delete_form',{duration:0.2}); Element.hide('group_controls')") %>
+        </small></h3>
+      </span>
+      
+      <div id="group_edit_form" style="display:none" class="addressbook_form">
+        <%= form_remote_tag(:url => {:action => "update_group"}, 
+                            :update => "addressbook_container", 
+                            :complete => "Element.hide('group_edit_form'), Element.show('group_name')") %>
+          <label for="group_name">Team name:</label>
+          <%= text_field("group","name", :value => address_list.name, :style => "width:100%;") %>
+          <%= hidden_field("group", "id", :value => address_list.id) %><br />
+          <%= submit_tag("save") %> or
+          <%= link_to_function("cancel", "Element.hide('group_edit_form'), Element.show('group_name')") %>
+        <%= end_form_tag %>
+      </div>
+      
+      <div id="group_delete_form" style="display:none" class="group_delete_form">
+        <%= form_remote_tag(:url => {:action => "delete_group", :id => address_list.id}, 
+                            :update => "addressbook_container") %>
+        <%= submit_tag("Delete this group") %>
+        or <%= link_to_function("cancel", "new Effect.BlindUp('group_delete_form',{duration:0.1}); Element.show('group_name')") %><br />
+        <small>(Addresses in this group will not be deleted.)</small>
+        <%= end_form_tag %>
+      </div>
+      
+    <% end %>
+
+    
+    
+    <%= content_tag("span", "#{image_tag("/images/spinner.gif")} loading...", :id => "group_loading", :style => "display:none;") %></h3>
+  
+  <%= render :partial => "/admin/teams/addressbook/address_form" %>
+  
+  <ul id="address_list">
+    <%= render :partial => "/admin/teams/addressbook/address_list_item", :collection => (address_list.addresses) %>
+  </ul>
+
+  <% end %>
+  
+</div>
+  

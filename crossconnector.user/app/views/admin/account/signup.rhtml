@@ -1,0 +1,56 @@
+<h1>Sign Up</h1>
+
+<hr />
+<%= start_form_tag %>
+
+  <h3>About You</h3>
+    <div class="signup" id="signup-you">
+      <dl>
+        <dt>Your name</dt>
+        <dd><%= text_field("user","name") %></dd>      
+        <dt>Your email address</dt>
+        <dd><%= text_field("user","email") %></dd>
+        <dd id ="observe_email"></dd>
+      </dl>
+    </div>
+
+    <h3>Your CrossConnector website</h3>
+    <div class="signup">
+      <dl>
+        <dt>Name your site</dt>
+        <dd><%= text_field("homebase", "name") %></dd>
+        
+        <dt>http://</dt>
+        <dd><%= text_field("homebase","subdomain", :size => 10) %>.crossconnector.com</dd>
+        <dd id="observe_homebase"></dd>
+      </dl>
+      <%= observe_field(:homebase_subdomain, 
+                          :frequency    => -0, 
+                          :update       => :observe_homebase, 
+                          :url          => {:action => :observe_homebase_field }) %>
+    </div>
+
+
+      <h3>Your login information</h3>
+      <div class="signup">
+        <dl>
+          <dt>Username</dt>
+          <dd><%= text_field("user", "username") %>
+          
+          <dt>Password</dt>
+          <dd><%= password_field("user","password", :size => 30) %></dd>
+          <dt>Confirm Password</dt>
+          <dd><%= password_field("user","password_confirmation", :size => 30) %><br />
+            Type your password one more time (to make sure we got it right)</dd>
+        </dl>
+      </div>
+
+
+      <div id="signup-controls">
+        <%= submit_tag "Create my CrossConnector Account" %>
+      </div>
+      <hr />
+
+    <%= end_form_tag %>
+
+  </div>

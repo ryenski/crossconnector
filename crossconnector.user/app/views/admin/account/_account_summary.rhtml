@@ -1,0 +1,48 @@
+
+<table class="stats">
+  
+  <caption>Site Profile 
+    <small>(<%= link_to("edit", :action => "profile") if @homebase.created_by.id == @user.id %>)</small></caption>
+
+  <tr>
+    <th>Site Name</th>
+    <td><%= h @homebase.name %></td>
+  </tr>
+  
+  <tr>
+    <th>Site Tagline</th>
+    <td><%= h @homebase.tagline %></td>
+  </tr>
+
+  <tr>
+    <th>Current plan:</th> 
+    <td><%= @homebase.subscription.plan.name %>: <%= " <small>#{@homebase.subscription.plan.money}/month</small>" unless @homebase.subscription.plan.price == 0 %></td>
+  </tr>
+  
+  <tr>
+    <th>Your URL:</th> 
+    <td><%= url_for_homebase(@homebase) %> </td>
+  </tr>
+  
+  <tr>
+    <th>Member since:</th> 
+    <td><%= localized_date(@homebase.created_at) %></td>
+  </tr>
+  
+  <tr>
+    <th>Messages:</th> 
+    <td><%= @homebase.messages.count %></td>
+  </tr>
+
+  <tr>
+    <th>Projects:</th>
+    <td><%= @homebase.projects.count %> <small>(of <%= @homebase.subscription.plan.priveleges.find(1).plan_limit.to_i == 0 ? "unlimited" : @homebase.subscription.plan.priveleges.find(1).plan_limit %> included in your plan)</small></td>
+  </tr>
+  
+  <tr>
+    <th>Disk Space Usage:</th>
+    <td><%= human_size(@homebase.total_files) %> <small>(of <%= @homebase.subscription.plan.priveleges.find(2).plan_limit.to_i == 0 ? "unlimited" : @homebase.subscription.plan.priveleges.find(2).plan_limit %> MB included in your plan)</small></td>
+  </tr>
+
+
+</table>

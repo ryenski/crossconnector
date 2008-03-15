@@ -1,0 +1,19 @@
+
+<%= render :partial => "nav" %>
+
+<h2>Editors</h2>
+
+<p>You can give other people access to edit your messages and projects. You control the level of access that your editors have, and you can even let different editors do different things.   </p>
+
+<h4 class="user_add icon"><%= link_to "New editor", :action => "new_editor" %></h4>
+
+
+<h4>Editors: </h4>
+<%= render :partial => "editor_list_item", :collection => @editors %>
+
+
+<hr class="clear" />
+<h4>Site Owner: </h4>
+<%= render :partial => "editor_list_item", :object => @owner %>
+
+<hr class="clear" />

@@ -1,0 +1,37 @@
+<div id="at_a_glance">
+  <h3 class="chart icon">At-a-glance</h3>
+
+<% unless @recent_projects.empty? %>
+<dl class="recent projects">
+  <%= content_tag("dt", "Upcoming projects", :class =>  "calendar icon") %>
+  <% for project in @recent_projects %>
+  <%= content_tag("dd", link_to(truncate(project.name,25), :controller => "/admin/project", :action => "show", :permalink => project.permalink)) %>
+  <% end %>
+  <%= content_tag("dd", link_to("More...", :controller => "/plan"), :class => "strong") if @recent_projects.size < @homebase.projects.size %>
+  <%= content_tag("dd", "No project yet.<br />#{link_to("Create the first project", :controller => "/admin/project", :action => "new")}") if @homebase.projects.empty? %>
+</dl>
+<% end %>
+
+<% unless @recent_messages.empty? %>
+<dl class="recent messages">
+  <%= content_tag("dt", "Recent messages", :class =>  "message icon") %>
+  <% for message in @recent_messages %>
+  <%= content_tag("dd", link_to(truncate(message.subject,25), :controller => "/admin/message", :action => "show", :permalink => message.permalink)) %>
+  <% end %>
+  <%= content_tag("dd", link_to("More...", :controller => "/blog"), :class => "strong") if @recent_messages.size < @homebase.messages.size %>
+  <%= content_tag("dd", "No messages yet.<br />#{link_to("Post the first message", :controller => "/admin/message", :action => "new")}") if @homebase.messages.empty? %>
+</dl>
+<% end %>
+
+<% unless @recent_files.empty? %>
+<dl class="recent files">
+  <%= content_tag("dt", "Recent files", :class =>  "file icon") %>
+  <% for file in @recent_files %>
+  <%= content_tag("dd", link_to(truncate(file["file"],25), :controller => "/share/file", :action => "download", :permalink => file.permalink)) %>
+  <% end %>
+  <%= content_tag("dd", link_to("More...", :controller => "/share"), :class => "strong") if @recent_files.size < @homebase.files.size %>
+  <%= content_tag("dd", "No files yet.<br />#{link_to("Upload the first file", :controller => "/share/file", :action => "upload")}") if @homebase.files.empty? %>
+</dl>
+<% end %>
+
+</div>

@@ -1,0 +1,7 @@
+
+<div class="info_box">
+<h3><%= image_tag("/images/icons/silk_gif/world.gif", :valign => "middle") %> Related Projects</h3>
+<ul>
+  <li class="link icon"><%= link_to(related_projects.project.name, :controller => "/admin/project", :action => "show", :permalink => related_projects.project.permalink) %></li>
+</ul>
+</div>

@@ -1,0 +1,14 @@
+<!-- Header -->
+<div id="header">
+  <div id="header_content">
+  <h1 id="siteid"><%= Homebase.current_homebase.name.empty? ? content_tag("span", "Your Site's Name #{content_tag("small", link_to("edit", :controller => "/account", :action => "profile"))}", :class => "faded") : h(Homebase.current_homebase.name) %></h1>
+
+  <ul id="utilities">
+    <%= content_tag("li", link_to("Account", :controller => "/admin/account"), :id => "account") %>
+    <%= content_tag("li", link_to("Help", "http://help.crossconnector.com/"), :id => "help") %>
+    <%= content_tag("li", link_to("Log-out", :controller => "/admin/account", :action => "logout"), :id => "logout") %>
+  </ul>
+
+</div>
+</div>
+<!-- End Header -->

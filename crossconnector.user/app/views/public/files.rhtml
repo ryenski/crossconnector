@@ -1,0 +1,23 @@
+
+<div class="left wide">
+  <h2 class="page_title"><%= @params[:tag] ? "<small>Files tagged as</small> <q>#{@params[:tag]}</q>" : "Our Files" %></h2>
+
+  <% if @files.empty? %>
+    <p class="intro">
+      We haven't uploaded any files yet.
+    </p>
+  
+  <% else %>
+  
+    <ul id="my_files" class="file_list">
+      <%= render :partial => "files_list", :object => @files %>
+      <%= render :partial => "shared/pagination_links", :object => @files_pages %>
+    </ul>
+  
+  <% end %>
+</div>
+
+<div class="right narrow">
+  <%= render :partial => "related_tags", :object => @related_tags %>
+  
+</div>

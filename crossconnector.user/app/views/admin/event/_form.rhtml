@@ -1,0 +1,47 @@
+<fieldset>
+  
+  <dl>
+    <dt><label for="event[name]">Event Name:</label></dt>
+    <dd><%= text_field "event", "name" %></dd>
+  </dl>
+  
+  
+  <dl>
+    <dt><label for="event[description]">Description:</label></dt>
+    <dd><%= text_area "event", "body", :rows => 7, :style => "width:100%;" %></dd>
+  </dl>
+
+  <dl>
+    <dt><label for="event[start_date]">Event Start:</label></dt>
+    <dd>
+      <% @event.start_date = session[:last_event].nil? ? (Time.now + 1.week) : session[:last_event] if @event.new_record? %>      
+      <%= date_select "event", "start_date", :discard_year => true, :include_blank => true, :order => [:month, :day] %>,
+      <%= date_select "event", "start_date", :discard_month => true, :discard_day => true, :include_blank => true %>
+      at
+      <%= select_hour(@event.start_date, :prefix => "event", :field_name => "start_date(4i)", :include_blank => true) %>:
+      <%= select_minute(@event.start_date, :prefix => "event", :field_name => "start_date(5i)", :include_blank => true) %>
+    </dd>
+  </dl>
+  
+  
+  <dl>
+    <dt><label for="event[duration]">Duration:</label><br /><small>(optional)</small></dt>
+    <dd>
+       <select name="event[duration_n]">
+          <option></option>
+          <% 1.upto(60) do |i| %>
+            <option<%= " selected" if @event.duration_n == i %>><%= i %></option>
+          <% end %>
+        </select>
+
+        <select name="event[duration_unit]">
+          <%= options_for_select([ "", "Minutes", "Hours", "Days", "Weeks", "Months", "Years" ], @event.duration_unit) %>
+        </select>
+    </dd>
+  </dl>
+
+
+<%= hidden_field "event", "id" %>
+<%= hidden_field "event", "project_id" %>
+
+</fieldset>

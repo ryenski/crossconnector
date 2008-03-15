@@ -1,0 +1,41 @@
+
+<%= render :partial => "/admin/teams/nav" %>
+
+<p class="small">
+  <strong>Teams</strong> are a handy way to keep in touch with people you work with. You can send messages and notifications of projects to anyone in your address book, or you can broadcast messages to everyone in a team. 
+</p>
+
+<div id="addressbook_container">
+  
+<%= render :partial => "/admin/teams/addressbook/addressbook", :object => @homebase %>
+
+</div>
+
+
+
+
+
+<% content_for("page_scripts") do -%>
+
+function loading_address(){
+  Element.hide('address_detail_content');
+  Element.show('address_loading');
+}
+
+function loading_address_done(){
+  Element.show('address_detail_content');
+  Element.hide('address_loading');
+}
+
+function toggleGroup(group_id,address_id) {
+  Element.show('address_group_' + group_id + '_indicator');
+  
+  elem = "address_detail_group_" + group_id;
+  new Ajax.Updater('address_detail_group_' + group_id, '/admin/teams/toggle_address_in_group', 
+      {asynchronous:true, evalScripts:true, 
+      parameters:"group_id=" + group_id + "&address_id=" + address_id + "&checked=" + document.getElementById(elem).checked}); 
+      
+  new Effect.Fade('address_group_' + group_id + '_indicator');
+}
+
+<% end -%>

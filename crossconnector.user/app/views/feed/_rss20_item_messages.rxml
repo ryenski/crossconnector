@@ -1,0 +1,7 @@
+xm.item do
+  xm.title "Message: #{h(item.subject)}"
+  xm.description h(item.body)
+  xm.pubDate pub_date(item.created_at)
+  xm.author item.created_by.name 
+  xm.link post_link(item)  
+end

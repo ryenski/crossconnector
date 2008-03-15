@@ -1,0 +1,6 @@
+<% if html_form.class == Image %>
+  <%= text_area_tag("resource_html_field_#{html_form.id}", html_for_image(html_form), {:rows => 6, :class => "description"}) %>
+<% else %>
+  <%= text_area_tag("resource_html_field_#{html_form.id}", html_for_file(html_form), {:rows => 6, :class => "description"}) %>
+<% end %>
+<%= link_to_function("done", visual_effect(:blind_up, "resource_html_#{html_form.id}", :duration => 0.2), :class => "accept icon") %>

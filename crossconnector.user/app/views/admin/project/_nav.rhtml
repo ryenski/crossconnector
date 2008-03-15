@@ -1,0 +1,6 @@
+<% unless @project.archived? %>
+<ul id="project_nav" class="project_<%= @params[:action].to_s %> tabbed_menu">
+  <%= content_tag("li", link_to("Project Overview", :action => "show", :permalink => @project.permalink), :id => "project_index") %>  
+  <%= content_tag("li", link_to("Manage Events", :action => "events", :permalink => @project.permalink), :id => "project_events") %>
+</ul>
+<% end %>

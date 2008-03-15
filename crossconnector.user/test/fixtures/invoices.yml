@@ -1,0 +1,35 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  subscription_id     :integer       
+#  total               :integer       default(0), not null
+#  created_at          :datetime      
+#  comment             :text          
+#  billing_name        :string(255)   
+#  billing_address     :string(255)   
+#  billing_city        :string(255)   
+#  billing_state       :string(255)   
+#  billing_zip         :string(255)   
+#  billing_country     :string(255)   
+#  payment_last_four   :string(255)   
+#  snapshot            :text          
+#  billing_date        :datetime      
+#  period_start        :datetime      
+#  period_end          :datetime      
+#  payment_method      :string(255)   
+#  pending             :integer       
+#
+
+invoice_one: 
+  id: 1
+  subscription_id: 1
+  total: 24
+  created_at: <%= Time.now - 35.days %>
+  billing_date: <%= Time.now - 35.days %>
+  
+invoice_two: 
+  id: 2
+  subscription_id: 1
+  total: 24
+  created_at: <%= Time.now - 5.days %>
+  billing_date: <%= Time.now - 35.days %>

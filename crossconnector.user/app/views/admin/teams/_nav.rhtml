@@ -1,0 +1,9 @@
+<% content_for("unit_controls") do %>
+  <%= content_tag("li", link_to("New leader", {:controller => "/admin/teams/leader", :action => "new"}, :class => "user_add dark icon")) %>
+  <%= content_tag("li", link_to("Manage teams", {:controller => "/admin/teams"}, :class => "team dark icon")) %>
+<% end %>
+
+<ul id="teams_nav" class="tabbed_menu teams_<%= @params[:controller].split('/').last.to_s %>">
+  <%= content_tag("li", link_to("Teams", :controller => "/admin/teams"), :id => "teams_index") %>
+  <%= content_tag("li", link_to("Leaders", :controller => "/admin/teams/leader"), :id => "teams_leaders") %>
+</ul>

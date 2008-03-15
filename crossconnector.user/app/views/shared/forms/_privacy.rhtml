@@ -1,0 +1,24 @@
+<% type = privacy.class.to_s.downcase %>
+<fieldset>
+  <legend><%= image_tag("/images/icons/silk_gif/lock.gif") %> Privacy Options</legend>
+  <dl>
+  <dt>
+    <%= check_box(type, "private", :onclick => "togglePrivateForm('#{type}_private', '#{type}_password_container')", :checked => (privacy.private? ? "checked" : "unchecked")) %> 
+    <label for="project_private">Private?</label>
+
+    
+    </dt>
+  <dd>
+    <small>Private <%= type %>s can only be seen by people who know the password.</small>
+  </dd>
+</dl>
+
+<dl id="<%= type %>_password_container"<%= " style=\"display:none;\"" unless privacy.private? %>>
+  <dt>Set a password for this <%= type %>: <%= password_field(type, "password") %></dt>
+  <dd>
+    <small><strong class="highlight">This password will be sent by email to the people that you select below</strong>. Only people who know this password will be able to access this <%= type %>. Additionally, <strong class="highlight">this <%= type %> will not show up in your public site</strong>. </small>
+  </dd>
+  
+</dl>
+
+</fieldset>

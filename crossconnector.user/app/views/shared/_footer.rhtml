@@ -1,0 +1,37 @@
+
+
+<div class="left half">
+  <%= form_remote_tag(:url => {:controller => "/search", :action => "search"},
+                      :update => "search_results") %>
+    
+    <%= text_field_tag("query") %>
+    <%= submit_tag("Search") %>
+    
+  <%= end_form_tag %>
+  
+  
+ 
+  <div id="search_results"></div>
+
+  
+
+</div>
+
+<div class="right half">
+  
+  <h3>Your recent stuff</h3>
+  
+  <dl>
+    <dt>Messages with recent comments</dt>
+    <dd><a href="#">Message title (n comments)</a></dd>
+  </dl>
+
+  <dl>
+    <dt>Recent Messages</dt>
+    <dd><a href="#">Message title (n comments)</a></dd>
+  </dl>
+</div>
+
+<hr class="clear" />
+
+

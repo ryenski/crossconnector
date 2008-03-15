@@ -1,0 +1,15 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  title               :string(255)   
+#  description         :text          
+#  description_html    :text          
+#  created_at          :datetime      
+#  expires_at          :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first_alert:
+  id: 1
+another_alert:
+  id: 2

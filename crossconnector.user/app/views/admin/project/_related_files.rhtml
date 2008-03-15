@@ -1,0 +1,14 @@
+
+
+<div class="info_box">
+  <h3><%= image_tag("/images/icons/silk_gif/page_white.gif", :valign => "middle") %> Related Files</h3>
+
+  <ul>
+  <% for file in related_files %>
+    <li class="link icon"><%= link_to(truncate(h(file.name),20), :controller => "/admin/file", :permalink => file.permalink) %></li>
+  <% end %>
+  </ul>
+
+</div>
+
+

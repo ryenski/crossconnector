@@ -1,0 +1,33 @@
+<%= @message.body_html %>
+<%= @message.extended_html %>
+
+
+
+
+<hr style="margin-top:40px;" />
+
+<p>
+  This message was sent to you by 
+  <%= @message.created_by.name.to_s %> (<%= @message.created_by.email %>)
+  from <%= link_to_homebase %>.
+</p>  
+
+<% unless @message.private? -%>
+<p>
+  Post comments and view this message online at
+  <%= url_for_blog_item(@message) %> 
+</p>  
+
+<% if !@message.project.nil? -%>
+<p>
+  This message is part of the <strong><%= @message.project.name %></strong> project. 
+  View it online at <%= url_for_blog_item(@message.project) %>
+</p>
+<% end -%>
+
+<% end -%>
+    
+<p>
+  You can get your own CrossConnector account! <br />
+  Go to <%= link_to("www.crossconnector.com/signup", "http://www.crossconnector.com/signup") %> to find out how.
+</p>

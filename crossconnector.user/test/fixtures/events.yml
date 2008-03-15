@@ -1,0 +1,36 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  project_id          :integer       not null
+#  name                :string(255)   
+#  start_date          :datetime      
+#  end_date            :datetime      
+#  body                :text          
+#  body_html           :text          
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  updated_by          :integer       
+#  duration_unit       :string(25)    
+#  duration_n          :integer       
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+first_event_for_haiti_project:
+  id: 1
+  project_id: 1
+  name: Haiti First Event
+  start_date: <%= 20.days.from_now.strftime("%Y-%m-%d %H:%M:%S") %>
+  end_date: <%= 22.days.from_now.strftime("%Y-%m-%d %H:%M:%S") %>
+
+second_event_for_haiti_project:
+  id: 2
+  project_id: 1
+  name: Haiti Second Event
+  start_date: <%= 30.days.from_now.strftime("%Y-%m-%d %H:%M:%S") %>
+
+past_event_for_haiti_project:
+  id: 3
+  project_id: 1
+  name: Haiti Past Event
+  start_date: <%= 30.days.ago.strftime("%Y-%m-%d %H:%M:%S") %>

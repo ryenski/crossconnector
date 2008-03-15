@@ -1,0 +1,32 @@
+<% unless @recent_projects.empty? %>
+<dl class="recent projects">
+  <%= content_tag("dt", "Upcoming projects", :class =>  "calendar icon") %>
+  <% for project in @recent_projects %>
+  <%= content_tag("dd", link_to(truncate(project.name,30), :action => "project", :permalink => project.permalink)) %>
+  <% end %>
+  <%= content_tag("dd", link_to("<strong>#{@homebase.public_projects.count - 3} more projects...</strong>", :action => "projects")) if @recent_projects.size < @homebase.public_projects.count %>
+  <%= content_tag("dd", "No project yet.") if @recent_projects.empty? %>
+</dl>
+<% end %>
+
+<% unless @recent_messages.empty? %>
+<dl class="recent messages">
+  <%= content_tag("dt", "Recent messages", :class =>  "message icon") %>
+  <% for message in @recent_messages %>
+  <%= content_tag("dd", link_to(truncate(message.subject,30), :action => "message", :permalink => message.permalink)) %>
+  <% end %>
+  <%= content_tag("dd", link_to("<strong>#{@homebase.public_messages.count - 3} more messages...</strong>", :action => "messages")) if @recent_messages.size < @homebase.public_messages.count %>
+  <%= content_tag("dd", "No messages yet.") if @recent_messages.empty? %>
+</dl>
+<% end %>
+
+<% unless @recent_files.empty? %>
+<dl class="recent files">
+  <%= content_tag("dt", "Recent files", :class =>  "file icon") %>
+  <% for file in @recent_files %>
+  <%= content_tag("dd", link_to(truncate(file["file"],30), :action => "file", :permalink => file.permalink)) %>
+  <% end %>
+  <%= content_tag("dd", link_to("<strong>#{@homebase.public_files.count - 3} more files...</strong>", :action => "files")) if @recent_files.size < @homebase.public_files.count %>
+  <%= content_tag("dd", "No files yet.") if @recent_files.empty? %>
+</dl>
+<% end %>

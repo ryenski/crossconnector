@@ -1,0 +1,283 @@
+/* 
+   Crossconnector.com
+   
+   Copyright(c) 2005-2006 Art of Mission, Inc.
+   All rights reserved.
+   
+   Art of Mission
+   1450 Barton Rd #300
+   Redlands, CA 92373
+   USA
+   
+   http://www.artofmission.com
+   ryan@artofmission.com
+
+*/
+
+* {
+  margin:0;
+  padding:0;
+}
+
+
+body,html{
+  background:#606060;
+  margin:0;
+  padding:0;
+}
+
+/* The main site container */
+#container{
+  max-width:1600px;  
+  min-width:800px;
+  width:expression(document.body.clientWidth > 1600? "1600px": "auto" );
+  width:expression(document.body.clientWidth < 500? "500px": "auto" );
+}
+
+
+
+/* Controls column - on the left side */
+#controls{
+  width:190px;
+  margin-left: 10px;
+  padding:0;
+  position:absolute;
+  left:0;
+  top:0;
+  display:inline;
+  z-index:1;
+}
+
+/* The main column */
+#main{
+  background:#fff url(../images/bkg-page-left.gif) repeat-y top left;
+  margin:0 10px 0 190px;
+}
+#main_content{
+  background:transparent url(../images/bkg-page-right.gif) repeat-y top right;
+  padding:0;
+}
+#content{
+  padding:20px 0 50px;
+  clear:both;
+  min-height:400px;
+  margin:0 40px;
+}
+
+
+/* Generic layouts */
+.left{float:left}
+.right{float:right}
+.wide{width:70%}
+.narrow{width:25%}
+.half{width:48%}
+
+
+
+/* 
+  Header
+*/
+
+#header{
+  padding:0;
+  margin:0 10px;
+}
+#header_content{
+  float:left;
+  display:block;
+  background:#E0720E;
+  width:100%;
+}
+
+#header #siteid{
+  color:#fff;
+  line-height:50px;
+  padding-left:30px;
+  margin:0 10px;
+  font-family:Helvetica,Arial,sans-serif;
+  font-weight:normal;
+  float:left;
+}
+
+#header ul{
+  margin:0;
+  list-style:none;
+  float:right;
+  padding:0 30px;
+  display:block;
+}
+#header li{
+  float:left;
+  margin:16px 10px;
+  color:#fff;
+  font-weight:bold;
+  font-size:95%;
+  cursor:default;
+}
+#header a{
+  float:left;
+  display:block;
+  color:#fff;
+  cursor:pointer;
+}
+
+
+/* 
+  Controls
+*/
+
+#controls p{
+  color:#fff; 
+  font-size:90%;
+}
+#controls p a{
+  color:#fff;
+  font-weight:bold;
+}
+
+#controls #logged_in{
+  font-size:80%;
+}
+
+
+#controls ul.controlset{
+  list-style:none;
+  margin:0;
+  padding:1em 0;
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+  border-bottom:1px solid #888;
+}
+#controls ul.controlset a {
+  font-size:85% !important;
+  display:block;
+  line-height:1.5em;
+}
+
+#controls ul.controlset li, #controls ul.controlset a{
+  color:#fff;
+}
+#controls ul.controlset li{
+  margin:0;
+  padding:0;
+    display:inline;
+}
+
+
+/*
+  Controls::Menu
+*/
+
+#menu{
+  margin-top:50px;
+}
+
+#menu ul{
+  list-style:none;
+  margin:0;
+}
+#menu li{
+  display:block;
+  background:#fff;
+  margin:0;
+}
+
+#menu li a{
+  font-family:"Lucida Grande", Verdana, Arial, sans-serif;
+  font-size:120%;
+  font-weight:bold;
+  text-decoration:none;
+  line-height:2.2em;
+  display:block;
+  padding-left:10px;
+  letter-spacing:-0.5pt;
+  
+}
+
+#menu li{
+  border-top:1px solid #2E526B;
+  border-bottom:1px solid #98D5FF;
+}
+
+#menu li,
+#menu li a{
+  background:transparent url(../images/tab.jpg) repeat-x center right;
+}
+
+#homebase #menu li#admin_tab,
+#project #menu li#project_tab,
+#message #menu li#message_tab,
+#file #menu li#file_tab,
+#teams #menu li#teams_tab,
+#leader #menu li#teams_tab{
+  border:2px solid #E0720E;
+  border-right:none;
+  border-top-width:3px;
+}
+
+#menu li:hover,
+#menu li a:hover,
+#homebase #menu li#homebase_tab a,
+#project #menu li#project_tab a,
+#message #menu li#message_tab a,
+#file #menu li#file_tab a,
+#teams #menu li#teams_tab a,
+#leader #menu li#teams_tab a{
+  background:transparent url(../images/tab.jpg) repeat-x center left;
+}
+#menu li a:hover{
+  text-decoration:underline;
+}
+
+
+
+
+/* 
+  Footer
+*/
+
+hr.clear{
+ clear:both;
+ height:0;
+ margin:0;
+ padding:0;
+ visibility:hidden;
+ line-height:0;
+ border:0;
+}
+
+/* Footer container */
+#footer{
+  background:#606060 url(../images/bkg-footer-bottom.gif) repeat-x top right;
+  color:#fff;
+  clear:both;
+  float:left;
+  display:block;
+  width:100%;
+}
+#footer_content{ background:transparent url(../images/bkg-footer-left.gif) no-repeat top left; }
+#footer_content h3{ background:transparent url(../images/bkg-footer-right.gif) no-repeat top right; }
+
+
+#footer_content h3 a{
+  float:right;
+  display:block;
+  height:16px;
+  width:116px;
+  background:#fff;
+  margin-right:20px;
+  background:transparent url(../images/logo-artofmission.gif) no-repeat;
+  text-indent:-10000px;
+  text-decoration:none;
+  margin-bottom:1em;
+}
+
+#footer_content p{
+  clear:both;
+  margin-right:20px;
+  color:#fff !important;
+  text-align:right;
+  font-size:90%;
+}
+#footer_content a{
+  color:#fff;
+}

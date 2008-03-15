@@ -1,0 +1,30 @@
+<%= render :partial => "/admin/teams/nav" %>
+
+<p>
+  <%= link_to "Cancel and go back", :action => "index" %> | 
+  <%= image_tag("/images/spinner.gif", :id => "delete_form_indicator", :style => "display:none;") %> 
+  
+  <%=  link_to_function("Delete this leader", visual_effect(:blind_down, "delete_form_container", :duration => 0.2)) %> | 
+  <%= image_tag("/images/spinner.gif", :id => "resend_indicator", :style => "display:none;") %> 
+  <%= link_to_remote("Re-send welcome email", 
+          :url => {:action => "resend_welcome_email", :id => @leader.id}, 
+          :update => "resend_email_message",
+          :loading => "Element.show('resend_indicator')", 
+          :complete => "new Effect.BlindDown('resend_email_container', {duration:0.5}), Element.hide('resend_indicator')") %>
+</p>
+
+<%= render :partial => "shared/delete_confirmation", :object => @leader %>
+
+<div id="resend_email_container" style="display:none;" class="flash good">
+  <div id="resend_email_message"></div>
+</div>
+
+
+<%= form_tag %>
+
+<%= render :partial => "form" %>
+
+<%= submit_tag "Save leader" %> or <%= link_to("cancel", :action => "index") %>
+<%= end_form_tag %>
+
+

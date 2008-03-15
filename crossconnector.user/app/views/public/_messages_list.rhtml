@@ -1,0 +1,35 @@
+
+<dl class="excerpt<% if messages_list.private == 1 -%> private<% end -%>">
+  
+  <dt class="excerpt_subject"><%= link_to messages_list.subject, :action => "message", :permalink => messages_list.permalink %><%= " (draft)" if messages_list.draft == 1 %></dt>
+
+  <dd class="excerpt_info">
+    <span class="message_sent">
+      <%= content_tag("span", "Sent #{localized_date(messages_list.created_at)}", :class => "sent") %>
+      <% unless messages_list.updated_at.nil? -%>
+      <%= "(updated #{localized_date(messages_list.updated_at)})" unless same_day?(messages_list.updated_at, messages_list.created_at) %>
+      <% end -%>
+    </span>
+    <span class="excerpt_comments">
+      <%= messages_list.disable_comments? ? "Comments are turned off" : link_to("#{pluralize(messages_list.comments.size, "comment")}", {:action => "message", :permalink => messages_list.permalink}) %>
+    </span>
+    <%= "Private" if messages_list.private == 1 -%>
+    <%= 
+    # "<br />Project: #{link_to(messages_list.project.name, {:action => "project", :permalink => messages_list.project.permalink})}" unless messages_list.project.nil? 
+    %>
+  </dd>
+
+  <dd class="excerpt_body">
+    <%= auto_link(messages_list.body_html) if messages_list.body_html %>
+    
+    <p class="excerpt_options">
+    <% unless messages_list.extended_html.blank? %>
+      <%= content_tag("span", link_to("Read full message", {:action => "message", :permalink => messages_list.permalink}), :class => "more") %> | 
+    <% end %>
+    
+    <%= content_tag("span", link_to(pluralize(messages_list.comments.count,"comment"), :action => "message", :permalink => messages_list.permalink)) %>
+
+    </p>
+  </dd>
+
+</dl>

@@ -1,0 +1,23 @@
+
+<% type = tags.class.name.to_s.downcase %>
+<div id="<%= type %>_tags" class="tags info_box">
+  <h3><%= image_tag("/images/icons/silk_gif/tag_blue.gif", :valign => "absmiddle") %> Tags</h3>
+  <p class="small"><strong>Tags</strong> are like categories. You can define as many tags as you like for a <%= type %>.</p>
+  <div id="<%= type %>_tags_list">
+    <%= render :partial => "/shared/tags_list", :object => tags %>
+  </div>
+  
+  <div id="<%= type %>_tags_form" style="display:none;">
+    <%= form_remote_tag(:url => {:action => "tags", :permalink => tags.permalink},
+                        :update => "#{type}_tags_list",
+                        :loading => "Element.show('#{type}_tags_indicator')",
+                        :complete => "Element.hide('#{type}_tags_form'), Element.show('#{type}_tags_list'), Element.hide('#{type}_tags_indicator')") %>
+      <%= text_area_tag("tags", tags.tag_names.join(", "), :rows => 3) %><br />
+      <%= image_tag("spinner.gif", :id => "#{type}_tags_indicator", :style => "display:none;") %>
+      <%= submit_tag("Save tags") %> or <%= link_to_function("cancel", "Element.hide('#{type}_tags_form'), Element.show('#{type}_tags_list'), Element.hide('#{type}_tags_indicator')") %>
+      
+      <p class="small">The point of tags is to help people find this <%= type %>, so you should only assign tags that are relevant to this <%= type %>.</p>
+    <%= end_form_tag %>
+  </div>
+
+</div>

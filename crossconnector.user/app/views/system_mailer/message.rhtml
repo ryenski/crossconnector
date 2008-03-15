@@ -1,0 +1,22 @@
+<%= @message.body %>
+
+<%= "Go to http://#{@message.homebase.subdomain}.#{App::CONFIG[:app_domain]}/message/#{@message.permalink} to read the rest of this message." if @message.extended %>
+
+=======================================================
+  This message was sent to you by 
+  <%= @message.created_by.name.to_s %> (<%= @message.created_by.email %>)
+  from http://<%= @message.homebase.subdomain %>.<%= App::CONFIG[:app_domain] %>
+  <% unless @message.private? -%>
+  
+  Post comments and view this message online at
+  http://<%= @message.homebase.subdomain %>.<%= App::CONFIG[:app_domain] %>/message/<%= @message.permalink %>
+  <% if !@message.project.nil? -%>
+    
+  This message is part of the <%= @message.project.name %> project. 
+  View it online at http://<%= @message.homebase.subdomain %>.<%= App::CONFIG[:app_domain] %>/project/<%= @message.project.permalink %>
+  <% end -%>
+  <% end -%>
+    
+  You can get your own CrossConnector account! 
+  Go to www.<%= App::CONFIG[:app_domain] %> to find out how.
+=======================================================

@@ -1,0 +1,31 @@
+
+<div id="project_team" class="team info_box">
+  
+  <h3>People</h3>
+  
+  <dl class="summary_list">
+  <% for group in team.groups %>
+
+    <dt class="team icon"><%= group.name %></dt>
+    
+    <% if group.addresses.empty? %>
+      <dd><em>No addresses in this group</em></dd>
+    <% else %>
+    
+    <% for address in group.addresses %>  
+      <dd><%= address.email %></dd>
+    <% end %>
+    <% end %>
+
+  
+  <% end %>
+  
+  <% if !team.addresses.empty? %>
+    <dt>Other addresses</dt>
+    <% for address in team.addresses %>
+      <dd><%= address.email %></dd>
+    <% end %>
+  <% end %>
+  </dl>
+  
+</div>

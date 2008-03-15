@@ -1,0 +1,40 @@
+<% type = project.class.to_s.downcase %>
+<% type = "file" if type == "resource" %>
+
+<fieldset id="project">
+  <legend><%= image_tag("/images/icons/silk_gif/world.gif") %> Project</legend>
+<dl>
+  <dt>
+    <label for="project">In project: <small>(optional)</small></label> 
+    
+    
+    <select id="<%= type %>_project_id" name="<%= type %>[project_id]">
+      <option value=""></option>
+      <optgroup label="Public projects">
+        <%= options_from_collection_for_select(@homebase.public_projects, :id, :name, @preselected_project || "") %>
+      <optgroup>
+      
+      <option value=""></option>
+      
+      <optgroup label="Private projects">
+        <%= options_from_collection_for_select(@homebase.private_projects, :id, :name, @preselected_project || "") %>
+      </optgroup>
+      
+    </select>
+    
+  </dt>
+  
+  <dd>
+    <small>This <%= type %> will be associated with the project that you select. </small>
+    
+    <div id="private_project_notice"></div>
+    
+  </dd>
+</dl>
+</fieldset>
+
+<%= 
+#observe_field("#{type}_project", :url => {:action => "observe_project_select"},
+#                                     :update => "private_project_notice",
+#                                     :with =>  "'project=' + escape(value)") 
+%>

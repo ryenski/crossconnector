@@ -1,0 +1,28 @@
+
+                  
+<table cellpadding="0" cellspacing="1" border="0" style="margin-top:5px;width:100%;">
+  <tr>
+    <th>Name:</th>
+    <td><%= text_field("comment", "name") %></td>
+  </tr>
+  <tr>
+    <th>URL: </th>
+    <td><%= text_field("comment", "url") %></td>
+  </tr>
+  <tr>
+    <th>Email: </th>
+    <td><%= text_field("comment", "email") %></td>
+  </tr>
+
+  <tr>
+    <th>Date: </th>
+    <td><%= datetime_select("comment", "created_at") %></td>
+  </tr>
+  <tr>
+    <th>&nbsp;</th>
+    <td colspan="2"><%= text_area("comment", "body", :rows => 10, :class => "description", :style => "width:100%;") %></td>
+  </tr>
+</table>
+
+<%= hidden_field "comment", "id" %>
+<%= hidden_field "comment", "message_id" %>

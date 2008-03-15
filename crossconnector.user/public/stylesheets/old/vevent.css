@@ -1,0 +1,43 @@
+.vevent{
+  line-height:1.3em;
+}
+.vevent th,
+.vevent_title{
+  font-size: 120%;
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6em;
+  text-transform:uppercase;
+  width:50px;
+  padding:5px 10px;
+  text-align:center;
+  font-weight:bold;
+  border:1px solid #1C8EDC;
+  background:#1C8EDC url(../images/bkg-bigdate.jpg) repeat-x;
+  color:#F0F5D6;
+  text-shadow: #000 0px 0px 4px;
+  
+}
+.vevent th span{
+  font-size: 200%;
+  display:block;
+  color:#fff;
+}
+
+.vevent .summary{
+  display:block;
+  font-weight:bold;
+  font-size:110%;
+}
+.vevent .description{
+  display:block;
+  font-size:85%;
+}
+.vevent .dtstart,
+.vevent .dtend{
+  font-size:85%;
+}
+.vevent .vinfo{
+  background:#F0F5D6 url(../images/bkg-event-info.gif) repeat-y;
+  border:1px solid #B0C74D;
+  padding:4px;
+}

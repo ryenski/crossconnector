@@ -1,0 +1,53 @@
+<% object = address_list.class.name.to_s.downcase %>
+<% if @homebase.addresses.empty? -%>
+  
+  <div class="intro">
+    <p>You don't have any addresses in your address book yet. 
+    <%= link_to("Go to your address book", {:controller => "/admin/teams"}, :confirm => "Are you sure you want to leave this page? Any changes you made to your message will be lost. ") %> to add addresses.</p>
+  </div>
+  
+<% else -%>
+
+
+<fieldset>
+  <legend><%= image_tag("/images/icons/silk_gif/group.gif") %> People and Teams</legend>
+
+
+  <div id="people" class="form">
+    <p><small>The people and teams selected below will receive an email notification of this <%= object %>. </small></p>
+    
+    <% for group in @homebase.groups %>
+      <% unless group.addresses.empty? %>
+      <dl class="people">
+        <dt><input type="checkbox" name="<%= object %>[group_ids][]" id="<%= object %>_group_<%= group.id %>" value="<%= group.id %>" <% if address_list.groups.include?(group) -%> checked="checked" <% end -%> /> <label for="<%= object %>_group_<%= group.id %>">Team: <%= group.name %></label></dt>
+    
+        <dd style="display:block;">
+          <ul>
+          <% for address in group.addresses %>
+              <%= content_tag("li", address.name? ? "#{content_tag("strong", address.name)} (#{content_tag("span", address.email)})" : "#{content_tag("strong", address.email)}", :class => "address_in_group") %>
+          <% end %>
+          </ul>
+          <hr class="clear" />
+        </dd>
+      </dl>
+      <% end %>
+    <% end %>
+    
+
+    <dl class="people">
+      
+      <dt><%= check_box("deliver_to_all", "all", :onClick => "togglePeople(this,'check_all')", :id => "check_all_master") %> <label for="check_all_master">Everyone</label></dt>
+      <dd style="display:block;">
+      <% for address in @homebase.addresses %>
+        <span class="address_check_box">
+          <input type="checkbox" class="check_all" onClick="toggleMaster('check_all_master')" id="<%= object %>_address_<%= address.id %>" name="<%= object %>[address_ids][]" value="<%= address.id %>" <% if address_list.addresses.include?(address) -%> checked="checked" <% end -%> /> 
+          <label for="<%= object %>_address_<%= address.id %>"><%= address.name? ? "#{content_tag("strong", truncate(address.name,36))}<br />#{content_tag("small", truncate(address.email, 36))}" : "#{content_tag("strong", truncate(address.email, 36))}" %></label>
+        </span>
+      <% end %>
+      <hr class="clear" />
+      </dd>
+    </dl>
+  </div>
+
+</fieldset>
+<% end -%>

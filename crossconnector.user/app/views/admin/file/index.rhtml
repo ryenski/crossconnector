@@ -1,0 +1,28 @@
+
+<%  if @files.empty? -%>
+  <%= render :partial => "intro" %>
+<% else %>
+
+  <div class="left wide">
+    <%= render :partial => "file_list", :object => @files %>
+    <%= render :partial => "shared/pagination_links", :object => @file_pages %>
+  </div>
+
+  <div class="right narrow">
+  
+    <div class="controls">
+    <% if within_storage_limit? -%>
+      <span class="control_button"><%= link_to("Upload new file", {:action => "new"}, :class => "file_add icon") %></span>
+    <% else -%>
+      <div class="page icon explanation">
+        <strong>Upload new file</strong>
+        <small>You're currently using <%= human_size(@homebase.total_files) %> of storage, with <%= @homebase.subscription.plan.priveleges.find(2).plan_limit %> MB included in <%= link_to("your plan", :controller => "/account") %>. <br />
+        <%= link_to("You must upgrade", :controller => "/admin/account") %> to upload more files.</small>
+      </div>    
+    <% end -%>
+    </div>
+    
+    <%= render :partial => 'file_info_box' %>
+  </div>
+  
+<% end -%>

@@ -1,0 +1,19 @@
+
+<h2>An error occurred</h2>
+
+<div id="Flash" class="<%= flash[:class] or "bad" %>" style="margin-top:50px;"><%= flash[:error] %></div>
+
+<hr />
+
+<p>
+If you believe that you received this error message by mistake, please email <%= email_support_link %> or visit <%= link_to "help.crossconnector.com", "http://help.crossconnector.com/" %>
+</p>
+
+
+<% if flash[:error_detail] %>
+<hr />
+<h4>Error Detail</h4>
+<pre><code>
+<%= word_wrap(h(flash[:error_detail].to_s)) %> 
+</code></pre>
+<% end %>

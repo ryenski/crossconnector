@@ -1,0 +1,40 @@
+<li class="<%= short_file_type(file_list_item) %>">
+  
+  
+  <span class="file_name">
+    <%= link_to(label_for(file_list_item), :action => "download", :permalink => file_list_item.permalink) %>
+    <% if file_list_item.class == Image %>
+      <small>| <%= link_to("screen version", :action => "download", :permalink => file_list_item.permalink, :size => "screen") %></small>
+    <% end %>
+  </span>
+  <br />
+  
+  <small class="file_info">
+    <%= human_size(file_list_item.size) %> <%= long_file_type(file_list_item) %> | 
+    <%= pluralize(file_list_item.access_logs.size, "download") %>
+
+  </small>
+  <br />
+  
+  <small>
+    <%= image_tag("/images/icons/silk_gif/tag_blue.gif", :align => "absmiddle") %>
+    <%= content_tag("span", file_list_item.tag_names.join(", "), :id => "file_tags_#{file_list_item.id}") %>
+    <%= link_to_function("Edit tags", visual_effect(:blind_down, "file_tags_form_#{file_list_item.id}", :duration => 0.2)) %> | 
+    <%= link_to_function("Get HTML", visual_effect(:blind_down, "resource_html_#{file_list_item.id}", :duration => 0.2)) %> | 
+    <%= link_to("Delete", {:action => "delete", :permalink => file_list_item.permalink}, :confirm => "Are you sure?") %> |
+    <%= "Project: #{link_to_project(file_list_item.project)}" if file_list_item.project %>
+  </small>
+  
+  <div class="file_html" id="resource_html_<%= file_list_item.id %>" style="display:none;">
+    <%= render :partial => "html_form", :object => file_list_item %>
+  </div>
+
+  <div class="file_html" id="file_tags_form_<%= file_list_item.id %>" style="display:none;">
+    <%= render :partial => "tags_form", :object => file_list_item %>
+  </div>
+  
+
+
+
+
+</li>

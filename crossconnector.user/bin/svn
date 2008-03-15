@@ -1,0 +1,9 @@
+#!/usr/local/bin/ruby
+require 'yaml'
+
+if (ARGV[0] == "ci" || ARGV[0] == "commit") && File.exists?("lib/tasks/svn.rake")
+  ENV['MESSAGE'] = ARGV.to_yaml
+  exec("rake", "ci")
+else
+  exec("svnorig", *ARGV)
+end

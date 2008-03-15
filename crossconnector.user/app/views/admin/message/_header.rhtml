@@ -1,0 +1,2 @@
+<%= render :partial => "controls", :object => @message if user_can_edit? "message"%>
+<%= render :partial => "/shared/delete_confirmation", :object => @message %>

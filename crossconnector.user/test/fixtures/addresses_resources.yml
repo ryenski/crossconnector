@@ -1,0 +1,8 @@
+
+pdf_file_sent_to_bethany:
+  address_id: 1
+  resource_id: 1
+  
+private_file_sent_to_private_pepper:
+  address_id: 5
+  resource_id: 2

@@ -1,0 +1,12 @@
+<div id="public_nav">
+  <ul>
+    <li id="public_homebase"><%= link_to "Home", :action => "homebase" %></li>
+    <li id="public_projects"><%= link_to "Projects", :action => "projects" %></li>
+    <li id="public_messages"><%= link_to "Messages", :action => "messages" %></li>
+    <li id="public_files"><%= link_to "Files", :action => "files" %></li>
+    <%= content_tag("li", link_to("About Us", :action => "about"), :id => "public_about") if about? %>
+  </ul>
+  <div id="login"><%= User.current_user.nil? ? 
+        link_to("Log-in", :controller => "/admin/login") : 
+        link_to(content_tag("small", "Logged in as #{User.current_user.name.to_s}"), :controller => "/admin/#{@request.parameters[:action]}", :permalink => @request.parameters[:permalink]) %></div>
+</div>

@@ -1,0 +1,5 @@
+
+  <% if private.private? %>
+    <h3><%= image_tag("/images/icons/silk_gif/lock.gif") %> Private</h3>
+    <p>This is a private <%= private.class.to_s.downcase %>. </p>
+  <% end %>

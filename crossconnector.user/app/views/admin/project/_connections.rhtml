@@ -1,0 +1,21 @@
+<div class="connections">
+  <h3>Connections</h3>
+  
+  <h4>People</h4>
+  <dl id="people_list">
+      <% for person in connections.addresses -%>
+      <dd><%= homebase_link_for?(person) ? homebase_link_for(person,20) : email_link_to(person) %></dd>
+      <% end -%>
+  </dl>
+  
+  <h4>Groups</h4>
+  <dl>
+   <% for group in connections.groups %>
+   <dt><%= group.name %></dt>
+   <% for address in group.addresses -%>
+   <dd><%= homebase_link_for?(address) ? homebase_link_for(address,20) : email_link_to(address) %></dd>
+   <% end -%>
+   <% end %>
+  </dl>
+
+</div>

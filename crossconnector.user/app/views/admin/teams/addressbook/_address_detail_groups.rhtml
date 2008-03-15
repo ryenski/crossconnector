@@ -1,0 +1,10 @@
+<%= start_form_tag %>
+<dl>
+<% for group in @homebase.groups %>
+  <dd style="margin:0;">
+    <input type="checkbox" name="address[group_ids][]" value="0" id="address_detail_group_<%= group.id %>" <% if address_detail_groups.groups.include?(group) -%> checked="checked" <% end -%> onChange="toggleGroup(<%= group.id %>,<%= address_detail_groups.id %>); return false;" /> <%= group.name %>
+  <span id="address_group_<%= group.id %>_indicator" style="display:none;">saving...</span>
+  </dd>
+<% end %>
+</dl>
+<%= end_form_tag %>

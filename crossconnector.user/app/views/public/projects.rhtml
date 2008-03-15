@@ -1,0 +1,18 @@
+
+<div class="left wide">
+  
+  <h2 class="page_title"><%= @params[:tag] ? "<small>Projects tagged as</small> <q>#{@params[:tag]}</q>" : "Our Projects" %></h2>
+
+  <% if @projects.empty? %>
+      <p class="intro">We haven't posted any projects yet. </p>
+  <% else %>
+    <%= render :partial => "project_list", :collection => @projects %>
+    <%= render :partial => "shared/pagination_links", :object => @projects_pages %>
+  <% end %>
+  
+</div>
+
+<div class="right narrow">
+  <%= render :partial => "related_tags", :object => @related_tags %>
+  <%= render :partial => "archived_projects" %>  
+</div>

@@ -1,0 +1,13 @@
+<tr>
+  <th><label>Logo</label></th>
+  <td>
+    <div><%= file_column_field "homebase", "logo" %></div>
+    <p class="notes" style="clear:left; padding-top:4px;"><strong>Your logo will be uploaded when you click the Save button.</strong></p>
+    <div id="logo_preview" style="border:1px solid #666; background:#fff; padding:6px; margin:10px 0;">
+    <% if logo? %>
+      <%= logo %>
+    <% end %>
+    </div>        
+    <p class="notes"><strong>Your logo</strong> may be automatically resized to a maximum size of 500px wide by 50px tall.</p>
+  </td>
+</tr>

@@ -1,0 +1,261 @@
+/* - - - - - - - - - - - - - - - - - - - - -
+
+Title : 
+Author : 
+URL : 
+
+Description : 
+
+Created : 
+Modified : 
+
+- - - - - - - - - - - - - - - - - - - - - */
+
+html,body{
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+  font-size:small;
+  color:#222;
+  background:#fff url(/images/bkg.jpg) repeat-x;
+}
+
+#container{
+  min-width:650px;
+  max-width:1000px;
+  margin:10px 50px;
+  text-align:center;
+  
+}
+
+#content{
+  padding:50px;
+  background:#fff;
+  text-align:left;
+  border:10px solid #1A8DDC;
+}
+
+.wide{ width:60%; }
+.narrow{ width:30%; }
+.left{ float:left; }
+.right{ float:right; }
+.half{ width:49%; }
+
+
+hr{
+  margin:2em 0;
+  padding:0;
+  color:#ccc;
+  background-color:#ddd;
+  height:1px;
+  border:none;
+  clear:left
+}
+
+hr.light{
+  margin:2em 0;
+  color:#ccc;
+  background-color:#ccc;
+  height:1px;
+  border:none;
+}
+
+hr.clear{
+  clear:both;
+  visibility:hidden;
+  margin:0;
+  padding:0;
+}
+
+/* 
+   Links
+*/
+a{
+  color: #1A8DDC;
+  padding:1px;
+}
+#content a:hover{
+  color:#fff;
+  background:#1A8DDC;
+}
+img{ border:none; }
+
+/* 
+   Typography
+*/
+
+h1,h2,h3,h4{
+   font-family:Helvetica,Arial,sans-serif;
+   line-height:1em;
+   font-weight:bold;
+   margin-top:0;
+   text-align:center;
+}
+h2{
+   font-size:300%;
+   margin-bottom:0;
+   color:#FF9934;
+   letter-spacing:-0.05em;
+}
+h3{
+   font-size:200%;
+   margin-top:0;
+   color:#606162;
+   letter-spacing:-0.05em;
+}
+h4{
+   font-size:120%;
+   color:#606060;
+   line-height:1.3em;
+}
+
+strong.highlight{
+  background: #CCF1FF;;
+}
+
+dl.features{
+  text-align:center;
+  padding:10px 0;
+  width:90%;
+  margin:0 auto;
+}
+dl.features dd{
+  margin:1px 0;
+  border-bottom:1px solid #CCF1FF;
+  background: #F0F9FF;
+  line-height:1.5em;
+  font-weight:bold;
+}
+
+dt{
+	font-weight:bold;
+	font-size:110%;
+	margin-top:20px;
+}
+dd{
+	margin:0;
+}
+
+.red{
+  color:#900;
+}
+
+/*
+  SUBSCRIPTION PLANS
+*/
+table.plans{
+  width:100%;
+  font-size:90%;
+  font-weight:normal;
+  line-height:1.6em;
+  margin:0;
+  border:solid #C7D18A;
+  border-width:2px 0;
+}
+table.plans .plan_title td{
+  background:#F6FAFB url(../images/bkg-plans.jpg) repeat-x;
+}
+table.plans th{
+  font-weight:normal;
+  text-align:left;
+}
+table.plans td{
+  text-align:center;
+}
+table.plans td,
+table.plans th{
+  padding:.6em;
+  border-bottom:1px solid #ddd;
+}
+table.plans .current{
+  background:#EFF6F8 !important;
+  font-weight:bold;
+}
+table.plans strong{
+  font-size:150%;
+}
+
+table.plans .plan_name{
+  font-size:140%;
+  font-weight:bold;
+  color:#8FA214;
+}
+table.plans .plan_price{
+  color:#900;
+}
+table.plans .sign_up{
+  font-size: 120%;
+  font-weight:bold;
+}
+
+/* 
+  SIGNUP FORM
+*/
+
+table.signup{
+  padding:5px 10px;
+  background:#F3F9FC;
+  border:1px solid #CEE6F3;
+}
+table.signup th{
+  text-align:right;
+  font-size:90%;
+}
+table.signup th.col_header{
+  color:#FF9934;
+  text-align:left !important;
+  border-bottom:1px solid #FF9934;
+  padding-top:40px;
+  font-size:110%;
+}
+table.signup td{
+  
+}
+
+
+/* 
+  ERRORS
+*/
+
+#flash_notice{
+  
+}
+
+#errorExplanation,
+#flash_notice{
+  border: 2px solid #333;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 150% !important;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}

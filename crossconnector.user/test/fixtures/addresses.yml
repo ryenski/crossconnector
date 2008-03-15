@@ -1,0 +1,73 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  homebase_id         :integer       not null
+#  created_by          :integer       
+#  email               :string(255)   not null
+#  name                :string(255)   
+#  organization        :string(255)   
+#  address1            :string(255)   
+#  address2            :string(255)   
+#  city                :string(255)   
+#  state               :string(50)    
+#  postal              :string(20)    
+#  country             :string(255)   
+#  time_zone           :string(255)   
+#  phone               :string(20)    
+#  website             :string(255)   
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  updated_by          :integer       
+#  position            :integer       
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# Haiti's Addresses
+haiti_address_bethany:
+  id:          1
+  homebase_id: 1
+  created_by:  1001
+  email:       bethany@example.com
+
+haiti_address_alan: 
+  id:          2
+  homebase_id: 1
+  created_by:  1001
+  email:       alan@example.com
+
+haiti_address_created_by_editor:
+  id:          3
+  homebase_id: 1
+  created_by:  1002
+  email:       address_3@example.com
+
+haiti_address_not_in_group:
+  id:          4
+  homebase_id: 1
+  created_by:  1001
+  email:       notingroup@example.com
+  
+haiti_private_pepper:
+  id:          5
+  homebase_id: 1
+  created_by:  1001
+  email:       private_pepper@example.com
+  
+not_private_but_in_private_group:
+  id:          6
+  homebase_id: 1
+  created_by:  1001
+  email:       private_group_member@example.com
+  
+covina_address_ryan:
+  id:          7
+  homebase_id: 2
+  created_by:  1003
+  email:       ryan@example.com
+  
+existing_address_not_in_group:
+  id:           8
+  homebase_id:  1
+  created_by:   1001
+  email:        existing@example.com

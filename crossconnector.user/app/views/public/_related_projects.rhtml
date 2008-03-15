@@ -1,0 +1,13 @@
+
+  <h3>Project</h3>
+  <dl class="projects small_list">
+    <dd><%= link_to(h(related_projects.name), :action => "project", :permalink => related_projects.permalink) %></dd>
+  </dl>
+
+  <%= 
+  #render :partial => "related_files", :object => related_projects.project.files if related_projects.project.files 
+  %>
+
+  <%= 
+  #render :partial => "related_messages", :object => @message.project.messages if related_projects.project.messages 
+  %>

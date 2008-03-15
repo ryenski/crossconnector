@@ -1,0 +1,39 @@
+
+<div class="soft warning" id="archive_form_container" style="display:none;">
+
+  <% if archive_form.archived? %>
+    <% if within_projects_limit? %>
+    
+      <h2 class="info icon">Do you want to un-archive this project?</h2>
+      <% unless archive_form.archived? -%>
+      <p>Archived projects can&#8217;t be edited, and they do not count against your total active projects.</p>
+      <h4>You can always re-archive this project later.</h4>
+      <% end -%>
+
+      <%= form_tag :action => "archive_project", :permalink => archive_form.permalink %>
+        <%= submit_tag "Yes, un-archive this project", :class => "delete button" %> or 
+        <%= link_to_function("cancel", visual_effect(:blind_up, "archive_form_container", :duration => 0.2)) %>
+      <%= end_form_tag %>
+      
+    <% else %>
+      <h2 class="warning icon">Can't un-archive this project </h2>
+      <p>You already have <strong><%= @homebase.projects.count %> active projects out of a total of <%= @homebase.plan.priveleges.find(1).plan_limit.to_s %> included in your plan</strong>. <br />
+        <%= link_to("You must upgrade", :controller => "/account") %> in order to un-archive this project.</p>
+      <p><%= link_to_function("cancel", visual_effect(:blind_up, "archive_form_container", :duration => 0.2), :class => "cancel icon") %></p>
+      
+    <% end %>
+    
+  <% else %>
+    <h2 class="info icon">Do you want to archive this project?</h2
+    <% unless archive_form.archived? -%>
+    <p>Archived projects can&#8217;t be edited, and they do not count against your total active projects.</p>
+    <h4>You can always un-archive this project later.</h4>
+    <% end -%>
+
+    <%= form_tag :action => "archive_project", :permalink => archive_form.permalink %>
+      <%= submit_tag "Yes, archive this project", :class => "delete button" %> or 
+      <%= link_to_function("cancel", visual_effect(:blind_up, "archive_form_container", :duration => 0.2)) %>
+    <%= end_form_tag %>
+  <% end %>
+  
+</div>

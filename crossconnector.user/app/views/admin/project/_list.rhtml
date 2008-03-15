@@ -1,0 +1,18 @@
+
+<dl class="excerpt<% if list.private? -%> private<% end -%>">
+  
+  <dt class="excerpt_subject"><%= link_to(h(list.name), :action => "show", :permalink => list.permalink) %> <%= content_tag("small", "(private)") if list.private? %></dt>
+
+  <dd class="excerpt_info"><strong><%= list.events.count == 0 ? "No Events" : pluralize(list.events.count, "Event") %></strong><%= " starting <strong>#{localized_date(list.events.first.start_date)}</strong>" unless list.events.count < 1 %><%= " and ending <strong>#{localized_date(list.events.last.end_date? ? list.events.last.end_date : list.events.last.start_date)}</strong>" unless list.events.count < 1 %></dd>
+
+  <dd class="excerpt_body">
+    <blockquote><%= list.excerpt.blank? ? h(truncate(list.description,250)) : list.excerpt %></blockquote>
+  </dd>
+  
+  <dd class="excerpt_info">
+    <%= link_to("view", {:action => "show", :permalink => list.permalink}, :class => "more") %> | 
+    <%= link_to("edit", {:action => "edit", :permalink => list.permalink}, :class => "more") %> | 
+    <%= link_to("events", {:action => "events", :permalink => list.permalink}, :class => "more") %>
+  </dd>
+
+</dl>

@@ -1,0 +1,7 @@
+Rakefile
+Manifest.txt
+README
+CHANGELOG
+lib/sparklines.rb
+test/test_all.rb
+test/output

@@ -1,0 +1,137 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  homebase_id         :integer       
+#  type                :string(20)    
+#  created_by          :integer       
+#  username            :string(255)   
+#  email               :string(255)   
+#  salt                :string(40)    
+#  salted_password     :string(255)   
+#  address1            :string(255)   
+#  address2            :string(255)   
+#  city                :string(255)   
+#  state               :string(50)    
+#  postal              :string(20)    
+#  country             :string(255)   
+#  time_zone           :string(255)   
+#  phone               :string(20)    
+#  website             :string(255)   
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  logged_in_at        :datetime      
+#  login_counter       :integer       default(0)
+#  verified            :integer       default(0)
+#  security_token      :string(40)    
+#  token_expiry        :datetime      
+#  deleted             :integer       default(0)
+#  deleted_at          :datetime      
+#  can_edit_messages   :integer       default(1)
+#  can_edit_projects   :integer       default(1)
+#  can_edit_addresses  :integer       default(1)
+#  can_edit_files      :integer       default(1)
+#  name                :string(500)   
+#  can_edit_leaders    :integer       default(1)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ryan:
+  id: 1001
+  name: Ryan Heneise
+  email: ryan@example.com
+  username: ryan
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("test", "9abb307917ceec8042c530809be181b26f5bf17e") %>
+  salt: 9abb307917ceec8042c530809be181b26f5bf17e
+  homebase_id: 1
+  created_at: <%= Time.now - 3.months %>
+  can_edit_projects: 1
+  can_edit_messages: 1
+  can_edit_files: 1
+  can_edit_addresses: 1
+
+haiti_leader: 
+  id: 1002
+  email: haiti_leader@example.com
+  username: haiti_leader
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("Leader", "34d8359f6a457ffc6a223dfd68fe4e717d54fc6d") %> # Leader
+  salt: 34d8359f6a457ffc6a223dfd68fe4e717d54fc6d
+  homebase_id: 1
+  type: Leader
+  can_edit_projects: 0
+  can_edit_messages: 0
+  can_edit_files: 0
+  can_edit_addresses: 0
+  can_edit_leaders: 0
+  created_at: <%= Time.now - 2.months %>
+  
+second_haiti_leader: 
+  id: 1005
+  email: haiti_leader2@example.com
+  username: haiti_leader2
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("Leader2", "34d8359f6a457ffc6a223dfd68fe4e717d54fc6d") %> # Leader2
+  salt: 34d8359f6a457ffc6a223dfd68fe4e717d54fc6d
+  homebase_id: 1
+  type: Leader
+  can_edit_projects: 1
+  can_edit_messages: 1
+  can_edit_files: 1
+  can_edit_addresses: 1
+  created_at: <%= Time.now - 1.month %>
+  
+alan: 
+  id: 1003
+  email: alan@example.com
+  username: alan
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("atest", "5fb327e607b1d1b2e2f2846c83f6503652d58211") %> # atest
+  salt: 5fb327e607b1d1b2e2f2846c83f6503652d58211
+  homebase_id: 2
+  created_at: <%= Time.now - 2.months %>
+  
+different_ryan: 
+  id: 1004
+  email: different_ryan@example.com
+  username: different_ryan
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("different", "ea580216cf6aa780704c007c90c1fb704006a7b8") %> # different
+  salt: ea580216cf6aa780704c007c90c1fb704006a7b8
+  homebase_id: 3
+  created_at: <%= Time.now - 1.week %>
+
+admin:
+  id: 10000001
+  email: admin@example.com
+  username: admin
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("test", "9abb307917ceec8042c530809be181b26f5bf17e") %> # test
+  salt: 9abb307917ceec8042c530809be181b26f5bf17e
+  type: Admin
+
+new_user:
+  id: 1006
+  email: new_account@example.com
+  username: ryan
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("foobar", "9abb307917ceec8042c530809be181b26f5bf17e") %> # foobar
+  salt: 9abb307917ceec8042c530809be181b26f5bf17e
+  security_token: f77b63068d9a6f48039092fac67f99142920b5e7
+  token_expiry: <%= Time.now + 1.minute %>
+  homebase_id: 5
+  created_at: <%= Time.now %>
+  
+homebase_four_user:
+  id: 1007
+  email: four@example.com
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("test", "9abb307917ceec8042c530809be181b26f5bf17e") %> # test
+  salt: 9abb307917ceec8042c530809be181b26f5bf17e
+  security_token: f77b63068d9a6f48039092fac67f99142920b5e7
+  token_expiry: <%= Time.now + 1.minute %>
+  homebase_id: 4
+  created_at: <%= Time.now %>
+
+free: 
+  id: 6000
+  email: free@example.com
+  salted_password: <%= ActiveRecord::PasswordSystem.encrypt("free", "9abb307917ceec8042c530809be181b26f5bf17e") %> # test
+  salt: 9abb307917ceec8042c530809be181b26f5bf17e
+  security_token: f77b63068d9a6f48039092fac67f99142920b5e7
+  token_expiry: <%= Time.now + 1.minute %>
+  homebase_id: 6000
+  created_at: <%= Time.now - 1.month %>

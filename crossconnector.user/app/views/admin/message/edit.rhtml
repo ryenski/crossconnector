@@ -1,0 +1,28 @@
+<%= render :partial => 'header' %>
+
+<%= form_tag :action => :edit, :permalink => @message.permalink %>
+
+  <%= render :partial => "form" %>
+
+  <%= submit_tag("Save this message", :class => "button") %> and 
+
+  <%= check_box "message", "resend_email", :onclick => "Element.toggle('resend_email_unsent_only')" %>
+    <label for="message[resend_email]">Re-send email</label><br />
+  
+  <!--
+  <div style="float:left;">
+    <%= submit_tag("Save this message", :class => "button") %> and 
+  </div>
+  
+  <div id="resend_email_container" style="float:left; padding:4px; 0 0 4px">
+    <%= check_box "message", "resend_email", :onclick => "Element.toggle('resend_email_unsent_only')" %>
+      <label for="message[resend_email]">Re-send email</label><br />
+    
+    <span id="resend_email_unsent_only" style="display:none;">
+      <%= check_box "message", "resend_email_unsent_only" %> 
+        <label for="message[resend_email_unsent_only]">Only send to people who have not yet received it</label>
+    </span>
+  </div>
+  -->
+  
+<%= end_form_tag %>

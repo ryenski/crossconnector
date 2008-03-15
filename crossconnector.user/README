@@ -1,0 +1,16 @@
+= CrossConnector
+
+CrossConnector is a web-based collaboration program, originally designed for ministries and missionaries. 
+
+ * CrossConnector lets you keep all your ministry information in one place. 
+ * It's an easy way to publish your ministry information on the web. 
+ * Use CrossConnector to plan a single mission trip or all your church's ministry information.
+
+This is pretty old code! Please give me a lot of grace when you're reading the sources. 
+
+Please feel free to branch, fork, push, pull, and use this code for your own purposes (only for good, not for evil). All I ask is that you give me credit for the idea and retain the license agreement (see LICENSE file) with my copyright info. 
+
+== Support
+
+Unfortunately, I cannot provide support for this software. It's basic Ruby on Rails, so you should be able to get it running pretty easily. Other than that, you're on your own. 
+

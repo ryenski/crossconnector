@@ -1,0 +1,10 @@
+<%= form_remote_tag(:url => {:action => "edit_tags", :permalink => tags_form.permalink},
+                    :update => "file_tags_#{tags_form.id}",
+                    :loading => %(Element.show('file_tags_indicator_#{tags_form.id}')),
+                    :complete => "Element.hide('file_tags_indicator_#{tags_form.id}'); Element.hide('file_tags_form_#{tags_form.id}')") %>
+  <label>Tags:</label> <br />
+  <%= text_field_tag("tags", tags_form.tag_names.join(", "), {:size => 25}) %>
+  <%= image_tag("spinner.gif", :style => "display:none;", :id => "file_tags_indicator_#{tags_form.id}") %> <br />
+  <%= submit_tag("Save tags") %> or <%= link_to_function("cancel", visual_effect(:blind_up, "file_tags_form_#{tags_form.id}", :duration => 0.2)) %>
+  <%= hidden_field("file", "id", :value => tags_form.id) %>
+<%= end_form_tag %>

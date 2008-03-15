@@ -1,0 +1,209 @@
+body,html{
+  margin:0;
+  padding:0;
+}
+
+#container{
+  margin:0 20px;
+  min-width:700px;
+  max-width:1400px;
+  position:relative;
+  padding:0;
+}
+
+#header{
+  height:100px;
+  margin:0;
+  padding:0;
+  position:relative;
+}
+
+#logo {
+  margin:0;
+  padding:0;
+}
+#logo a{
+  text-decoration:none;
+  text-indent:-10000px;
+  display:block;
+  width:210px;
+  height:100px;
+}
+
+#siteid{
+  position:absolute;
+  top:50px;
+  left:210px;
+  font-weight:bold;
+  color:#8FA214;
+  line-height:1.1em;
+  font-size:120%;
+}
+
+#addressbook_link{
+  width:90px;
+  height:100px;
+  float:right;
+  position:relative;
+  margin-top:-100px;
+}
+#addressbook_link a{
+  display:block;
+  text-indent:-10000px;
+  width:60px;
+  height:30px;
+  text-decoration:none;
+}
+
+#utilities{
+  position:relative;
+  float:right;
+  margin-top:-90px;
+  margin-right:100px;
+  font-size:100%;
+  font-family:verdana,arial,helvetica,sans-serif;
+  font-weight:bold;
+  line-height:1.2em;
+}
+#utilities a{
+  color:#fff;
+  margin:0 1em;
+  padding:1px 6px;
+}
+#utilities a:hover,
+body#account #utilities a#account{
+  background:#fff;
+  color:#1A8AD6;
+}
+
+#menu{
+  position:absolute;
+  top:100px;
+  left:0px;
+  width:180px;
+  margin:0;
+  padding:0;
+  z-index:2;
+}
+
+#menu ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#menu li{
+  color:#fff;
+margin:0 0 5px 0;
+}
+#menu li a{
+  display:block;
+  height:50px;
+  width:150px;
+  font:bold 200%/50px Helvetica,Arial,sans-serif;
+  text-decoration:none;
+  letter-spacing:-1pt;
+  padding:0 0 0 30px;
+  margin:0;
+/*  overflow:hidden; */
+}
+
+#main{
+  background:#fff;
+  margin:0 0 0 170px;
+  min-height:300px;
+  padding:0 40px;
+  padding-bottom:40px;
+/*  overflow: display; */
+  }
+/* Holly hack for IE \*/
+* html #main {
+  height: 0;
+}
+/* */
+#footer{
+  margin:0 0 0 170px;
+  padding:10px;
+  font:10px/1em Verdana,sans-serif;
+  border:10px solid #1C8EDC;
+  border-top:none;
+  background:#4AA8E8 url(../images/bkg-footer.jpg) repeat-x;
+  color:#fff;
+}
+#footer a{
+  color:#fff;
+}
+
+#company-id{
+  margin:10px 0 50px 170px;
+}
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+.wide{
+  width:64%;
+}
+.narrow{
+  width:30%;
+}
+.half{
+  width:48%;
+}
+
+.line-right{
+  border-right:1px dotted #B0C74D;
+  padding-right:20px;
+}
+
+hr.clear{
+  clear:both;
+  visibility:hidden;
+}
+h1,h2,h3,h4,h5{
+  margin-top:0;
+}
+
+strong{}
+
+
+/* 
+  Small
+*/
+.smalltabs{
+  height: 26px;
+	margin: 1em 0 0 0;
+	padding-left: 10px;
+	background: url(../images/tab-bottom.gif) repeat-x bottom;
+}
+
+.smalltabs li{
+  margin: 0; 
+  padding: 0;
+	display: inline;
+	list-style-type: none;
+}
+.smalltabs a:link, .smalltabs a:visited {
+	float: left;
+	background: #f3f3f3;
+	font-size: 1em;
+	line-height: 16px;
+	font-weight: bold;
+	padding: 4px 10px 4px 10px;
+	margin-right: 4px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	color: #666;
+}
+
+.smalltabs .current a:link, .smalltabs .current a:visited{
+	border-bottom: 1px solid #fff;
+	background: #fff;
+	color: #000;
+}
+
+.smalltabs a:hover{
+	background: #fff;
+}

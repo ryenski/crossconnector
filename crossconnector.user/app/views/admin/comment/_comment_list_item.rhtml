@@ -1,0 +1,18 @@
+
+<dl id="comment_list_item_<%= comment_list_item.id %>">
+
+  <dt><%= h comment_list_item.name if comment_list_item.url.blank? %><%= link_to(comment_list_item.name, comment_list_item.url) unless comment_list_item.url.blank? %> said <%= time_ago_in_words(comment_list_item.created_at) %> ago</dt>
+
+
+  <%= admin_tools_for comment_list_item, comment_list_item.message %>
+  
+  <% if user_can_edit? comment_list_item.message.class %>
+  <div id="comment_edit_form_<%= comment_list_item.id %>" style="display:none;"></div>
+  <% end %>
+
+  <dd id="comment_body_<%= comment_list_item.id %>">
+    <%= auto_link(comment_list_item.body_html) %>
+  </dd>
+
+
+</dl>

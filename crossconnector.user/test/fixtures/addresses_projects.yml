@@ -1,0 +1,9 @@
+# Addresses_Projects
+
+haiti_project_sent_to_alan:
+  project_id: 1
+  address_id: 2
+  
+covinavineyard_project_sent_to_ryan:
+  project_id: 2
+  address_id: 7

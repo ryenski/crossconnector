@@ -1,0 +1,45 @@
+
+<div class="padding">
+  <%= content_tag("h3", "#{image_tag("/images/spinner.gif")} loading...", :id => "address_loading", :style => "display:none;") %>
+  
+  <div id="address_detail_content">
+    
+  <% if !address_detail %>
+      <h4>Select a name</4h>
+  <% else %>
+    <p><%= quick_update_form("Email", address_detail) %></p> 
+    
+    <p>
+      <%= quick_update_form("Name", address_detail) %> <br />
+      <%= quick_update_form("Organization", address_detail) %><br />
+      <%= quick_update_form("Telephone", address_detail, "phone") %><br />
+    </p>
+    <p>
+      <span id="address_detail_mailing">
+        <%= link_to_function("edit", "Element.toggle('address_detail_mailing'), Element.toggle('address_detail_mailing_form')") %>
+        <%= mailing_address_for(address_detail) or content_tag("span", "Mailing address", :class => "faded")%>
+      </span>
+      <span id="address_detail_mailing_form" style="display:none;">
+        <%= render :partial => "/admin/teams/addressbook/address_detail_form", :object => address_detail %>
+      </span>
+    </p>
+    
+    <hr class="small" />
+    <p><strong>Teams:</strong></p>
+    <%= render :partial => "/admin/teams/addressbook/address_detail_groups", :object => address_detail %>    
+    
+    <hr />
+    
+    <div style="text-align:right">
+      
+      <%= link_to_remote("Delete this address", :url => {:action => "delete_address", :id => address_detail.id}, 
+                          :update => "addressbook_container",
+                          :loading => "Element.show('address_detail_indicator')",
+                          :confirm => "Are you sure you want to delete this address?") %>
+      
+
+    <%= image_tag("/images/spinner.gif", :id => "address_detail_indicator", :style => "display:none;") %>
+    </div>
+  </div>
+  <% end %>
+</div>

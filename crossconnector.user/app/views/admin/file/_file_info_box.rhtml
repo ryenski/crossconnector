@@ -1,0 +1,17 @@
+    <div class="info_box">
+      <% usage = (((@homebase.total_files.to_f/1024.kilobytes.to_f).to_f / @homebase.subscription.plan.priveleges.find(2).plan_limit.to_f) * 100).to_i %>
+      <% usage = 100 if usage > 100 %>
+      <% share_color = usage > 75 ? "red" : "#2E526B" %>
+      <h3><%#= sparkline_tag [usage], :type => 'pie', :background_color => "#eeeeee", :share_color => share_color, :remain_color => "#E0720E" %> Disk Storage</h3>
+      <p>You've used <%= human_size(@homebase.total_files) %> of <%= commify(@homebase.subscription.plan.priveleges.find(2).plan_limit.to_i) %> MB included in <%= link_to("your plan", :controller => "/admin/account#subscription_plans") %>. </p>
+      <% if usage > 75 and usage < 100 %>
+        <p><%= link_to("Upgrade soon", :controller => "/admin/account#subscription_plans") %> to get more disk space!</p>
+      <% elsif usage >= 100 %>
+        <p><%= link_to("You must upgrade", :controller => "/admin/account#subscription_plans") %> to upload more files. </p>
+      <% end %>
+    
+    
+      <% if @homebase.within_storage_limit? %>
+        <p class="small">You have <%= human_size(@homebase.available_storage) %> available. </p>
+      <% end %>
+    </div>

@@ -1,0 +1,16 @@
+==== Cancellation Notification ====
+
+<%= @homebase.subdomain %>.crossconnector.com has been canceled. 
+
+Please cancel the subscription, if necessary. 
+Subscription identifier: <%= @homebase.subscription.identifier %>
+
+
+HOMEBASE: 
+<%= @homebase.inspect %>
+
+SUBSCRIPTION: 
+<%= @homebase.subscription.inspect %>
+
+INVOICES: 
+<%= @homebase.subscription.invoices.inspect %>

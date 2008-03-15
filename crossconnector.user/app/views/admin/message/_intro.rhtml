@@ -1,0 +1,26 @@
+<div class="left wide">
+  <%= image_tag("/images/blank_slates/messages.gif", :style => "margin:3em 0;") %>
+  <%= link_to("New message.", {:action => "new"}, :class => "message_add icon") if user_can_edit? "message" %>
+</div>
+
+<div class="intro right narrow">
+
+  <p><strong>You haven't posted any messages yet.</strong> </p>
+  <p><%= link_to("Post the first message.", {:action => "new"}, :class => "message_add icon") if user_can_edit? "message" %> </p>
+  
+  <ul class="small_list">
+    <li>Post messages that will show up on <%= link_to_my_blog("your blog") %>.</li>
+    <li>Send messages by email to people in your <%= link_to("teams", :controller => "/admin/teams") %>.</li>
+  </ul>
+
+  <p><strong>Need some ideas?</strong></p>
+  <ul class="small_list">
+    <li>Post your newsletter, and have it delivered to friends and supporters by email. </li>
+    <li>Send reminders and notifications for upcoming events.</li>
+    <li>Send updates while you're away on a trip.</li>
+    <li>Post news and updates for people back home to read.</li>
+  </ul>
+  
+</div>
+
+

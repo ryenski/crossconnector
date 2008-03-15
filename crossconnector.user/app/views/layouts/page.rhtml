@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>CrossConnector <%= @page_title %></title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta name="copyright" content="(c) Copyright 2005 Art of Mission (www.artofmission.com)" />
+  <%= stylesheet_link_tag "public2", "icons", "common", :media => "all" %>
+  <%= javascript_include_tag "prototype", "effects", "dragdrop", "controls" %>
+  
+  <script type="text/javascript" language="javascript">
+  // <![CDATA[
+  <%= @content_for_page_scripts %>
+  // ]]>
+  </script>
+
+</head>
+
+
+<body><div id="container">
+  
+  <div id="header_container">
+    <div id="header">
+      <ul id="mainNav">
+        <%= content_tag("li", link_to_unless_current("Search", :controller => "search")) %>
+        <%= content_tag("li", link_to_unless_current("Sign Up", :controller => "signup")) %>
+      </ul>
+    </div>
+  </div>
+
+  <div id="content_container">
+  <div id="content">
+
+    <%= render :partial => "shared/flash_notice" %>
+  
+    <%= @content_for_layout %>
+    
+    <hr class="clear" />
+    
+    
+  </div>
+  </div>
+  
+  <div id="footer">
+    <%= render :partial => "public/footer" %>
+  </div>
+  
+  
+
+</div><%= render :partial => "layouts/analytics" %></body>
+</html>

@@ -1,0 +1,23 @@
+<%= render :partial => 'header' %>
+
+
+<%= form_tag %>
+  
+  <%= render :partial => "form" %>
+  
+  <%= submit_tag "Save changes to this project", :class => "button" %>
+    <span style="margin:0 0.5em;">
+    <%= check_box "project", "resend_email" %> 
+    and <label for="project_resend_email">Re-send email</label></span>
+    
+
+<%= end_form_tag %>
+
+<% content_for("page_scripts") do -%>
+  
+  function disableSubmit(class){
+    elems = document.getElementsByClassName(class)
+    for (i = 0; i < elems.length; i++) { elems[i].disabled==true; } 
+  }
+  
+<% end -%>

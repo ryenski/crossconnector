@@ -1,0 +1,24 @@
+
+<% if @homebase.projects.empty? -%>
+  
+  <%= render :partial => "intro" %>
+
+<% else -%>
+
+  <% if !@homebase.archived_projects.empty? %>
+
+  <div class="left wide">
+    <%= render :partial => "list", :collection => @projects %>
+    <%= render :partial => "shared/pagination_links", :object => @project_pages %>
+  </div>
+
+  <div class="right narrow">
+    <%= render :partial => 'archived_projects', :object => @homebase.archived_projects unless @homebase.archived_projects.empty? %>
+  </div>
+  
+  <% else %>
+    <%= render :partial => "list", :collection => @projects %>
+    <%= render :partial => "shared/pagination_links", :object => @project_pages %>
+    
+  <% end %>
+<% end -%>

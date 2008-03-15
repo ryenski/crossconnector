@@ -1,0 +1,19 @@
+<hr />
+
+<div id="project_events_summary">
+  
+  <h3>Events Summary</h3>
+    
+    <%= content_tag("small", link_to("Manage events", :action => "events", :permalink => @project.permalink)) unless @project.archived?%>
+  
+  <dl class="summary_list events">
+  <% for event in events_summary %>
+  
+    <dt><%= event.name %></dt>
+    <dd><%= event.start_date.strftime("%A, %B %d, %Y") %></dd>
+
+  
+  <% end %>
+  </dl>
+  
+</div>

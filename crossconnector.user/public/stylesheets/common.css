@@ -1,0 +1,1240 @@
+/* 
+   Crossconnector.com
+   
+   Copyright(c) 2005-2006 Art of Mission, Inc.
+   All rights reserved.
+   
+   Art of Mission
+   1450 Barton Rd #300
+   Redlands, CA 92373
+   USA
+   
+   http://www.artofmission.com
+   ryan@artofmission.com
+
+*/
+
+*{
+  margin:0;
+  padding:0;
+}
+
+
+/* 
+  Typography
+----------------------------------------------*/
+body,html{
+  font-family:Verdana,Helvetica,Arial,sans-serif;
+  font-size:small;
+  color:#222;
+}
+p{
+  font-size:100%;
+  line-height:1.5em;
+  color:#333;
+  margin-bottom:1em;
+  margin-top:1em;
+}
+h1,h2,h3,h4,h5{
+  margin:0;
+  /*font-family:Helvetica,Arial,sans-serif;
+    font-family:"Trebuchet MS", Helvetica, Arial, sans-serif;----------------------------------------------*/
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+}
+h1,h2, h3{
+  letter-spacing:-0.05em;
+}
+h1#siteid{letter-spacing:0;}
+
+h1{ font-size:200%; }
+h2{ font-size:150%; }
+h3{ font-size:120%; }
+h4{ font-size:90%; }
+
+h1,h2,h3{ clear:left; }
+
+h2,h3{
+  padding:1em 0 0 0;
+}
+h4,h5{
+  margin-bottom:5px;
+  margin-top:1em;
+}
+
+.page_title{
+  line-height:32px;
+  width:100%;
+}
+
+small{
+  font-weight:normal;
+}
+.small{
+  font-size:85%;
+  line-height:1.1em;
+  margin-left:0.5em;
+  margin-right:0.5em;
+}
+.light{
+  color:#666;
+}
+
+.center{
+  text-align:center;
+}
+
+ol,ul,li{
+  margin-left:1em;
+}
+.bold{
+  font-weight:bold;
+}
+
+.highlight{
+  background:#FFFF99;
+}
+
+dt{
+	font-weight:bold;
+	font-size:110%;
+	margin-top:20px;
+}
+dd{
+	margin:0;
+}
+
+
+
+/*
+  Links
+----------------------------------------------*/
+a{
+  color:#166EAC;
+  border:none;
+}
+a:hover{
+  text-decoration:none;
+  border:none;
+}
+a img{
+  border:none;
+}
+/* whoever thought blue linked image borders were a good idea? ----------------------------------------------*/
+a img,:link img,:visited img { border:none }
+
+
+.pagination_links{
+  text-align:center;
+  font-size:90%;
+  line-height:1.6em;
+}
+
+/*
+  Horizontal Rules
+----------------------------------------------*/
+hr{
+  margin:2em 0;
+  padding:0;
+  color:#ccc;
+  background-color:#ddd;
+  height:1px;
+  border:none;
+}
+hr.clear{
+  clear:both;
+  visibility:hidden;
+  margin:0;
+}
+hr.space{
+  margin:1em 0;
+}
+hr.small{
+  margin:.5em 0;
+}
+
+
+
+
+
+
+
+
+/* System Messages ----------------------------------------------*/
+#Flash, .flash{
+  border:1px solid #D5E3F6;
+  font-size:120%;
+  margin:0 0 10px 0;
+  background:#FFFFD1;
+  padding:10px 10px 10px 38px;
+  line-height:1.4em;
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+}
+.flash p{
+  margin:0;
+  font-size:85%;
+}
+.good{
+  border-color: #9c9 !important;
+  background: #E2F9E3 url(../images/icons/flash_good.gif)  no-repeat 10px 0.6em !important; 
+  color: #060 !important;
+}
+.bad{
+  border-color: #c99 !important;
+  background: #c00 url(../images/icons/flash_bad.gif)  no-repeat 10px 0.6em !important; 
+  color: #fff !important;
+  font-weight:bold !important;
+}
+.bad a{
+  color:#fff;
+}
+
+.information{
+  border-color: #ABC7ED !important;
+  background: #EAF0FB url(../images/icons/flash_info.gif)  no-repeat 10px center !important; 
+}
+
+#Flash small, .flash small{
+  font-weight:normal;
+  display:block;
+}
+#Flash p, .flash p{
+  line-height:1.1em;
+}
+
+
+
+
+#errorExplanation{
+  border: 2px solid #333;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 150% !important;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+
+/* 
+  Summary List
+----------------------------------------------*/
+
+
+dl.summary_list{
+  margin:10px 0;
+  padding:0;
+  font-family:Verdana,sans-serif;
+  font-size:90%;
+}
+.summary_list dt{
+  margin-top:12px;
+  padding:2px 0 4px 20px;
+  font-weight:bold;
+  border-top:1px solid #ddd;
+}
+.summary_list dd{
+  font-size:90%;
+  margin:0;
+  padding:0 0 4px 20px;  
+}
+
+
+
+/*
+  Comments
+----------------------------------------------*/
+#comment_list{
+  margin-top: 2em;
+  border-top:1px solid #ddd;
+  padding-top:2em;
+}
+#comment_list dt{
+  font-size:110%;
+  font-weight:bold;
+  color:#900;
+  background:transparent url(../images/comment.gif) no-repeat bottom left;
+  padding:0 0 6px 40px;
+  margin:0;
+  z-index:20;
+}
+#comment_list dd{
+  background:#EFF6F8;
+  border:solid #D5E3F6;
+  border-width:0 1px 1px 1px;
+  margin:0 0 3em 0;
+  padding:.1em 1em;
+  z-index:19;
+}
+#comment_list dd p{
+  line-height:1.6em;
+}
+.comments_title{
+  background:url(../images/icons/comments-right.gif) no-repeat left top;
+  padding-left:16px;
+  padding-bottom:1em;
+}
+.commentbox{
+  padding:10px 20px;
+  margin-bottom:2em;
+  background-color:#F0F5D6;
+  border:1px solid #CDE54E;
+}
+
+.commentbox input,
+.commentbox textarea{
+  font-family:Verdana,Helvetica,Arial,sans-serif;
+  font-size:100%;
+  margin:1px 0;
+  padding:4px;
+}
+
+
+div.admin_tools{
+  float:right;
+  padding:1px;
+  margin: 0 0 2px 2px;
+}
+div.admin_tools a{
+  margin:0 5px;
+}
+
+.comment_error{
+
+}
+
+/* 
+  Events
+----------------------------------------------*/
+
+#event_list{
+  clear:both;
+  margin:1em 0;
+}
+
+table.event_calendar{
+  margin-top:1em;
+  margin-bottom:2em;
+}
+
+.event_calendar h3{
+  font-size:120%;
+  margin:0;
+  padding:2px 0;
+}
+
+.event_calendar .description{
+  border:solid #ddd;
+  border-width:1px 0 0 0;
+  padding:0 10px;
+}
+.event_calendar .date{
+  color:#000;
+  font-family:Helvetica,Arial,sans-serif; 
+  font-weight:bold;
+  text-align:center;
+  border:solid #ddd;
+  border-width:1px;
+  background:#FAFAFA;
+}
+.event_calendar .date .month{ 
+  background:#ddd;
+  border-bottom:1px solid #666;
+  display:block;
+  line-height:160%;
+}
+.past .event_calendar .date .month{
+  background: #999;
+} 
+.event_calendar .date .year{ 
+  font-size:140%;
+}
+
+.event_calendar .date .day{
+  display:block;
+  letter-spacing:-2pt;
+  font-weight:bold;
+	line-height:100%;
+}
+
+.event_calendar .time_away{
+  display:block;
+  font-size:90%;
+  border-top:1px solid #ddd;
+  padding-top:.5em;
+  padding-bottom:.5em;
+  color:#555;
+}
+
+.event_calendar .date small{
+  font-weight:normal;
+}
+
+.withinthreemonths .day{color: #222}
+.withinsixmonths .day{color: #555}
+.sixmonthsormore .day{color: #aaa}
+
+
+
+.event_calendar .date.thisweek .day{font-size:450%;}
+.event_calendar .date.withinthreemonths .day{font-size:400%;}
+.event_calendar .date.withinsixmonths .day{font-size:250%;}
+.event_calendar .date.sixmonthsormore .day{font-size:200%; letter-spacing:0}
+
+
+
+/* 
+  Message Excerpts
+----------------------------------------------*/
+
+dl.excerpt{
+  margin:10px 0 35px 0;
+  padding:0 10px;
+}
+
+dl.excerpt dt.excerpt_subject{
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+  font-size:130%;
+  font-weight:bold;
+  margin:0;
+  padding:0;
+}
+dl.excerpt dt a {}
+
+dl.excerpt dd{
+  margin: 0;
+  padding: 0;
+  font-size:95%;
+  color:#222;
+}
+
+dl.excerpt dd.excerpt_info{
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+  font-size:90%;
+	margin: 0;
+	padding: 2px 0 4px 0;
+	color:#666;
+	border-top:1px solid #eee;
+}
+
+dl.excerpt .sent{
+  padding-left:12px;
+  background:transparent url(../images/icons/envelope_ver1.gif) no-repeat left center;
+  margin-right:1em;
+  margin-left:2px
+}
+dl.excerpt .excerpt_comments{
+  padding-left:12px;
+  background:transparent url(../images/icons/documents.gif) no-repeat left center;
+  margin:0 1em;
+}
+
+dl.excerpt dd.excerpt_options{
+  white-space:nowrap;
+  line-height:2em;
+  margin-right:1em;
+}
+
+dl.excerpt .more{
+  padding-left:14px;
+  margin-left:14px;
+  background:transparent url(../images/icons/arrow_C_ver2.gif) no-repeat left center;
+}
+
+dl.excerpt{
+}
+dd.excerpt_body blockquote{
+  font-size:90%;
+  margin:4px 2px;
+}
+
+
+
+dl.message_inbox,
+dl.project_inbox{
+  font-size:90%;
+}
+dl.message_inbox dt,
+dl.project_inbox dt,
+dl.file_inbox dt{
+  font-weight:bold;
+  margin-top:10px;
+}
+
+dl.message_inbox dd,
+dl.project_inbox dd,
+dl.file_inbox dd{
+  font-size:80%;
+  margin:0;
+  line-height:1.2em;
+}
+dd.message_body p {
+	font-size: 100%;
+	margin:0;
+}
+
+.message_author{
+  color: #333;
+  font-size:80%;
+}
+
+/* 
+Project Archives
+----------------------------------------------*/
+#archiveNotice{
+  background:#eee url(../images/icons/silk_gif/lock.gif) 6px center no-repeat;
+  color:#666;
+  font-weight:bold;
+  padding:4px 30px;
+  margin:10px -10px;
+  border:3px solid #ccc;
+}
+
+
+
+
+/*
+  Private and Draft Excerpts
+----------------------------------------------*/
+
+.private {
+  background:transparent url(../images/bkg-private-2.gif) 0 0 repeat-x;
+  padding:5px 5px 5px 10px;
+  margin-top:0.5em;
+  border-left:4px solid #E40000;
+  border-top:1px solid #c99;
+}
+.private dt.excerpt_subject,
+.private h2{
+  background:transparent url(../images/icons/silk_gif/lock.gif) no-repeat top left;
+  padding:0 0 0 20px !important;
+  margin-top:0;
+}
+
+dl.message_excerpt.draft {
+  background:transparent url(../images/bkg-draft.jpg) 0 0 no-repeat;
+  padding:5px 20px 5px 5px;
+  border-right:4px solid #C9E1F9;
+}
+dl.message_excerpt.draft dt{
+  background:transparent url(../images/icons/silk_gif/note.gif) no-repeat top right;
+}
+dl.message_excerpt.private.draft dt{
+  background:transparent url(../images/icons/private_draft2.gif) no-repeat top right;
+}
+dl.message_excerpt.private.draft {
+  border-right:4px solid #FAD9CF;
+}
+dl.excerpt.private {
+  padding-top:4px;
+  padding-bottom:4px;
+}
+
+
+
+
+/* 
+Highlights
+----------------------------------------------*/
+
+ul#highlights{
+  margin: 0;
+  padding:0;
+  list-style:none;
+}
+ul#highlights li{
+  margin:20px 0;
+}
+ul#highlights a{
+  font:bold 200% Helvetica,Arial,sans-serif;
+  color:#000;
+  display:block;
+  text-decoration:none;
+  padding:5px 0;
+}
+ul#highlights li a strong{
+  color:#1A8DDB;
+}
+ul#highlights li small{
+  color:#000;
+  display:block;
+  font-size:50%;
+}
+ul#highlights li a{
+  border:1px solid #fff;
+}
+ul#highlights li a:hover{
+  border:1px solid #1A8DDB;
+  background-color:#E3F1FA;
+}
+ul#highlights #highlights_plan a,
+ul#highlights #highlights_blog a,
+ul#highlights #highlights_share a,
+ul#highlights #highlights_teams a{
+  padding-left:50px;
+}
+
+ul#highlights #highlights_plan a{
+  background: transparent url(../images/icons/helsinki_gif/calendar_32.gif) no-repeat 10px center;
+}
+ul#highlights #highlights_blog a{
+  background: transparent url(../images/icons/helsinki_gif/mail_32.gif) no-repeat 10px center;
+}
+ul#highlights #highlights_share a{
+  background: transparent url(../images/icons/helsinki_gif/documents_32.gif) no-repeat 10px center;
+}
+ul#highlights #highlights_teams a{
+  background: transparent url(../images/icons/helsinki_gif/contacts_32.gif) no-repeat 10px center;
+}
+ul#highlights #highlights_plan a:hover,
+ul#highlights #highlights_blog a:hover,
+ul#highlights #highlights_share a:hover,
+ul#highlights #highlights_teams a:hover{
+  background-color:#E3F1FA;
+}
+
+
+/*
+At-a-Glance
+----------------------------------------------*/
+
+#at_a_glance{}
+
+dl.recent{
+}
+dl.recent dt{
+  font-weight:bold;
+  line-height:16px;
+  border-bottom:1px solid #ccc;
+}
+
+dl.recent dd{
+  font-size:85%;
+  margin-left:22px;
+  font-family:verdana,sans-serif;
+}
+
+dl.recent a{
+  display:block;
+  padding:1px;
+}
+
+/*
+  Files
+----------------------------------------------*/
+.file_list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.file_list li{
+  margin:1.5em 0;
+  margin-bottom:2.5em;
+  padding-left:22px;
+  background: transparent url(../images/icons/silk_gif/page_white.gif) no-repeat;
+  background-position: 0 4px;
+  background-repeat:no-repeat;
+}
+.file_list li.acrobat{
+  background-image: url(../images/icons/silk_gif/page_white_acrobat.gif);
+}
+.file_list li.msword{
+  background-image: url(../images/icons/silk_gif/page_white_word.gif);
+}
+.file_list li.msexcel{
+  background-image: url(../images/icons/silk_gif/page_white_excel.gif);
+}
+.file_list li.paint{
+  background-image: url(../images/icons/silk_gif/page_white_paint.gif);
+}
+.file_list li.video{
+  background-image: url(../images/icons/silk_gif/page_white_dvd.gif);
+}
+.file_list li.audio{
+  background-image: url(../images/icons/silk_gif/page_white_cd.gif);
+}
+.file_list li.flash{
+  background-image: url(../images/icons/silk_gif/page_white_flash.gif);
+}
+
+
+.file_list .file_name{
+  font-weight:bold;
+}
+.file_list .file_info{
+}
+.file_list textarea{
+  width:100%;
+  display:block;
+}
+.file_list .file_html{
+  margin-bottom:3em;
+  border:1px solid #ccc;
+  background:#f0f0f0;
+  padding:4px 12px;
+}
+
+
+/*
+  Images
+----------------------------------------------*/
+img.right{
+  float:right;
+}
+img.left{
+  float:left;
+}
+img.border{
+  border:1px solid #ddd;
+  padding:2px;
+  margin:5px;
+  background:#fff;
+}
+
+/*
+  Small List
+----------------------------------------------*/
+dl.small_list{
+  font-size:90%;
+}
+dl.small_list,
+dl.small_list dt,
+dl.small_list dd{
+  margin:0;
+  padding:0;
+}
+dl.small_list dt{
+  font-weight:bold;
+  margin-top:1em;
+}
+dl.small_list dd{
+  margin:2px 0 2px 1em;
+  font-size:95%;
+}
+
+ul.small_list{
+  list-style:none;
+  margin:0;
+  font-size:90%;
+}
+ul.small_list li{
+  margin:1em 0 1em 1em;
+  
+}
+
+/*
+  Help List
+----------------------------------------------*/
+
+#help ul{
+  list-style:none;
+  line-height:1.6em;
+}
+
+
+/*
+  Info box
+----------------------------------------------*/
+.info_box{
+  font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif;
+  border:1px solid #ddd;
+  background:#F5F5F5;
+  padding:4px;
+  margin:1em 0;
+}
+
+.info_box h3{
+  font-size:90%;
+  padding:2px;
+  background:#eee;
+  border:1px solid #ccc;
+}
+
+.info_box ul{
+  list-style:none;
+  font-size:85%;
+  margin:0;
+  padding:0;
+}
+
+/* 
+  Stats Table
+----------------------------------------------*/
+.stats{
+}
+table.stats{
+  padding-left:10px;
+  padding-bottom:3em;
+  line-height:1.3em;
+  width:100%;
+  margin:1em 0;
+  padding:0;
+  
+}
+table.stats th{
+  text-align:right;
+  padding-right:10px;
+	vertical-align: top;
+	color:#666;
+}
+table.stats td,
+table.stats th{
+  border-bottom:1px solid #ddd;
+  padding-top:2px;
+  padding-bottom:2px;
+  margin:0;
+  font-size:85%;
+}
+table.stats caption{
+  font-family:"Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size:130%;
+  padding-bottom:0.5em;
+}
+
+
+/*
+  Tags
+----------------------------------------------*/
+.tags{
+}
+
+.tags dl{
+}
+.tags dt,
+.tags dd{
+  padding:0;
+  margin:0;
+}
+.tags dd{
+}
+
+/*
+  Warning & Notice
+----------------------------------------------*/
+div.warning{
+  background:#fff url(/images/bkg-private-5.jpg) repeat-x;
+  border:solid #C52E35;
+  border-width:3px 0 0 0;
+  padding:0 10px 1em 10px;
+  margin-top:0.5em;
+}
+
+div.warning.soft{
+  background:#fff url(/images/bkg-draft.jpg) no-repeat;
+  border-color:#66A0BB;
+}
+
+h2.warning{
+  color:#B63A25; 
+  margin-bottom:10px;
+}
+
+#system_alert{
+  border:2px solid #ABC7ED;
+  background: #EAF0FB url(../images/icons/flash_info.gif)  no-repeat 2px 4px !important; 
+  margin:1em 0;
+  padding:6px 25px;
+  font-size:95%;
+}
+
+#system_alert h4{
+  font-size:130%;
+  margin:0 0 4px;
+  padding:0;
+}
+
+#system_alert p{
+  line-height:1.4em;
+  margin:1em;
+  padding:0;
+}
+
+.intro{
+  border:solid #0071BD;
+  border-width:2px 0;
+  background: #EBF4FA;
+  margin:1em 0;
+  padding:10px;
+  z-index:2;
+}
+
+
+/* 
+  Horizontal Menus
+----------------------------------------------*/
+
+.tabbed_menu{
+  float:left;
+  width:96%;
+  margin:0;
+  padding:10px 0 0 4%;
+  list-style:none;
+  background:#fff url(../images/tab-bottom.gif) repeat-x bottom left;
+}
+ * html .tabbed_menu { height: 0.01%; }
+.tabbed_menu li{
+  float:left;
+  margin:0;
+  padding:0;
+  font-size:85%;
+  font-family:verdana,arial,sans-serif; 
+}
+.tabbed_menu a{
+  float:left;
+  display:block;
+  font-weight:bold;
+  margin:0 1px 0 0;
+  padding:5px 8px;
+  color:#333;
+  text-decoration:none;
+  border:1px solid #A1DAF5;
+  border-bottom-color: #ccc;
+  background:#fff url(../images/bkg-tab-blue.gif) repeat-x;
+}
+
+.tabbed_menu a:hover,
+#account_nav.account_index #account_index a,
+#account_nav.account_profile #account_profile a,
+#account_nav.account_your_info #account_your_info a,
+#account_nav.account_password #account_password a,
+#account_nav.account_editors #account_editors a,
+#account_nav.account_new_editor #account_editors a,
+#account_nav.account_edit_editor #account_editors a,
+#project_nav.project_show #project_index a,
+#project_nav.project_events #project_events a,
+#project_nav.project_messages #project_messages a,
+#project_nav.project_files #project_files a,
+#teams_nav.teams_teams #teams_index a,
+#teams_nav.teams_leader #teams_leaders a
+{
+  padding-bottom:6px;
+  background:#fff;
+  color:#333;
+  border:1px solid #A1DAF5;
+  border-bottom:none;
+}
+
+
+/*
+  Subscription Plans
+----------------------------------------------*/
+table.plans{
+  width:100%;
+  font-size:90%;
+  font-weight:normal;
+  line-height:1.6em;
+  margin:0;
+  border:solid #C7D18A;
+  border-width:2px 0;
+}
+table.plans .plan_title td{
+  background:#F6FAFB url(../images/bkg-plans.jpg) repeat-x;
+}
+table.plans th{
+  font-weight:normal;
+  text-align:left;
+}
+table.plans td{
+  text-align:center;
+}
+table.plans td,
+table.plans th{
+  padding:.6em;
+  border-bottom:1px solid #ddd;
+}
+table.plans .current{
+  background:#EFF6F8 !important;
+  font-weight:bold;
+}
+table.plans strong{
+  font-size:1.5em;
+}
+
+table.plans .plan_name{
+  font-size:1.4em;
+  font-weight:bold;
+  color:#8FA214;
+}
+table.plans .plan_price{
+  color:#900;
+}
+
+
+
+
+/* 
+  Address Book
+----------------------------------------------*/
+
+#addressbook_table{
+  width:100%;
+}
+
+#addressbook_table td{
+  vertical-align:top;
+}
+.addressbook_section{
+  overflow:auto;
+  background:#F0F5D6 url(../images/bkg-connections.jpg) repeat-x;
+  background:#fff;
+  border:1px solid #ddd;
+  margin:0;
+  padding:0;
+  height:300px;
+}
+
+.addressbook_section .padding{
+  margin:0 5px;
+}
+
+#addressbook_groups{}
+#addressbook_people{}
+#addressbook_detail{}
+
+
+.addressbook_section ul{
+  padding:0;
+  font-family:Verdana,sans-serif;
+  font-size:80%;
+  line-height:1.1em;
+}
+
+#addressbook_people ul{
+  list-style-image:url(../images/icons/silk_gif/vcard.gif);
+  list-style-image:url(../images/icons/helsinki_gif/contacts_16.gif);
+  list-style-position:inside;
+}
+#addressbook_groups ul{}
+
+#addressbook_detail p{
+  line-height:1em;
+  font-family:Verdana,sans-serif;
+  font-size:.8em;
+}
+#addressbook_people a,
+#addressbook_groups a{
+  cursor:pointer;
+}
+
+#addressbook_people li:hover,
+#addressbook_groups li:hover{
+  background-color:#FFFF99;
+  /* cursor:move; ----------------------------------------------*/
+}
+
+.addressbook_controls{}
+
+.group_list {
+  list-style-type:none;
+  margin:10px 0 10px 0;
+  padding:0;
+}
+.group_list .current {
+  background:#ffa;
+  border:1px solid #ff0;
+}
+.group_list .current a {
+  color:#900;
+}
+
+.group_list_item{
+  background: transparent url(../images/icons/silk_gif/folder_user.gif) left center no-repeat;
+  padding:2px 0 2px 20px;
+  font-weight:bold;
+}
+.addressbook_controls{
+  font-weight:normal;
+}
+
+.group_delete_form{
+  border:1px solid #ccc;
+  background:#eee;
+  padding:4px;
+  margin:4px 0;
+}
+
+#addressbook_groups li,
+#addressbook_people li{
+  line-height:18px;
+}
+#addressbook_groups form{
+  margin:0;
+}
+.admin_tools_for_addressbook{
+  float:right;
+}
+.admin_tools_for_addressbook input{}
+.addressbook_groups li a{}
+
+#address_detail_form form dl{}
+#address_detail_form form dl dt{
+  font-size:80%;
+  font-weight:bold;
+  margin:5px 0 0 0;
+  line-height:1em;
+}
+#address_detail_form form dl dd{
+  margin:0;
+  font-size:85%;
+}
+
+a.control{
+  color:#999;
+  font-size:90%;
+  text-decoration:none;
+}
+
+
+/*
+  Account
+----------------------------------------------*/
+
+
+
+/*
+  Forms
+----------------------------------------------*/
+
+fieldset {
+  clear:both;
+  padding:0 1em 1em 1em;
+  margin:1em 0;
+  border:1px solid #dcdcdc;
+  background:#F5F5F5;
+}
+fieldset legend{
+  font-family:"Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size:140%;
+}
+fieldset label{
+  font-weight:bold;
+}
+fieldset label small{
+  font-weight:normal;
+}
+fieldset input.large,
+fieldset input.regular,
+fieldset textarea{
+  font-family:Verdana,Helvetica,Arial,sans-serif;
+  font-size:100%;
+  margin:1px 1%;
+  padding:4px;
+  width:98%;
+}
+
+fieldset input.regular{
+  width:60%;
+}
+fieldset table th{
+  text-align:right;
+}
+
+form dl{
+  margin:0.5em 0;
+}
+
+form dd{
+  margin:0 1em;
+}
+
+form dt{
+  font-weight:bold;
+  padding:0px 4px 0;
+}
+
+
+
+.addressbook_form fieldset{
+  margin:10px 0;
+  background:#eee;
+  padding:4px;
+  border:1px solid #ccc;
+}
+
+.addressbook_form fieldset dt,
+.addressbook_form fieldset dd,
+.addressbook_form fieldset label{
+  font-weight:normal;
+  margin:0;
+  padding:0;
+}
+.addressbook_form fieldset label{
+  font-size:90%;
+}
+
+.extra_fields{
+  display:none;
+}
+
+/*
+  Address List
+----------------------------------------------*/
+
+
+dl.people{
+  margin:0;
+  padding:0 0 1em 0;
+}
+.people dt{
+  clear:both;
+  font-weight:bold;
+  margin-top:1em;
+  
+}
+.people dd{
+  margin-left:2em;
+  line-height:1.2em;
+}
+.address_check_box{
+  float:left;
+  width:280px;
+  white-space:nowrap;
+  margin:1px 1px 4px 1px;
+  overflow:hidden;
+  font-size:90%;
+  line-height:1.1em;
+}
+.address_check_box small{
+  padding-left:18px;
+}
+
+
+.address_in_group{
+  font-size:85%;
+  margin-right:2em;
+}
+
+/* 
+  Leader
+----------------------------------------------*/
+.leader_list_item{
+  border:1px solid #ddd;
+  margin:5px 2px;
+  padding: 5px 25px;
+  background:transparent url(/images/icons/silk_gif/user.gif) no-repeat 5px 5px;
+  width:220px;
+}

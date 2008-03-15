@@ -1,0 +1,15 @@
+<h3>Search results for <%= h @query %></h3>
+
+
+<dl>
+  <% for result in @results %>
+
+    <% if result.class == Message %>
+      <%= content_tag("dd", link_to(h(result.subject), "http://#{result.homebase.subdomain}.#{@request.domain}/message/#{result.id}")) %>
+    <% elsif result.class == Project %>
+      <%= content_tag("dd", link_to(h(result.name), "http://#{result.homebase.subdomain}.#{@request.domain}/project/#{result.id}")) %>
+    <% end %>
+  <% end %>
+  
+
+</dl>

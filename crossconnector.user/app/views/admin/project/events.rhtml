@@ -1,0 +1,7 @@
+<%= render :partial => 'header' %>
+
+<div id="event_list"<%= "class=\"private\"" if @project.private? %>>
+  
+  <%= render :partial => "admin/event/event_list", :object => @project %>
+
+</div>

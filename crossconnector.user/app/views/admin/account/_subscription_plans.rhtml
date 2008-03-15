@@ -1,0 +1,33 @@
+<h2>Subscription Plans</h2>
+
+<table class="plans" cellpadding="0" cellspacing="0" border="0">
+  <tr class="plan_title">
+    <td>&nbsp;</td>
+    <% for plan in @plans %>
+    <td<%= " class=""current""" if @homebase.subscription.plan.id == plan.id %>><span class="plan_name"><%= plan.name %></span><br />
+      <span class="plan_price">
+        <%= "$#{Money.new(plan.price)}/month" %>
+      </span class="plan_price"> <br />
+      <%= upgrade_link(@homebase.subscription, plan) %>
+    </td>
+    <% end %>
+  </tr>
+  
+  <% for privelege in @priveleges %>
+  <tr>
+    <th><%= privelege.name %></td>
+    <% for plan in privelege.plans %>
+      <td<%= " class=""current""" if @homebase.subscription.plan.id == plan.id %>>
+        
+        <% content = privelege.id.to_i == 2 ? "#{commify(plan.plan_limit)} MB" : plan.plan_limit.to_i == 0 ? "unlimited" : commify(plan.plan_limit) %>
+        <%= privelege.id.to_i == 1 ? content_tag("strong", h(content)) : h(content) %>
+      </td>
+    <% end %>
+  </tr>
+  <% end %>
+
+
+</table>
+
+
+<%= content_tag("p", link_to("Update your billing information", :controller => "account", :action => "subscription", :plan => @homebase.subscription.plan.name)) if @homebase.subscription.plan.price > 0 %>

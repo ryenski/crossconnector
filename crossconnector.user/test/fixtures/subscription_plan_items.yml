@@ -1,0 +1,87 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+free_subscription_plan_item_projects:
+  subscription_plan_id: 1
+  subscription_plan_privelege_id: 1
+  plan_limit: 1
+
+free_subscription_plan_item_storage:
+  subscription_plan_id: 1
+  subscription_plan_privelege_id: 2
+  plan_limit: 10
+  
+free_subscription_plan_item_messages:
+  subscription_plan_id: 1
+  subscription_plan_privelege_id: 3
+  plan_limit: 0
+  
+  
+  
+  
+personal_subscription_plan_item_projects:
+  subscription_plan_id: 2
+  subscription_plan_privelege_id: 1
+  plan_limit: 5
+
+personal_subscription_plan_item_storage:
+  subscription_plan_id: 2
+  subscription_plan_privelege_id: 2
+  plan_limit: 50
+
+personal_subscription_plan_item_messages:
+  subscription_plan_id: 2
+  subscription_plan_privelege_id: 3
+  plan_limit: 0
+
+
+
+projectary_subscription_plan_item_projects:
+  subscription_plan_id: 3
+  subscription_plan_privelege_id: 1
+  plan_limit: 15
+
+projectary_subscription_plan_item_storage:
+  subscription_plan_id: 3
+  subscription_plan_privelege_id: 2
+  plan_limit: 100
+
+projectary_subscription_plan_item_messages:
+  subscription_plan_id: 3
+  subscription_plan_privelege_id: 3
+  plan_limit: 0
+  
+  
+  
+
+megachurch_subscription_plan_item_projects:
+  subscription_plan_id: 4
+  subscription_plan_privelege_id: 1
+  plan_limit: 50
+
+megachurch_subscription_plan_item_storage:
+  subscription_plan_id: 4
+  subscription_plan_privelege_id: 2
+  plan_limit: 500
+
+megachurch_subscription_plan_item_messages:
+  subscription_plan_id: 4
+  subscription_plan_privelege_id: 3
+  plan_limit: 0
+
+
+
+
+agency_subscription_plan_item_projects:
+  subscription_plan_id: 5
+  subscription_plan_privelege_id: 1
+  plan_limit: 0
+
+agency_subscription_plan_item_storage:
+  subscription_plan_id: 5
+  subscription_plan_privelege_id: 2
+  plan_limit: 1000
+
+agency_subscription_plan_item_messages:
+  subscription_plan_id: 5
+  subscription_plan_privelege_id: 3
+  plan_limit: 0

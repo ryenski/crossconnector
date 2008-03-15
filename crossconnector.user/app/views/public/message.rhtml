@@ -1,0 +1,34 @@
+
+<div class="left wide">
+
+  <%= content_tag("h2", h(@message.subject), :class => "page_title") %>
+
+  <p class="message_info">
+    
+    <% if (@message.updated_by != @message.created_by or @message.updated_at != @message.created_at) and (!@message.updated_at.nil? and !@message.updated_by.nil?) -%>
+       Updated <%= time_ago_in_words(@message.updated_at) %> ago by <%= @message.updated_by.name.to_s %>.
+    <% else -%>
+      Posted <%= time_ago_in_words(@message.created_at) %> ago by <%= @message.created_by.name.to_s %>.
+    <% end -%>    
+
+    
+    </p>
+
+  <%= auto_link(@message.body_html) if @message.body_html %>
+  <%= auto_link(@message.extended_html) if @message.extended_html %>
+
+  <hr />
+  <%= render :partial => "admin/comment/list", :object => @message %>
+  
+  
+</div>
+
+<div class="right narrow">
+  
+  <hr />
+  
+  <%= render :partial => "related_projects", :object => @message.project if @message.project %>
+
+  <%= render :partial => "related_tags", :object => @message.tags %>
+  
+</div>

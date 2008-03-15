@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title><%= "#{@homebase.name || "Homebase"} - #{@page_title} - CrossConnector" %></title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta name="copyright" content="(c) Copyright 2005 Art of Mission (www.artofmission.com)" />
+	
+	<%= stylesheet_link_tag "icons", "common" %>
+	
+  <%= stylesheet_link_tag "/stylesheets/theme/orange", :media => "all" %>
+  
+  <%= javascript_include_tag "prototype" %>
+  
+  <script type="text/javascript" language="javascript">
+  // <![CDATA[
+  <%= @content_for_page_scripts %>
+  // ]]>
+  </script>
+
+</head>
+
+
+<body id="<%= @params[:action] %>"><div id="container">
+  
+  <div id="header">
+    <%= render :partial => "public/nav" %>
+    <div id="siteid" class="content">
+      <%= content_tag("h1", logo || h(@homebase.name)) %>
+      <%= content_tag("p", h(@homebase.tagline), :id => "tagline") unless logo? %>
+    </div>
+  </div>
+
+  <div id="content" class="content">
+    <%= render :partial => "shared/flash_notice" %>
+    <%= yield %>
+    <hr class="clear" />
+  </div>
+  
+  <div id="footer" class="content">
+    <%= render :partial => "public/footer" %>
+  </div>
+  
+</div></body>
+</html>

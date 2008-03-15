@@ -1,0 +1,14 @@
+
+
+<div class="info_box">
+  <h3><%= image_tag("/images/icons/silk_gif/email.gif", :valign => "middle") %> Related Messages</h3>
+
+  <ul>
+  <% for message in related_messages %>
+    <li class="link icon"><%= link_to(truncate(h(message.subject),20), :controller => "/admin/message", :action => "show", :permalink => message.permalink) %></li>
+  <% end %>
+  </ul>
+
+</div>
+
+

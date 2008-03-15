@@ -1,0 +1,15 @@
+<fieldset>
+  <legend><%= image_tag("/images/icons/silk_gif/email.gif") %> Message Options</legend>
+  <dl>
+
+    <!--dt><%= check_box_tag("include_pictures") %>  <label for="include_pictures">Include pictures?</label>
+    <dd><small>Automatically include pictures with the same tags as this message.</small></dd-->
+
+    <dt><%= check_box("message", "draft") %> <label for="comments">Draft?</label> </dt>
+    <dd><small>Draft messages can only be seen by you. This is handy if you want to save your unfinished message and keep working on it later. </small>
+      
+    <dt><%= check_box("message", "disable_comments") %> <label for="comments">Turn off comments?</label> </dt>
+    <dd><small>Turn off comments if you do not want people to be able to respond to this message.</small></dd>
+  
+  </dl>
+</fieldset>

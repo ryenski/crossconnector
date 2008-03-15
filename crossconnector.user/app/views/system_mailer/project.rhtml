@@ -1,0 +1,37 @@
+=======================================================
+You've received a project notification from:
+  <%= h @project.homebase.name %>
+
+This project can be accessed using the following web address: 
+  http://<%= @project.homebase.subdomain %>.<%= App::CONFIG[:app_domain] %>/project/<%= h @project.permalink %>
+<% if @project.private? -%>
+  
+THIS PROJECT IS PRIVATE. You'll need the password to get in. 
+  password: <%= h @project.decrypted_password %>
+<% end -%>
+
+=======================================================
+
+PROJECT:  <%= h @project.name %>
+
+
+<%= h @project.description %>
+
+<% unless @project.events.empty? %>
+UPCOMING EVENTS
+
+<%= render :partial => "./events", :collection => @project.events %>
+<% end %>
+
+
+=======================================================
+This project notification was sent to you from: 
+  <%= h @project.homebase.name %>
+  from http://<%= h @project.homebase.subdomain %>.<%= App::CONFIG[:app_domain] %>
+
+This project has its own web address:
+  http://<%= h @project.homebase.subdomain %>.<%= App::CONFIG[:app_domain] %>/project/<%= @project.permalink %>
+
+  You can get your own CrossConnector account! 
+  Go to www.<%= App::CONFIG[:app_domain] %>/signup to find out how.
+=======================================================

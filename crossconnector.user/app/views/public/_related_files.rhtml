@@ -1,0 +1,9 @@
+
+<% unless related_files.empty? %>
+<h3>Related Files</h3>
+<dl class="messages small_list">
+<% for file in related_files %>
+  <dd><%= link_to(truncate(h(file.name), 30), :action => "file", :permalink => file.permalink) %></dd>
+<% end %>
+</dl>
+<% end %>

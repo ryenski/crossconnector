@@ -1,0 +1,21 @@
+<h3>Welcome to your homebase!</h3> 
+
+<p><small>
+  To get started, click one of the big buttons on the left. You might start by creating a project, which is a great way to track mission trips, church projects, and missionary work. <%= link_to("Need some ideas?", "http://help.crossconnector.com/articles/2005/12/05/ideas-for-projects", :target => "blank") %> </small></p>
+
+<dl class="small_list">
+  <dt>Here are some things you can do:</dt>
+  
+  <dd><%= link_to("Create a Project", {:controller => "/admin/project", :action => "new"}, :class => "project_add icon") %></dd>
+
+  <dd><%= link_to("Post a Message", {:controller => "/admin/message", :action => "new"}, :class => "message_add icon") %></dd>
+  
+  <dd><%= link_to("Manage your Teams", {:controller => "/admin/teams"}, :class => "team icon") %></dd>
+  
+  <dd><%= link_to("Set up Leaders", {:controller => "/admin/teams/leader"}, :class => "user_add icon") %></dd>
+
+  <dd><%= link_to("Personalize your account", {:controller => "/admin/account", :action => "profile"}, :class => "account icon") %>
+      
+</dl>
+
+<hr />

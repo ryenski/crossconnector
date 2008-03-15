@@ -1,0 +1,27 @@
+<div class="left wide">
+  
+  <% unless @homebase.profile.nil? %>
+  <h3 style="margin:0;">About Us</h3>
+  <p style="margin-top:0;"><%= h @homebase.profile %></p>
+  <%= link_to("Read on...", :action => "about") if @homebase.profile_extended %>
+  <% end %>
+  
+  <ul id="highlights">
+    <li id="highlights_plan"><%= link_to("Our <strong>#{@homebase.public_projects.empty? ? "Projects" : pluralize(@homebase.public_projects.size, "Project")}</strong> <small>Click here to see our projects.</small>", {:action => "projects"}) %></li>
+    <li id="highlights_blog"><%= link_to("Our <strong>#{@homebase.public_messages.empty? ? "Messages" : pluralize(@homebase.public_messages.size, "Message")}</strong> <small>Read our latest messages and post comments.</small>", {:action => "messages"}) %></li>
+    <li id="highlights_share"><%= link_to("Our <strong>#{@homebase.public_files.empty? ? "Files" : pluralize(@homebase.public_files.size, "File")}</strong> <small>Download our files.</small>", {:action => "files"}) %></li>
+    <li id="highlights_teams"><%= link_to("About <strong>Us</strong> <small>Read all about us.</small>", {:action => "about"}) %></li>
+  </ul>
+   
+</div>
+
+<div class="right narrow">
+  
+  <% unless @recent_projects.empty? and @recent_messages.empty? and @recent_files.empty? %>
+  <h3>Quick Links</h3>
+  <div id="at_a_glance">
+    <%= render :partial => "at_a_glance" %>
+  </div>
+  <% end %>
+  
+</div>

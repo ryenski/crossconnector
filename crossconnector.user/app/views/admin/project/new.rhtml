@@ -1,0 +1,20 @@
+<%= form_tag :action => "new" %>
+
+  <%= render :partial => "form" %>
+
+  <hr />
+  
+  <%= submit_tag "Save this project and send emails", :class => "submit", :onclick => "disableSubmit('submit'); Element.show('indicator'); this.form.submit();" %> or <%= link_to "cancel and go back", :action => "index" %>
+
+
+
+<%= end_form_tag %>
+
+<% content_for("page_scripts") do -%>
+  
+  function disableSubmit(class){
+    elems = document.getElementsByClassName(class)
+    for (i = 0; i < elems.length; i++) { elems[i].disabled=true; } 
+  }
+  
+<% end -%>

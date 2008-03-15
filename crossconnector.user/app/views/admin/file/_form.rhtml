@@ -1,0 +1,36 @@
+<fieldset>
+  <legend>Select a file to upload</legend>
+  
+  <dl>
+    <dd><%= file_column_field 'file', 'file' %></dd>
+  </dl>
+  
+  
+  <dl>
+    <dt><label>Name this file <small>(optional)</small></label></dt>
+    <dd><%= text_field_tag("label", "", {:size => 40, :class => "regular"}) %></dd>
+  </dl>
+  
+</fieldset>
+
+<div style="margin:2em 0;">
+  <%= submit_tag "Upload this file", :class => "button" %> or select more options below...
+</div>
+
+
+<%= render :partial => 'shared/forms/tags', :object => @file %>
+
+<%= 
+render :partial => 'shared/forms/project', :object => @file 
+%>
+
+  
+<div id="upload_indicator", style="display:none;">
+<%= image_tag("spinner.gif") %>&nbsp;<strong>uploading... </strong>
+</div>
+<%= submit_tag("Upload This File") %> or <%= link_to_function("cancel", "window.location.reload();return false;") %>
+
+  
+<p><small><strong>Note:</strong> Files larger than 10 MB may not transfer successfully. </small></p>
+  
+</fieldset>

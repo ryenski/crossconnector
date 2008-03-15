@@ -1,0 +1,16 @@
+<% @counter == 0 ? @counter = 1 : @counter = 0 %>
+
+<tr class="row_<%= @counter %><%= " private" if message_list_item.private? %><%= " owner" if message_list_item.created_by.id == @session[:user].id %>">
+
+  <td class="subject">
+    <%= link_to truncate(h(message_list_item.subject),40), {:action => "show", :id => message_list_item.id}, :class => "title" %><br />
+    From <%= link_to_user_name(message_list_item.created_by) %>
+  </td>
+
+  <td class="date"><%= time_ago_in_words(message_list_item.created_at) %> ago</td>
+
+  <td class="project"><%= message_list_item.project ? truncate(h(message_list_item.project.name),25) : "&ndash;" %></td>
+
+  <td class="comments"><%= message_list_item.comments.size %></td>
+
+</tr>

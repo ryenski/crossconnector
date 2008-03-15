@@ -1,0 +1,15 @@
+Hi <%= @leader.name %>
+
+<%= @leader.homebase.created_by.name.to_s %> has created an account for you in their CrossConnector Homebase. 
+
+You can visit the <%= @leader.homebase.name %> Homebase now by going to: 
+<%= "http://#{@leader.homebase.subdomain}.#{App::CONFIG[:app_domain]}" %>/admin
+
+You'll need the following information to log in: 
+
+  Your username/email: <%= @leader.email %>
+  Your password:       <%= @leader.decrypted_password %>
+  
+You can change your password by going to <%= "http://#{@leader.homebase.subdomain}.#{App::CONFIG[:app_domain]}" %>/admin/account/password (you'll need to log in first). You might want to keep this email for your future reference. Please keep your username and password secret! Anyone who has your password will have access to your account. 
+
+You can find help and answers to most common questions at http://help.crossconnector.com/. And if you have any questions that you can't find the answer to, we'd love to hear from you. Just email us at support@crossconnector.com.

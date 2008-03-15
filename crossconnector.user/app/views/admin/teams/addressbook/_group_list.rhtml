@@ -1,0 +1,23 @@
+
+<div class="padding">
+  <h3>Teams</h3>
+
+  <%= render :partial => "/admin/teams/addressbook/group_form" %>
+  
+
+  <ul id="groups_all" class="group_list">
+    <li class="group_list_item">
+    <%= link_to_remote("All Addresses", :url => { :action => :get_group, :get_all => true },
+            :update => "addressbook_people",
+            :loading => "Element.show('group_loading')",
+            :complete => "new Effect.Highlight('addressbook_people'),Element.hide('group_loading')"
+      )%>
+    </li>
+  </ul>
+
+
+  <ul id="group_list" class="group_list">
+    <%= render :partial => "/admin/teams/addressbook/group_list_item", :collection => group_list %>
+  </ul>
+
+</div>

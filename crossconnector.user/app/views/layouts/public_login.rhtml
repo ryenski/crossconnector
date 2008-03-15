@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Please Enter your Password</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+
+  <%= stylesheet_link_tag "common", "icons", :media => "all" %>
+	
+	<style type="text/css" media="screen">
+	/* <![CDATA[ */
+	 
+  body{
+    background:#777;
+  }
+  #container{
+    width:500px;
+    border:5px solid #ddd;
+    background:#fff;
+    margin:10em auto;
+    padding:1em;
+  }
+  
+  dl{
+    margin:1em 0;
+  }
+  
+  dt{
+  	float:left;
+  	clear:left;
+  	width:170px;
+  	font-weight:bold;
+  	text-align:right;
+  	line-height:24px;
+  	font-size:110%;
+  	margin:0;
+  }
+  dd{
+     margin:0 0 0 180px;
+     padding:0;
+     line-height:24px;
+     font-size:110%;
+  }
+	 
+	/* ]]> */
+	</style>
+	
+</head>
+
+<body>
+  
+  <div id="container">
+    
+    <%= render :partial => "shared/flash_notice" %>
+    
+    <h1><%= image_tag("/images/logo.gif") %></h1>
+    
+    
+    <%= yield %>
+    
+  </div>
+
+<%= render :partial => "layouts/analytics" %></body>
+</html>

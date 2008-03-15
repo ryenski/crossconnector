@@ -1,0 +1,27 @@
+
+<div id="header">
+
+    <div id="logo"><%= link_to("CrossConnector", :controller => "/homebase") %></div>
+      
+      
+    <div id="siteid">
+      
+      <h2><%= Homebase.current_homebase.name.empty? ? content_tag("span", "Your Site's Name #{content_tag("small", link_to("edit", :controller => "/account", :action => "profile"))}", :class => "faded") : h(Homebase.current_homebase.name) %></h2>
+      
+      <small><%= h(Homebase.current_homebase.tagline) %></small>
+
+    </div>
+      
+    <div id="addressbook_link"><a href="/addressbook/">Address book</a></div>
+    
+    <div id="utilities">
+      
+      <%= link_to "Account", {:controller => "/account"}, :id => "account" if user? %>
+      
+      <a href="#">Help</a> 
+      
+      <%= user? ? link_to("Sign Out", :controller => "/account", :action => "logout") : link_to("Sign In", :controller => "/account", :action => "login") %>
+
+    </div>
+
+</div>

@@ -1,0 +1,17 @@
+
+<%= render :partial => "/admin/teams/nav" %>
+
+<p class="small">
+  <strong>Leaders</strong> have access to post new messages, upload files, and create projects. 
+  You control the level of access that your editors have, and you can even let different editors do different things.
+</p>
+
+<h3><%= link_to("Add new leader", {:action => "new"}, :class => "user_add icon") %></h3>
+
+
+  
+<%= render :partial => "list_item", :collection => @homebase.leaders %>
+
+<h4>Site Owner: </h4>
+<%= render :partial => "list_item", :object => @homebase.created_by %>
+

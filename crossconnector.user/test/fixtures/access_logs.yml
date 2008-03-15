@@ -1,0 +1,22 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  ip                  :string(255)   
+#  request             :text          
+#  referrer            :text          
+#  user_agent          :string(255)   
+#  language            :string(255)   
+#  host                :string(255)   
+#  created_at          :datetime      
+#  public_homebase_id  :integer       
+#  message_id          :integer       
+#  project_id          :integer       
+#  resource_id         :integer       
+#  homebase_id         :integer       
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+  id: 1
+another:
+  id: 2

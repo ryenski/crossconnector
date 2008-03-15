@@ -1,0 +1,4 @@
+== <%= h events.name %>
+<%= distance_of_time_in_words_to_now events.start_date %> <%= events.start_date > Time.now ? "away" : "ago" %> (<%= localized_date(events.start_date) %>)
+<%= word_wrap(h(events.body)) %>
+

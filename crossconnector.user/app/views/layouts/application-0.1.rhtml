@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<title>CrossConnector: <%= @page_title %></title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="copyright" content="(c) Copyright 2005 Art of Mission" />
+
+<%= stylesheet_link_tag "base2", "blue2", :media => "screen" %>
+<%= stylesheet_link_tag "content2", "icons", "common", :media => "all" %>
+<%= stylesheet_link_tag "print", :media => "print" %>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="" />
+
+<%= javascript_include_tag "common", "prototype", "scriptaculous", "controls", "dragdrop", "effects",  "slider" %>
+
+<script type="text/javascript" language="javascript">
+// <![CDATA[
+<%= @content_for_page_scripts %>
+// ]]>
+</script>
+</head>
+
+
+<body id="<%= current_section %>"><div id="container">
+  
+  <%= render :partial => "shared/header2" %>
+  <%= render :partial => "shared/nav2" %>
+
+
+  <div id="main">
+    <%= render :partial => "shared/flash_notice" %>
+    
+    <%= 
+     content_tag("h1", @page_title || "Please set the @page_title", :class => "#{current_section} bigicon page_title") unless @params[:controller] == "homebase"
+    %>
+
+    <%= @content_for_layout %>
+    
+    <hr class="clear" />
+  </div>
+  
+  <div id="footer">
+    <%= 
+    #render :partial => "shared/footer" 
+    %>
+  </div>
+  
+  <div id="company-id">
+    <a href="http://www.artofmission.com/"><img src="/images/logo-artofmission.gif" style="width:95px; height:12px; border:0;" /></a>
+  </div>
+  
+</div>
+<%= render :partial => "layouts/analytics" %></body>
+</html>

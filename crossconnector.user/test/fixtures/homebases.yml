@@ -1,0 +1,79 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  subscription_plan_id:integer       default(1)
+#  subdomain           :string(255)   not null
+#  name                :string(255)   not null
+#  tagline             :string(255)   
+#  profile             :text          
+#  address1            :string(255)   
+#  address2            :string(255)   
+#  city                :string(255)   
+#  state               :string(50)    
+#  postal              :string(20)    
+#  country             :string(255)   
+#  time_zone           :string(255)   
+#  phone               :string(20)    
+#  website             :string(255)   
+#  display_contact_info:integer       default(0)
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  deleted             :integer       
+#  deleted_at          :datetime      
+#  created_by          :integer       
+#  messages_count      :integer       default(0)
+#  projects_count      :integer       default(0)
+#  resources_count     :integer       default(0)
+#  addresses_count     :integer       default(0)
+#  groups_count        :integer       default(0)
+#  access_logs_count   :integer       default(0)
+#  logo                :string(255)   
+#  profile_extended    :text          
+#  free_trial          :integer       
+#
+
+# created_by is commented out because it is a circular dependency
+
+haiti_homebase:
+  id: 1
+  subdomain: haiti
+  name: Haiti Connection
+  subscription_plan_id: 4
+  # created_by: 1001
+  created_at: <%= Time.now - 3.months %>
+  
+covinavineyard_homebase:
+  id: 2
+  subdomain: covinavineyard
+  name: Covina Vineyard
+  tagline: A pretty good church
+  subscription_plan_id: 2
+  # created_by: 1003
+  created_at: <%= Time.now - 2.months %>
+
+a_different_homebase: 
+  id: 3
+  subdomain: different
+  name: A different homebase
+  subscription_plan_id: 2
+  # created_by: 1004
+  created_at: <%= Time.now - 2.weeks %>
+  
+homebase_four:
+  id: 4
+  subdomain: four
+  name: Nasty Homebase
+  subscription_plan_id: 2
+  created_at: <%= Time.now - 1.months %>
+  
+new_homebase:
+  id: 5
+  subdomain: new_homebase
+  name: New Homebase
+  created_at: <%= Time.now %>
+  
+free:
+  id: 6000
+  subdomain: free
+  name: Free Homebase
+  created_at: <%= Time.now - 1.month %>

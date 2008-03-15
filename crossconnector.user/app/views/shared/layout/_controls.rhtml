@@ -1,0 +1,34 @@
+<% content_for("section_controls") do -%>
+  <%= protected_link_to_control("New project", {:controller => "/admin/project", :action => "new"}, :class => "project_add dark icon") if @homebase.within_projects_limit? %>
+  <%= protected_link_to_control("New message", {:controller => "/admin/message", :action => "new"}, :class => "message_add dark icon") %>
+  <%= protected_link_to_control("New file", {:controller => "/admin/file", :action => "new"}, :class => "file_add dark icon") if @homebase.within_storage_limit? %>
+<% end -%>
+
+<% content_for("unit_controls") do %>
+  <li><%= link_to_public %></li>
+<% end %>
+
+<!-- Controls -->
+<div id="controls">
+  <p id="logged_in">Logged in as <%= link_to(User.current_user.name, :controller => "/admin/account") %></p>
+  <div id="menu">
+    <ul>
+      <%= navigation_link("admin", "homebase") %>
+      <%= navigation_link("admin/project", "projects") %>
+      <%= navigation_link("admin/message", "messages") %>
+      <%= navigation_link("admin/file", "files &amp; images") %>
+      <%= navigation_link("admin/teams", "teams &amp; leaders") %>
+    </ul>
+  </div>
+  
+  
+  <%= content_tag("ul", @content_for_section_controls, :id => "section_controls", :class => "controlset") if @content_for_section_controls %>
+  
+  <%= content_tag("ul", @content_for_unit_controls, :id => "unit_controls", :class => "controlset") if @content_for_unit_controls %>
+  
+  <hr class="clear" />
+  
+  <p><%= render :partial => "shared/donate" %></p>
+</div>
+<!-- End Controls -->
+

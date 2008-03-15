@@ -1,0 +1,10 @@
+
+<% unless @homebase.subscription.invoices.empty? %>
+  <hr />
+  <h2>Your Invoices</h2>
+
+  <% for invoice in @homebase.subscription.invoices %>
+    <p><%= link_to("Invoice ##{invoice.id} &mdash; #{invoice.billing_date.strftime("%D")} &mdash; #{invoice.money.format}", :action => 'invoice', :number => invoice.id) %> </p>
+  <% end %>
+
+<% end %>

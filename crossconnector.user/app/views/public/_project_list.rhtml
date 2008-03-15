@@ -1,0 +1,15 @@
+<dl class="excerpt<% if project_list.private == 1 -%> private<% end -%>">
+  <dt class="excerpt_subject"><%= link_to(project_list.name, :action => "project", :permalink => project_list.permalink) %> <%= "(private)" if project_list.private? %></dt>
+  <dd class="excerpt_info">
+
+    <%= content_tag("span", "#{pluralize(project_list.events.count, "event")} starting #{localized_date(project_list.events.first.start_date)}.", :class => "message_comments") unless project_list.events.nil? or project_list.events.first.nil? or project_list.events.first.start_date.nil? %>
+    
+  </dd>
+  <dd class="excerpt_body">
+    <p>
+      <%= project_list.excerpt.blank? ? h(truncate(project_list.description,250)) : project_list.excerpt %>
+    </p>
+    
+    </dd>
+</dl>
+

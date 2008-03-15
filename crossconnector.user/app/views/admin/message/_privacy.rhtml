@@ -1,0 +1,8 @@
+
+<div class="info_box">
+<h3><%= image_tag("/images/icons/silk_gif/lock.gif", :valign => "middle") %> Privacy</h3>
+
+<%= content_tag("span", "This message is private", :class => "check icon") if privacy.private? %>
+<%= content_tag("span", "This message is a draft", :class => "check icon") if privacy.draft? %>
+
+</div>

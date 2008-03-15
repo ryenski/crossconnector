@@ -1,0 +1,27 @@
+
+
+<% if status.private? %>
+  <div class="stats info_box">
+  <h3><%= image_tag("/images/icons/silk_gif/lock.gif", :valign => "absmiddle") %> Private</h3>
+
+  <p class="small">
+  <%= content_tag("strong", "This project is private") %>
+  Private projects do not show up on your public homebase.
+  </p>
+  </div>
+<% end %>
+
+<% if status.archived? %>
+
+  <div class="stats info_box">
+  <h3><%= image_tag("/images/icons/silk_gif/database.gif", :valign => "absmiddle") %> Archived</h3>
+
+  <p class="small">
+  <%= content_tag("strong", "This project is archived") %>
+  Archived projects can't be edited and don't count against your total active projects, but they will still show up on <%= link_to_homebase(@homebase, "your blog") %> and in the <%= link_to("search engine", "http://www.#{App::CONFIG[:app_domain]}/search") %>. 
+  <% if within_projects_limit? %>
+  You can also <%= link_to_function("un-archive this project", visual_effect(:blind_down, "archive_form_container", :duration => 0.2)) %>.
+  <% end %>
+  </p>
+  </div>
+<% end %>

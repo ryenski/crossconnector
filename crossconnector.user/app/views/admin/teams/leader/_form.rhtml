@@ -1,0 +1,43 @@
+
+  <fieldset>
+    <legend>Leader</legend>
+    
+<dl>
+  <dt><label for="leader_name">Leader name</label></dt>
+  <dd>
+    <%= text_field "leader", "name", :class => "large" %>
+  </dd>
+</dl>
+
+<dl>
+  <dt><label for="leader_email">Email</label></dt>
+  <dd>
+    <%= text_field "leader", "email", :class => "large" %>
+  </dd>
+</dl>
+
+<dl>
+  <dt><label for="leader_password">Password</label></dt>
+  <dd><%= password_field "leader", "password", :class => "large" %></dd>
+
+  <dt><label for="leader_password">Confirm Password</label></dt>
+  <dd><%= password_field "leader", "password_confirmation", :class => "large" %></dd>
+</dl>
+
+
+
+<dl>
+  <dt><label for="leader_permissions">Permissions</label></dt>
+  <dd><small>This person can edit, delete, and create new...</small></dd>
+  <dd>
+    <%= check_box("leader", "can_edit_projects") %>  Projects<br />
+    <%= check_box("leader", "can_edit_messages") %>  Messages<br />
+    <%= check_box("leader", "can_edit_addresses") %> Addresses<br />
+    <%= check_box("leader", "can_edit_files") %> Files<br />
+    <%= check_box("leader", "can_edit_leaders") %> Leaders
+  </dd>
+</dl>
+  
+  
+
+  </fieldset>

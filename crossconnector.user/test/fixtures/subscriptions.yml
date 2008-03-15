@@ -1,0 +1,86 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  homebase_id         :integer       
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  last_action         :string(255)   
+#  installments        :integer       
+#  start_date          :datetime      
+#  periodicity         :string(255)   
+#  comments            :text          
+#  identifier          :string(255)   
+#  name                :string(255)   
+#  email               :string(255)   
+#  address             :string(255)   
+#  address2            :string(255)   
+#  city                :string(255)   
+#  state               :string(255)   
+#  zip                 :string(255)   
+#  country             :string(255)   
+#  subscription_plan_id:integer       
+#  last_four           :string(255)   
+#  card_type           :string(255)   
+#  price               :integer       
+#  trial_ends_at       :datetime      
+#  coupon_code         :string(255)   
+#  pending             :integer       
+#  salt                :string(255)   
+#  last_billing_date   :datetime      
+#  old_identifiers     :text          
+#
+
+free_subscription:
+  id: 5
+  name: Free Subscription
+  email: free@example.com
+  trial_ends_at: <%= Time.now + 30.days %>
+  homebase_id: 5
+  price: 0
+  subscription_plan_id: 1
+
+haiti_subscription_is_paid:
+  id: 1
+  name: Ryan
+  email: ryan@example.com
+  price: 24
+  trial_ends_at: <%= Time.now - 45.days %>
+  homebase_id: 1
+  subscription_plan_id: 4
+  
+covina_subscription_in_trial:
+  id: 2
+  name: Alan
+  email: alan@example.com
+  price: 3
+  trial_ends_at: <%= Time.now + 30.days %>
+  homebase_id: 2
+  subscription_plan_id: 2
+
+different_subscription_is_lapsed:
+  id: 3
+  name: different
+  email: different@example.com
+  trial_ends_at: <%= Time.now - 10.days %>
+  homebase_id: 3
+  price: 3
+  subscription_plan_id: 2
+  
+new_subscription_is_free:
+  id: 4
+  name: Free
+  email: free@example.com
+  trial_ends_at: <%= Time.now + 30.days %>
+  homebase_id: 4
+  price: 0
+  subscription_plan_id: 1
+
+
+free:
+  id: 6000
+  homebase_id: 6000
+  name: Free
+  email: free@example.com
+  trial_ends_at: <%= Time.now + 30.days %>
+  price: 0
+  subscription_plan_id: 1

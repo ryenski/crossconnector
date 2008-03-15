@@ -1,0 +1,23 @@
+
+<dl class="excerpt<%= " private" if message_excerpt.private? -%><%= " draft" if message_excerpt.draft? -%>">
+  
+  <dt class="excerpt_subject"><%= link_to message_excerpt.subject, :action => "show", :permalink => message_excerpt.permalink %><%= content_tag("small"," (draft)") if message_excerpt.draft == 1 %><%= content_tag("small"," (private)") if message_excerpt.private == 1 %></dt>
+  
+  <dd class="excerpt_info">
+    Created <%= localized_date(message_excerpt.created_at) %> by <%= message_excerpt.created_by.name %> 
+    <br />    
+    <% if message_excerpt.disable_comments == 1 -%>Comments are turned off<% else -%>
+      <%= pluralize(message_excerpt.comments.size, "comment") %>
+    <% end -%>
+    
+  </dd>
+  
+  <dd class="excerpt_body"><blockquote><%= auto_link(message_excerpt.body_html) %> </blockquote></dd>
+  
+  <dd class="excerpt_info">
+    <%= link_to("View", {:action => "show", :permalink => message_excerpt.permalink}, :class => "more") %>
+    <%= link_to("Edit", {:action => "edit", :permalink => message_excerpt.permalink}, :class => "more") %>
+    
+  </dd>
+  
+</dl>

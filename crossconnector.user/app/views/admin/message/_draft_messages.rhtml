@@ -1,0 +1,10 @@
+    <div class="info_box">
+      <h3>Draft Messages</h3>
+
+      <dl class="message_inbox">
+      <% for message in draft_messages %>
+        <dt><%= link_to(truncate(message.subject,50), :action => "edit", :permalink => message.permalink) %></dt>
+        <dd>Saved <%= time_ago_in_words(message.updated_at) %> ago.</dd>
+      <% end %>
+      </dl>
+    </div>

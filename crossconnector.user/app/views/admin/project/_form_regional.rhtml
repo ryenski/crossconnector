@@ -1,0 +1,38 @@
+<fieldset id="regional">
+  <legend>Regional Options</legend>
+<dl>
+  <dt>
+    <label for="project_country">Country: </label><br />
+    <select id="project_country" name="project[country]">
+      <option value="">None</option>
+      <%= country_options_for_select @project.country, App::CONFIG[:priority_countries] %>
+    </select>
+    </dt>
+  <dd>
+    <small>Select a country for this project (optional).</small>
+  </dd>
+</dl>
+
+
+<dl>
+  <dt>
+    <label for="project_state">State/Province: </label><br />
+    <%= text_field "project", "state" %>
+  </dt>
+  <dd>
+    <small>Enter a state, province, or region for this project (optional).</small>
+  </dd>
+</dl>
+
+
+<dl>
+  <dt>
+    <label for="project_city">City: </label><br />
+    <%= text_field "project", "city" %>
+  </dt>
+  <dd>
+    <small>Enter a city for this project (optional).</small>
+  </dd>
+</dl>
+
+</fieldset>

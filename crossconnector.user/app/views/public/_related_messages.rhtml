@@ -1,0 +1,6 @@
+<h3>Related Messages</h3>
+<dl class="messages small_list">
+<% for message in related_messages %>
+  <dd><%= link_to(truncate(h(message.subject),30), :action => "message", :permalink => message.permalink) %></dd>
+<% end %>
+</dl>

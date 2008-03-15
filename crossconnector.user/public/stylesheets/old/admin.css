@@ -1,0 +1,506 @@
+/* 
+   Crossconnector.com
+   
+   copyright(c) 2005 Art of Mission, Inc.
+   1450 Barton Rd #300
+   Redlands, CA 92373
+   USA
+   
+   http://www.artofmission.com
+   ryan@artofmission.com
+
+*/
+
+
+
+
+.faded{
+  color:#ccc;
+}
+
+.strong{
+  font-weight:bold;
+}
+
+dl.list{
+  padding:.5em .5em;
+  margin:0;
+}
+dl.list dt{
+  font-weight:bold;
+  margin-bottom:0;
+}
+dl.list dd{
+  font-size:85%;
+  margin-left:1em;
+  margin-bottom:.2em;
+}
+
+ul.upcoming_events{
+  list-style:none;
+  font-size:70%;
+  padding-left:0;
+  font-family:verdana,sans-serif;
+}
+
+ul.upcoming_events li{
+  margin-left:0;
+  padding:.5em 0 .5em 1.5em;
+  background:url(../images/icons/arrow2.gif) left center no-repeat ;
+}
+
+ul.small_list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+
+
+
+
+#system_alert{
+  border:solid #ABC7ED;
+  border-width:1px 1px 1px 4px;
+  background: #EAF0FB;
+  margin:5px 0;
+  padding:1px 10px;
+  font-size:85%;
+}
+#system_alert p{
+  line-height:1.1em;
+}
+
+.intro{
+  border:solid #0071BD;
+  border-width:2px 0;
+  background: #EBF4FA;
+  margin:40px 0;
+  padding:0 10px;
+}
+
+
+/*
+  MISC
+*/
+
+
+
+.red{
+  color: #B63A25;
+}
+div.feature_info{
+  font-size:80%;
+  line-height:1.3em;
+  padding:10px 0;
+  border-bottom:1px solid #ddd;
+  border:0;
+  font-family:verdana,sans-serif;
+}
+
+
+div.explanation{
+  line-height:1em;
+  margin:20px 0;
+  background-position:top left !important;
+}
+div.explanation strong{
+  display:block;
+}
+
+
+.small{
+  font-size:85%;
+}
+
+del{
+	color:red;
+}
+ins{
+	color:green;
+	text-decoration:none;
+}
+
+
+/* 
+  Forms
+*/
+
+
+
+.form  {
+  width:100%;
+  background:#EFF6F8;
+  background:#F0F5D6 url(../images/bkg-event-info.gif) repeat-y top left;
+  border:solid #E2E79C;
+  border-width:4px 1px 1px 1px;
+  padding-bottom:1em;
+  margin:1em 0 1em 0;
+}
+.form p{
+  padding:0 20px;
+}
+
+form label{
+	font-family:verdana,sans-serif;
+	font-size:90%;
+  padding-bottom:0;
+  font-weight:bold;
+}
+table.form th{
+  vertical-align:top;
+  font-size:110%;
+  width:20%;
+  padding-top:1em;
+  border:solid #E2E79C;
+  border-width:0 3px 0 0;
+}
+th{
+  text-align:right;
+  padding-right: 0.5em;
+}
+.form th small{
+  font-weight:normal;
+  font-size:75%;
+}
+.form td{
+  padding:1em .5em;
+}
+.required{
+  color:#900;
+}
+label{
+  margin-top:1em;
+}
+form table p{
+  line-height:1em;
+  font-size:1em;
+}
+form table p small{
+  color:#444;
+}
+
+input{
+  font-family:Verdana,Helvetica,Arial,sans-serif;
+  font-size:130%;
+  margin:1px 0;
+  padding:4px;
+}
+
+/*
+input.biginput{
+  font-size:140%;
+  font-weight:bold;
+  margin:0 0;
+  padding:6px;
+  width:90%;
+  border-top: #555;
+  border-left: #555;
+  border-right: #ddd;
+  border-bottom: #ddd;
+  border-width:2px;
+  border-style:solid; 
+}
+
+
+input.button{
+  font-size:120%;
+  font-weight:bold;
+  padding:3px 12px;
+}
+*/
+textarea.description{
+  width:95%;
+  margin:0;
+  display:block;
+  font-family:Verdana,Helvetica,Arial,sans-serif;
+  font-size:110%;
+}
+
+
+
+.nowrap{
+  white-space:nowrap;
+}
+
+.smallform{
+  padding:5px 20px;
+  background: #f7f7f7;
+  border:1px solid #ccc;  
+}
+
+.smallform dt,
+.smallform dd{
+  margin:0;
+}
+.smallform dt{
+  margin-top:10px;
+}
+.smallform input{
+
+}
+.form h3 a{
+  text-decoration:none;
+  /*margin:0 20px;*/
+}
+.form a img{
+  border:0;
+}
+.form .indent{
+  margin-left:20px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+  Messages
+*/
+
+table.message_list{
+  border-top:1px solid #D6E8F5;
+  margin-top:2em;
+  padding-top:1em;
+}
+.message_list th{
+  text-align:left !important;
+}
+.message_list td{
+  font-size:70%;
+  line-height:1.2em;
+  padding:4px 2px;
+}
+.message_list .subject{
+  padding-left:18px;
+  color:#666;
+  font-size:85%;
+  line-height:1.3em;
+}
+
+.message_list .row_0 td {
+  background:#EEF4FC;
+  border:solid #D6E3F5;
+  border-width: 1px 0;
+}
+.message_list .row_1 td{
+  border:0;
+  background:#fff;
+}
+
+.message_list .row_0.private .subject{
+  background:#EEF4FC url(../images/icons/helsinki_gif/security-lock-red_16.gif) left center no-repeat;
+}
+.message_list .row_1.private .subject{
+  background:#fff url(../images/icons/helsinki_gif/security-lock-red_16.gif) left center no-repeat;
+  background:#fff url(../images/icons/silk_gif/lock.gif) no-repeat left center;
+}
+
+.message_list .subject a.title{
+  font-weight:bold;
+}
+.message_list .date{
+  font-size:70%;
+}
+
+/*
+  Project Form
+*/
+
+.project_controls{
+  margin:1em 0;
+}
+
+
+
+
+
+.data{
+  background:#EFF6F8;
+  border:solid #D5E3F6;
+  border-width:1px 0;
+  padding:0 5px;
+}
+.data p{
+  font-size:85%;
+  padding:0 15px;
+  margin-top:0;
+  color:#111;
+}
+
+
+
+
+
+
+
+
+.message_list_small{
+  font-size:85%;
+  line-height:1.2em;
+}
+.message_list_small dl{
+  border-top:2px solid #B0C74D;
+}
+.message_list_small dt{
+  padding-top:10px;
+}
+.message_list_small dd{
+  padding-bottom:6px;
+  border-bottom:1px solid #F0F5D6;
+  margin:0;
+  padding:0 0 10px 12px;
+}
+.message_list_small span.mls_date{
+  float:right;
+}
+
+
+
+
+
+/* 
+  Files
+*/
+table.filelist{
+  width:100%;
+  margin:2em 0;
+}
+.filelist td {
+  padding-top:.5em;
+  padding-bottom:.5em;
+  border-bottom:1px solid #ddd;
+}
+
+.filelist .gif{
+  background:url(../images/icons/file-gif.gif) no-repeat left center;
+}
+.filelist .jpg{
+  background:url(../images/icons/file-jpg.gif) no-repeat left center;
+}
+.filelist .pages{
+  background:url(../images/icons/file-pages.gif) no-repeat left center;
+}
+.filelist .pdf{
+  background:url(../images/icons/file-pdf.gif) no-repeat left center;
+}
+.filelist .png{
+  background:url(../images/icons/file-png.gif) no-repeat left center;
+}
+.filelist .rtf{
+  background:url(../images/icons/file-rtf.gif) no-repeat left center;
+}
+.filelist .txt{
+  background:url(../images/icons/file-txt.gif) no-repeat left center;
+}
+.filelist .word{
+  background:url(../images/icons/file-word.gif) no-repeat left center;
+}
+
+#storage_usage{
+  width:100%;
+  margin:1em;
+}
+#storage_available{
+  background:#ffc;
+  width:60%;
+  padding:2px;
+  border:1px solid #ff0;
+}
+#storage_used{
+  background:#1A8AD6;
+  height:12px;
+  color:#fff;
+  font:bold .8em/12px verdana,sans-serif;
+  text-align:right;
+}
+
+/*
+  Account
+*/
+
+.personal_info{
+
+}
+.personal_info h2{
+  color: #1A8DDC;
+}
+.profile.form th{
+
+}
+.profile.form th small{
+  display:block;
+    line-height:1.1em;
+}
+
+
+
+
+
+
+
+
+/* 
+  Help
+*/
+.help.mouseover{
+  color:#666;
+  font-size:.9em;
+  font-weight:bold;
+}
+
+
+
+
+/*
+  Search Results
+*/
+#search_results{
+  
+}
+#search_results dt{
+  font-weight:bold;
+  margin-top:5px;
+}
+#search_results dd{
+  margin:2px 10px;
+}
+
+/*
+  Change Password
+*/
+dl.password{
+  border:2px #E4EDB5 solid;
+  background:#F0F5D6 url(../images/bkg-event-info.gif) repeat-y top left;
+  padding-bottom:10px;
+
+}
+dl.password dt{
+  float:left;
+  clear:left;
+  font-weight:bold;
+  width:250px;
+  text-align:right;
+  font-size:110%;
+  margin:15px 10px 0 0;
+}
+dl.password dd{
+  margin:0 0 0 260px;
+}
+dl.password input{
+  margin-top:15px;
+}
+
+
+
+/*
+  Footer
+*/
+
+
+

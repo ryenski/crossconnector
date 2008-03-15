@@ -1,0 +1,40 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  name                :string(255)   
+#  price               :integer       default(0), not null
+#  description         :text          
+#  visible             :integer       default(1), not null
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+free_subscription_plan:
+  id: 1
+  name: Free
+  price: 0
+  description: Free account
+  
+basic_subscription_plan:
+  id: 2
+  name: Basic
+  price: 3
+  description: Personal Account
+  
+pro_subscription_plan:
+  id: 3
+  name: Pro
+  price: 9
+  description: Missionary Account
+
+unlimited_subscription_plan:
+  id: 4
+  name: Unlimited
+  price: 24
+  description: Megachurch Account
+
+agency_subscription_plan:
+  id: 5
+  name: Agency
+  price: 69
+  description: Agency Account

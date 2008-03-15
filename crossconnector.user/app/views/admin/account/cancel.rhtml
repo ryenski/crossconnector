@@ -1,0 +1,21 @@
+
+<div class="warning">
+  <h2><%= image_tag("/images/icons/silk_gif/exclamation.gif") %> Are you sure you want to cancel your account?</h2>
+  
+  <p>If you click the button below, your account will be cancelled, and <strong class="red">all your information will be deleted immediately</strong>, along with all projects, messages, files, and addresses in your account. There is no way to undo this action, and we cannot restore your information after it has been deleted. </p>
+  
+  <p>Instead of cancelling, <strong><%= link_to"consider downgrading", "/admin/account/#subscription_plans" %></strong> to a more affordable plan.</p>
+  
+  <div style="margin:4em 0;">
+  <%= form_tag :action => "cancel", :id => session[:user].id %>
+    <%= submit_tag("Yes, cancel my account and permanently DELETE all my information", :onclick => "return confirm('Are you really sure you want to cancel your account and permanently DELETE all your information?')") %> 
+    or <%= link_to("no, I changed my mind", :action => "index") %>
+  <%= end_form_tag %>
+  </div>
+  
+  <p><strong>
+    There is no undo, and we cannot retrieve your information after you cancel your account.
+  </strong></p>
+</div>
+
+

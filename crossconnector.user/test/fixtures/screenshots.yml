@@ -1,0 +1,17 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  name                :string(255)   
+#  caption             :string(255)   
+#  description         :string(255)   
+#  thumbnail           :string(255)   
+#  image               :string(255)   
+#  movie               :string(255)   
+#  created_at          :string(255)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+  id: 1
+another:
+  id: 2

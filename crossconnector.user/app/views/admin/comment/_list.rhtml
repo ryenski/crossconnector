@@ -1,0 +1,16 @@
+
+<h3 class="comments_title" id="comments_count"><%= pluralize(@comments_count || list.comments.size, "comment") %></h3>
+
+<div id="comment_list">
+  <%= render :partial => "admin/comment/comment_list_item", :collection => list.comments %>
+</div>
+
+
+
+<% unless list.disable_comments == 1 -%>
+<%= render :partial => "admin/comment/new_comment" %>
+<% else -%>
+<p class="commentbox">Comments are turned off.</p>
+<% end -%>
+
+

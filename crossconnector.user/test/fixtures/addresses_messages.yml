@@ -1,0 +1,13 @@
+# These are messages that have been sent to certain addresses
+
+message_from_ryan_to_bethany:
+  address_id: 1
+  message_id: 20001
+  
+message_from_ryan_to_alan:
+  address_id: 2
+  message_id: 20001
+
+private_message_from_ryan_to_alan:
+  address_id: 2
+  message_id: 20003

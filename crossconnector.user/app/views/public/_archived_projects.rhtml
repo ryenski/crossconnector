@@ -1,0 +1,10 @@
+<% unless @homebase.public_archived_projects.empty? %>
+
+<h3>Archived Projects</h3>
+<dl class="projects small_list">
+<% for project in @homebase.public_archived_projects %>
+  <dd><%= link_to(project.name, :action => "project", :id => project.id) %></dd>
+<% end %>
+</dl>
+
+<% end %>

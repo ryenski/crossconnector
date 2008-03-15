@@ -1,0 +1,10 @@
+
+<%= form_tag :action => "new" %>
+
+  <%= render :partial => "form" %>
+
+  <hr />
+  
+  <%= submit_tag("Save this message", :class => "button") %> or <%= link_to_function("Cancel and go back", "javascript:history.back()") %>
+
+<%= end_form_tag %>

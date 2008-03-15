@@ -1,0 +1,56 @@
+
+<%= form_remote_tag :url => {:controller => "/admin/comment", :action => "new"},
+                    :update => "comment_list",
+                    :position => "bottom",
+                    :loading => "Element.show('comment_loading')",
+                    :complete => "comment_complete()"
+                    %>
+                      
+                      
+<div class="commentbox">
+  <a name="comment"></a>
+  <h3>Add Your Comment</h3>
+  
+  <p>Your name:<br />
+  <%= text_field "comment", "name", :value => (@cookies[:comment_name]) %>
+  </p>
+
+  <p>Your email <small>(optional - not displayed)</small>:<br />
+  <%= text_field "comment", "email", :value => (@cookies[:comment_email]) %> 
+  </p>
+
+  <p>Your website <small>(optional)</small>:<br />
+  <%= text_field "comment", "url", :value => (@cookies[:comment_url])%> 
+  </p>
+
+  <p>Your message:<br />
+  <%= text_area "comment", "body", :rows => "6", :style => "width:100%;" %>
+  </p>
+
+  <span id="comment_loading" style="display:none;"><%= image_tag "spinner.gif" %></span>&nbsp;&nbsp;
+  <%= submit_tag("Save comment", :class => "button") %>
+  <%= hidden_field("comment", "message_id", :value => @message.id) %>
+
+</div>
+
+
+<div class="extra_fields">
+  <%= text_field("comment", "phone") %>
+</div>
+
+
+<%= end_form_tag %>
+
+
+
+<script type="text/javascript" language="javascript">
+   // <![CDATA[
+   function comment_complete(){
+     comments_count = <%= @comments_count %> + 1;
+     Element.hide('comment_loading');
+     document.getElementById('comment_body').value='';
+     document.getElementById('comments_count').innerHTML=comments_count+' comments'
+
+   }
+   // ]]>
+   </script>

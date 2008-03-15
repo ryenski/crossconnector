@@ -1,0 +1,7 @@
+<div class="intro">
+  <h3>You haven't uploaded any files relating to this project yet.</h3>
+  <p>
+    <%= link_to("Upload the first file for this project.", {:controller => "/share"}, :class => "file_add icon") if user_can_edit? "message" %>
+  </p>
+
+</div>

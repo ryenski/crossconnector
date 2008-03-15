@@ -1,0 +1,32 @@
+
+
+<div class="left wide">
+  
+  <%= content_tag("div", "This project is archived.", :id => "archiveNotice") if @project.archived? %>
+
+  
+  <%= content_tag("h2", @project.name, :class => "page_title") %>
+
+  <%= auto_link(@project.excerpt_html) if @project.excerpt_html %>
+  <%= auto_link(@project.description_html) if @project.description_html %>
+
+
+  <% if @project.events.count > 0 or @project.past_events.count > 0  %>  
+  <%= render :partial => "admin/event/event_list", :object => @project %>
+  <% end %>
+</div>
+
+<div class="right narrow">
+  
+  <hr />
+  
+  <%= render :partial => 'private', :object => @project %>
+
+  <%= render :partial => "related_messages", :object => @project.messages if @project.messages %>
+  
+  <%= render :partial => "related_files", :object => @project.files if @project.files %>
+
+  <%= render :partial => "related_tags", :object => @project.tags %>
+  
+</div>
+

@@ -1,0 +1,29 @@
+
+0.4.1
+
+* Converted to Hoe for rakefile
+* Added whisker graph [Luke Francl]
+* General cleanup and bug fixes
+* Experimental label option
+
+0.3.0
+
+* Changed to a Class for maintainability
+* All values are normalized (except pie)
+* A single value can be passed for the pie percentage (instead of an Array)
+
+0.2.7
+
+* Fixed bug where last element of bar graph wouldn't go to the bottom [Esad Hajdarevic esad@esse.at]
+
+0.2.5
+
+* Tests now use Test::Unit
+* Bar type added
+
+0.2.1
+
+* Added line_color option for smooth graphs
+* Now available as a gem ('gem install sparklines') and as a rails generator ('gem install sparklines_generator')
+
+

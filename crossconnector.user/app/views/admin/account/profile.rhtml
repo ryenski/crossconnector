@@ -1,0 +1,126 @@
+
+<%= render :partial => "nav" %>
+
+<%= error_messages_for(:user) %>
+
+<%= start_form_tag({:action => "profile"}, :multipart => true) %>
+
+<fieldset>
+  
+  <legend>Site Profile</legend>
+  
+  <dl>
+    <dt><label for="homebase_name">Your Site's Name</label></dt>
+    <dd>
+      <small class="notes">Your site's name as it will appear at the top of the page.</small>
+      <%= text_field "homebase", "name", :class => "large" %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt><label for="homebase_tagline">Tagline</label></dt>
+    <dd>
+      <small class="notes">Your tagline is a short, descriptive sentence that appears right under your site's name</small>
+      <%= text_field "homebase", "tagline", :class => "large" %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt><label for="homebase_profile">About Us</label></dt>
+    <dd>
+      <small class="notes">About Us shows up on your public homebase page and your About Us page</small>
+      <%= text_area "homebase", "profile", :rows => 4, :class => "description" %>      
+      <small class="notes">
+        <%= link_to_function("Toggle extended about us", "Element.toggle('extended')") %>
+      </small>
+    </dd>
+  </dl>
+  
+  <dl id="extended" style="display:none;">
+    <dt><label for="profile_extended">Extended About Us</label></dt>
+    <dd>
+      <small class="notes">Extended About Us only shows up on your About Us page</small>
+      <%= text_area "homebase", "profile_extended", :rows => 9, :class => "description" %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt><label for="homebase_website">Official Website</label></dt>
+    <dd>
+      <small class="notes">If your organization has an <strong>official website</strong>, enter its address here. This link will show up on your About Us page.</small>
+      <%= text_field "homebase", "website", :class => "regular" %>
+    </dd>
+  </dl>
+
+  
+</fieldset>
+
+  <%= submit_tag "Save site profile", :class => "button" %> or there's more information below...
+  
+<fieldset>
+  <legend>Address &amp; Contact Information</legend>
+  
+  
+  <dl>
+    <dt><label for="homebase_address1">Address</label></dt>
+    <dd><%= text_field "homebase", "address1", :class => "large" %> <small>Address line 1</small></dd>
+    <dd><%= text_field "homebase", "address2", :class => "large" %> <small>Address line 2</small></dd>
+  </dl>
+
+
+  <dl>
+    <dt><label for="homebase_city">City</label></dt>
+    <dd>
+      <%= text_field "homebase", "city", :class => "large" %>
+    </dd>
+  </dl>
+  
+  <dl>
+    <dt><label for="homebase_state">State/Province/Territory</label></dt>
+    <dd>
+      <%= text_field "homebase", "state", :class => "large" %>
+    </dd>
+  </dl>
+  
+  
+  <dl>
+    <dt><label for="homebase_country">Country</label></dt>
+    <dd>
+      <select id="homebase_country" name="homebase[country]">
+        <%= country_options_for_select @user.country, App::CONFIG[:priority_countries] %>
+      </select>
+    </dd>
+  </dl>
+  
+  <dl>
+    <dt><label for="homebase_postal">Zip/Postal Code</label></dt>
+    <dd>
+      <%= text_field "homebase", "postal", :class => "regular" %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt><label for="homebase_phone">Phone</label></dt>
+    <dd>
+      <%= text_field "homebase", "phone", :class => "regular" %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt><label for="homebase_phone">Time Zone</label></dt>
+    <dd>
+      <select id="homebase_time_zone" name="homebase[time_zone]">
+        <%= time_zone_options_for_select @homebase.time_zone, TimeZone.us_zones %>
+      </select>
+    </dd>
+  </dl>
+  
+
+</fieldset>  
+
+  <%= submit_tag "Save site profile", :class => "button" %> or 
+  <%= link_to "cancel and go back", :action => "index" %>
+  
+  
+<%= end_form_tag %>
+

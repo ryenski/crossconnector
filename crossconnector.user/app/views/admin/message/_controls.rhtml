@@ -1,0 +1,7 @@
+<% content_for("unit_controls") do -%>
+  
+  <%= protected_link_to_control("Edit this message", {:controller => "/admin/message", :action => "edit", :permalink => controls.permalink}, :class => "message_edit dark icon") %>
+  <%= content_tag("li", link_to_function("Delete this message", visual_effect(:blind_down, "delete_form_container", :duration => 0.2), :class => "delete dark icon")) if user_can_edit? "message"  %>
+  
+<% end -%>
+

@@ -1,0 +1,31 @@
+<%= render :partial => 'header' %>
+
+
+<div"<%= "class=\"private\"" if @message.private? %>">
+  
+  <p class="message_author">Posted <%= time_ago_in_words @message.created_at %> ago by <%= @message.created_by.name %></p>
+  
+  <div class="left wide line-right">
+    <%= auto_link(@message.body_html) if @message.body_html %>
+    <%= auto_link(@message.extended_html) if @message.extended_html %>
+    
+    <%= render :partial => "admin/comment/list", :object => @message %>
+  </div>
+  
+  <div class="right narrow">
+    
+    <%= render :partial => "/shared/tags", :object => @message %>
+    
+    <%= render :partial => "related_projects", :object => @message if @message.project %>
+    
+    Private: <%= @message.private? %>
+    
+  </div>
+
+  
+
+</div>
+
+
+
+

@@ -1,0 +1,8 @@
+
+haiti_project_sent_to_group_one: 
+  group_id: 1
+  project_id: 1
+  
+private_project_sent_to_private_group:
+  group_id: 3
+  project_id: 3

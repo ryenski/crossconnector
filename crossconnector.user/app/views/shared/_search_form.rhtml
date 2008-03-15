@@ -1,0 +1,5 @@
+<%= form_tag "http://www.#{App::CONFIG[:app_domain]}/search/search" %>
+  <%= image_tag("logo-small.gif", :alt => "CrossConnector", :style => "vertical-align:middle") %>
+  <%= text_field_tag "query", {}, {:size => 20, :class => "search"} %>
+  <%= submit_tag "Search" %>
+<%= end_form_tag %>

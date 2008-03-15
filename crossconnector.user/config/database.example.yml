@@ -1,0 +1,17 @@
+login: &login
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  database: crossconnector_dev
+  <<: *login 
+
+test:
+  database: crossconnector_test
+  <<: *login 
+
+production:
+  database: crossconnector_dev
+  <<: *login

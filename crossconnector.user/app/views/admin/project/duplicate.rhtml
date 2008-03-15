@@ -1,0 +1,22 @@
+<%= render :partial => 'header' %>
+
+<%= start_form_tag %>
+
+<fieldset>
+  <legend>Duplicate this Project</legend>
+  
+  <dl>
+    <dt><label for="project_name">New Project Name</label></dt>
+    <dd><%= text_field :project, :name %></dd>
+    
+    <dt><label for="project_start_date">Events start on:</label></dt>
+    <dd>
+      <%= select_date(@start_date) %>
+    </dd>
+  </dl>
+  
+</fieldset>
+
+<%= submit_tag "Duplicate project" %> or <%= link_to "cancel and go back", :action => "show", :permalink => @project.permalink %>
+
+<%= end_form_tag %>

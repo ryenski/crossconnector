@@ -1,0 +1,33 @@
+
+
+<table class="stats">
+  
+  <caption>Your Info 
+    <small>(<%= link_to "edit", :action => "your_info" %>)</small></caption>
+  
+  <tr>
+    <th>Logged in as:</th> 
+    <td><%= h @user.name.to_s %></td>
+  </tr>
+
+  <tr>
+    <th>Your Address</th>
+    <td><%= mailing_address_for @user %></td>
+  </tr>
+  
+  <tr>
+    <th>Phone</th>
+    <td><%= h @user.phone %></td>
+  </tr>
+  
+  <tr>
+    <th>Email</th>
+    <td><%= h @user.email %></td>
+  </tr>
+  
+  <tr>
+    <th>Time Zone</th>
+    <td><%= @user.time_zone %></td>
+  </tr>
+</table>
+

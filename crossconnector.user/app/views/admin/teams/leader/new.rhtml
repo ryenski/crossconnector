@@ -1,0 +1,9 @@
+<%= render :partial => "/admin/teams/nav" %>
+
+<%= form_tag %>
+
+<%= render :partial => "form" %>
+
+<%= submit_tag "Create leader" %> <%= check_box_tag("send_email", "yes", :checked => true) %> <label for="send_email">and send welcome email</label>
+<%= end_form_tag %>
+

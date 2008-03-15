@@ -1,0 +1,19 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  first_name          :string(255)   
+#  last_name           :string(255)   
+#  invitation_code     :string(255)   
+#  created_at          :datetime      
+#  used_at             :datetime      
+#  use_counter         :integer       default(0)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+first_invitation:
+  id: 1
+  first_name: Test
+  last_name: User
+  email: user@example.com
+  invitation_code: af9aed8cfe9168b4f39acf7beefa6ebdd8ba1949

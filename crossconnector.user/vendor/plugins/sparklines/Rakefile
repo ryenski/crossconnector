@@ -1,0 +1,17 @@
+
+require 'rubygems'
+require 'hoe'
+$:.unshift(File.dirname(__FILE__) + "/lib")
+require 'sparklines'
+
+Hoe.new('Sparklines', Sparklines::VERSION) do |p|
+  p.name = "sparklines"
+  p.author = "Geoffrey Grosenbach"
+  p.description = "Tiny graphs."
+  p.email = 'boss@topfunky.com'
+  p.summary = "Tiny graphs."
+  p.url = "http://nubyonrails.com/pages/sparklines"
+  p.clean_globs = ['test/output/*']
+
+  # * extra_deps - An array of rubygem dependencies.
+end

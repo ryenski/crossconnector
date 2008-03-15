@@ -1,0 +1,83 @@
+
+<h1><%= image_tag("/images/logo.gif") %></h1>
+
+<p>CrossConnector is a service of Art of Mission, Inc. </p>
+
+<p>
+  Art of Mission, Inc.<br />
+  1540 Barton Rd, PMB 300<br />
+  Redlands, CA 92373 USA
+</p>
+
+<p>Thank you for using CrossConnector. This invoice is provided for your records. </p>
+
+<hr />
+
+<h2>Invoice <%= @invoice.id %> </h2>
+<p><%= @invoice.billing_date.strftime("%Y-%m-%d") %></p>
+
+<dl>
+  <dt>Billed to:</dt>
+  <dd>
+    <%= @invoice.billing_name %><br />
+    <%= "#{@invoice.billing_address}"  %>
+    <%= "<br />#{@invoice.billing_city}"  %>
+    <%= ", #{@invoice.billing_state}"  %>
+    <%= " #{@invoice.billing_zip}"  %>
+    <%= "<br /> #{@invoice.subscription.homebase.web_address}" %>
+  </dd>
+</dl>
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <th>Quantity</th>
+    <th>Description</th>
+    <th style="text-align:right">Price</th>
+  </tr>
+  
+  <tr>
+    <% for item in @invoice.items %>
+    <td><%= item.quantity %> <%= item.period %></td>
+    <td>CrossConnector <%= item.name %> Account
+      <%= "<br />#{item.description}" if item.description %>
+    </td>
+    <td style="text-align:right"><%= item.money.format %></td>
+    <% end %>
+  </tr>
+  
+  <tr>
+    <td colspan="3" style="text-align:right">
+      <p>Amount PAID: <%= @invoice.money.format %></p>
+      <p>Credit card billed: <code>XXXX-XXXX-XXXX-<%= @invoice.subscription.decrypted_last_four %></code></p>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+<pre>
+  
+  
+IMPORTANT NOTE: 
+The charge for CrossConnector will appear on your credit 
+card statement from "ART OF MISSION"
+
+Art of Mission, Inc.
+1540 Barton Rd, PMB 300
+Redlands, CA 92373 USA
+
+</pre>
+
+<hr />
+<div class="hide_from_printer">
+<p>
+  <strong><%= link_to("Return to your account", "#{@homebase.web_address}/admin/account") %></strong>
+</p>
+<hr />
+</div>

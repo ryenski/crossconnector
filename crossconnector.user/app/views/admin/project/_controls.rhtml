@@ -1,0 +1,17 @@
+
+<% content_for("unit_controls") do -%>
+
+  <% if controls.archived? %>
+    <%= content_tag("li", link_to_function("Un-archive this project", visual_effect(:blind_down, "archive_form_container", :duration => 0.2), :class => "archive_go dark icon")) if controls.archived? %>
+  <% else %>
+    <%= protected_link_to_control("Edit this project", {:controller => "/admin/project", :action => "edit", :permalink => controls.permalink}, :class => "project_edit dark icon") %>
+    <%= protected_link_to_control("Add events", {:controller => "/admin/project", :action => "events", :permalink => controls.permalink}, :class => "event_add dark icon") %>
+    
+    <%= content_tag("li", link_to_function("Archive", visual_effect(:blind_down, "archive_form_container", :duration => 0.2), :class => "archive_go dark icon")) %>
+  <% end %>
+
+  <%= content_tag("li", link_to("Duplicate", {:action => "duplicate"}, :class => "copy dark icon")) if user_can_edit? "project"  %>
+  <%= content_tag("li", link_to_function("Delete", visual_effect(:blind_down, "delete_form_container", :duration => 0.2), :class => "delete dark icon")) if user_can_edit? "project"  %>
+
+<% end -%>
+

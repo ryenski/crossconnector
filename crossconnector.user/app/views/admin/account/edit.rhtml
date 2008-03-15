@@ -1,0 +1,66 @@
+
+<h2>Edit your personal information</h2>
+
+
+<%= form_tag :action => "edit" %>
+  <table width="90%", cellpadding="0", cellspacing="4" class="form">
+    
+    <tr>
+      <th><label>Tagline</label><br /><small>Appears under your organization name</small></th>
+      <td><%= text_field "user", "tagline" %></td>
+    </tr>
+    
+    <tr>
+      <th><label>Phone</label></th>
+      <td><%= text_field "user", "phone" %></td>
+    </tr>
+        
+    <tr>
+      <th><label>Address</label></th>
+      <td>
+        <%= text_field "user", "address1" %> <small>Address line 1</small><br />
+        <%= text_field "user", "address2" %> <small>Address line 2</small>
+        
+      </td>
+    </th>
+    
+    <tr>
+      <th><label>City</label></th>
+      <td><%= text_field "user", "city" %></td>
+    </tr>
+    
+    <tr>
+      <th><label>State/Province</label></th>
+      <td><%= text_field "user", "state" %></td>
+    </tr>
+    
+    <tr>
+      <th><label>Country</label></th>
+      <td><select id="user_country" name="user[country]">
+            <%= country_options_for_select @user.country, App::CONFIG[:priority_countries] %>
+          </select>
+      </td>
+    </tr>
+    
+    <tr>
+      <th><label>Zip/Postal Code</label></th>
+      <td><%= text_field "user", "postal" %></td>
+    </tr>
+    
+    <tr>
+      <th><label>Time Zone</label></th>
+      <td>
+      <select id="user_time_zone" name="user[time_zone]">
+        <%= time_zone_options_for_select @user.time_zone, TimeZone.us_zones %>
+      </select>
+      
+      </td>
+    </tr>
+
+  </table>
+  <hr />
+  <%= hidden_field "user", "id" %>
+  <%= submit_tag "Save my information", :class => "button" %> or 
+  <%= link_to "Cancel and go back", :action => "index" %>
+
+<%= end_form_tag %>

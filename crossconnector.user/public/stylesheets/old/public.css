@@ -1,0 +1,230 @@
+/* 
+   Crossconnector.com
+   
+   copyright(c) 2005 Art of Mission, Inc.
+   1450 Barton Rd #300
+   Redlands, CA 92373
+   USA
+   
+   support@crossconnector.com
+
+*/
+
+
+body,html{
+  font-size:small;
+  /*font-family: "Lucida Grande",Verdana,Arial,sans-serif;*/
+  font-family: Verdana,Helvetica,Arial,sans-serif;
+  color:#222;
+	background:#DFDFDF url(../images/public/bkg4.gif) top center repeat-y;
+	margin:0;
+	padding:0;
+	
+}
+
+#container{
+	width:800px;
+	margin:0 auto;
+	position:relative;
+}
+
+.content{
+	width:740px;
+	margin:0 30px;
+	padding:20px 0;
+}
+
+/* Header */
+
+/* 
+  Fun Colors
+  4AC9F4 - ice blue
+  E4301A - red
+  75D508 - icky green
+  1A8DDB - nice blue
+  E0720E - orange
+*/
+
+#header{
+  background: #333 url(../images/public/bkg-top.gif) bottom left no-repeat;
+  margin:0;
+  padding:0;
+  color:#fff;
+  /* font-family:Helvetica, Arial, sans-serif; */ 
+  font-family:verdana,sans-serif;
+  position:relative;
+  clear:left;
+  padding-bottom:10px;
+}
+#header h1{
+  margin:0;
+  padding:0;
+  font-size:200%;
+  font-weight:lighter;
+  /* letter-spacing:-1pt;
+  text-shadow:#333 1px 1px 4px; */
+}
+#header #tagline{
+  margin:0;
+  padding:0;
+  font-weight:normal;
+  font-size:100%;
+  /* text-shadow:#333 0 0 2px; */
+}
+
+#login{
+  position:absolute;
+  z-index:100;
+  width:300px;
+  left:490px;
+  top:12px;
+  text-align:right;
+  color:#fff;
+}
+#login a{
+  color:#fff;
+  background:transparent url(../images/icons/silk_gif/lock_black.gif) no-repeat;
+  padding-left:20px;
+}
+
+
+/* Tabs */ 
+
+#public_nav{
+  background:#E0720E;
+  float:left;
+  margin:0;
+  padding:3px 30px 10px 30px;
+  list-style:none;
+  width:740px;
+  text-align:right;
+}
+#public_nav li{
+  float:left;
+  margin:6px 24px 6px 0;
+  padding:0;
+  
+}
+#public_nav a{
+  float:left;
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  margin:0;
+  padding:3px 0 0 0;
+  
+}
+
+#public_nav a:hover,
+#homebase #public_nav #public_homebase a,
+#messages #public_nav #public_messages a,
+#message #public_nav #public_messages a,
+#projects #public_nav #public_projects a,
+#project #public_nav #public_projects a,
+#files #public_nav #public_files a,
+#about #public_nav #public_about a{
+  border-bottom:2px solid #fff;
+}
+
+
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+.wide{
+  width:520px;
+}
+.narrow{
+  width:170px;
+}
+.half{
+  width:48%;
+}
+#footer{
+  clear:left;
+  margin-top:100px;
+  margin-bottom:40px;
+  padding-top:20px;
+  padding-bottom:60px;
+}
+
+/* Text */
+
+p{
+  font-size:90%;
+}
+
+
+
+a{
+  color:#166EAC;
+}
+a:hover{
+  text-decoration:none;
+  border:0;
+}
+a:visited{
+  color:#B85F0A;
+}
+
+
+h1,h2,h3,h4,dt{
+  font-family:"Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-weight:normal;
+}
+
+h2{
+  font-size:200%;
+  font-weight:normal;
+  margin-top:0;
+}
+h3{
+  font-size:150%;
+}
+h4{
+  font-weight:bold;
+}
+
+
+/* Misc */
+hr.clear{
+  clear:both;
+  visibility:hidden;
+  margin:0;
+  padding:0;
+}
+
+hr{
+  margin:2em 0;
+  padding:0;
+  color:#ccc;
+  background-color:#ddd;
+  height:1px;
+  border:none;
+}
+
+/* Lists */
+.related_list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-size:85%;
+}
+.related_list li{
+  padding-bottom:10px;
+  padding-left:20px;
+}
+.related_list.projects li{
+  background:transparent url(../images/icons/silk_gif/world.gif) 0 0 no-repeat;
+}
+
+.related_list.messages li{
+  background:transparent url(../images/icons/silk_gif/email.gif) 0 0 no-repeat;
+}
+
+
+
+
+

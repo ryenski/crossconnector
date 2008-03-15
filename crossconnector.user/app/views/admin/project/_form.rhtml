@@ -1,0 +1,39 @@
+
+<fieldset>
+
+  <dl>
+    <dt><label for="project_name">Name your project: </label></dt>
+    <dd><%= text_field :project, :name, :class => "large" %></dd>
+  </dl>
+
+  <dl>
+    <dt><label for="project_excerpt">Project excerpt: <small>(optional)</small></label></dt>
+    <dd>
+      <small class="notes">The project excerpt is a short summary of this project. The excerpt will show up on your project index page. If you don't include an excerpt, then the first few words of the description (below) will be used instead. </small>
+      <%= text_area :project, :excerpt, :class => "description", :rows => "5"%></dd>
+  </dl>
+  
+  <dl>
+    <dt><label for="project_description">Project description: </label></dt>
+    <dd><%= text_area :project, :description, :class => "description", :rows => "12"%></dd>
+  </dl>
+
+</fieldset>
+
+
+<div style="margin:1em 0;">
+  <%= submit_tag "Save this project", :class => "submit", :onclick => "disableSubmit('submit'); Element.show('indicator'); this.form.submit();" %>
+   or select more options below...</div>
+
+
+<%= render :partial => 'shared/forms/tags', :object => @project %>
+
+<%= render :partial => 'shared/forms/privacy', :object => @project %>
+
+<%= render :partial => 'form_regional', :object => @project %>
+
+<div style="margin:1em 0;">
+<%= submit_tag "Save this project", :class => "submit", :onclick => "disableSubmit('submit'); Element.show('indicator'); this.form.submit();" %> or select more options below...</div>
+
+<%= render :partial => "shared/address_list", :object => @project %>
+

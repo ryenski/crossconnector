@@ -1,0 +1,42 @@
+
+<div class="stats info_box">
+<h3><%= image_tag("/images/icons/silk_gif/chart_line.gif", :valign => "absmiddle") %> Project Stats</h3>
+
+<table class="stats">
+  
+  <!-- 
+  <tr>
+    <th scope="row">Visitors</th>
+    <td><big><strong><%= pluralize(project_stats.access_logs.size, "visitor") %></strong></big> <%= project_stats.access_logs.size == 1 ? "has" : "have" %> seen this project. </td>
+  </tr>
+  -->
+  
+  <tr>
+    <th scope="row">Posted</th>
+    <td>by <%= link_to_user_name(project_stats.user) %><br />
+        on <%= localized_date(project_stats.created_at) %>
+            
+    </td>
+  </tr>
+  
+  <% if !project_stats.updated_at.nil? and project_stats.updated_at > project_stats.created_at -%>
+  <tr>
+    <th scope="row">Updated</th>
+    <td>by <%= link_to_user_name(project_stats.updated_by) %><br />
+        on <%= localized_date(project_stats.updated_at) %>
+  </tr> 
+  <% end -%>
+
+  
+  <% if project_stats.private? %>
+  <tr>
+    <th scope="row">Private?</th>
+    <td><%= yes_no(project_stats.private) %></td>
+  </tr>
+  <% end %>
+
+
+
+</table>
+
+</div>

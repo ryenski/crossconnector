@@ -1,0 +1,6 @@
+xm.item do
+  xm.title "File: #{file_label(item)}"
+  xm.pubDate pub_date(item.created_at)
+  xm.author item.created_by.name 
+  xm.link file_link(item)  
+end

@@ -1,0 +1,5 @@
+# Messages sent to groups
+
+private_message_sent_to_private_team:
+  group_id: 3
+  message_id: 20003

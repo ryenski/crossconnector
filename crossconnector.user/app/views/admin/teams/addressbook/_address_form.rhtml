@@ -1,0 +1,31 @@
+<a name="address_form"></a>
+
+<div id="add_address" style="display:none;" class="addressbook_form">
+
+    <%= form_remote_tag(:url => {:action => "add_address"}, 
+                        :update => "address_list",
+                        :loading => "Element.show('add_address_indicator')",
+                        :complete => "Form.reset('add_address_form'); Element.hide('add_address_indicator')",
+                        :position => "top",
+                        :html => {:id => "add_address_form"}) %>
+                        
+
+      <fieldset>
+      <dl>
+
+        <dt><label for="add_address_name">Name:</label></dt>
+        <dd><%= text_field("add_address", "name", :style => "width:95%;") %></dd>
+
+        <dt><label for="add_address_email">Email address:</label></dt>
+        <dd><%= text_field("add_address","email", :style => "width:95%;") %></dd>
+
+      </dl>
+      
+      <%= image_tag("/images/spinner.gif", :id => "add_address_indicator", :style => "display:none") %>
+      
+      <%= submit_tag("Save") %> or <%= link_to_function("Cancel", "new Effect.BlindUp('add_address',{duration:0.2})", :href => "javascript:return false(0);") %>
+      
+      </fieldset>
+    <%= end_form_tag %>
+
+</div>

@@ -1,0 +1,34 @@
+<%= render :partial => 'header' %>
+
+
+<div class="left wide line-right<%= " private" if @project.private? %>">
+  
+  <div id="project_detail">
+    
+    <h2>Project Overview<%= " <small>(private project)</small>" if @project.private? %></h2>
+    <%= auto_link(@project.excerpt_html) if @project.excerpt_html %>
+    <%= auto_link(@project.description_html) if @project.description_html %>
+
+  </div>
+  
+  <div id="project_form"> </div>
+  
+  <%= render :partial => "events_summary", :object => @project.events %>
+  
+</div>
+
+<div class="right narrow" id="related">
+  
+  <%= render :partial => "/shared/tags", :object => @project unless @project.archived? %>
+    
+  <%= render :partial => "team", :object => @project unless @project.addresses.empty? and @project.groups.empty? %>
+
+  <%= render :partial => "related_messages", :object => @project.messages %>
+  
+  <%= render :partial => "related_files", :object => @related_files  %>
+  
+  
+
+</div>
+
+

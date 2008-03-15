@@ -1,0 +1,29 @@
+
+<h1><%= @homebase.name %></h1>
+
+<h2>Please sign in to your account</h2>
+ 
+<div class="form">
+  
+  <dl>
+  <%= form_tag :action => "login" %>
+  
+		<dt><label for="user_username">Your Email: </label></dt>
+		<dd><%= text_field("user", "username", :size => 30) %></dd>
+
+		<dt><label for="user_password">Your Password: </label></dt>
+		<dd><%= password_field("user", "password", :size => 15 ) %> <small><%= link_to("Forgot your password?", :action => 'forgot_password') %></small></dd>
+    
+		<dd style="margin-top:20px;">
+		  <%= image_tag "/images/spinner.gif", :id => "indicator", :style => "display:none;" %>
+		  <%= submit_tag("Sign in") %> or <%= link_to "Sign up...", "http://secure.#{@request.domain}/signup" %>   
+		</dd>
+    <!-- 
+    <dd>
+		  <%= check_box("remember", "me") %> Remember me on this computer
+		</dd>
+		-->
+  </dl>
+  <%= end_form_tag %>
+  
+</div>

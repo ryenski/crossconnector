@@ -1,0 +1,19 @@
+
+<div class="left wide">
+  
+  <h2 class="page_title"><%= @params[:tag] ? "<small>Messages tagged as</small> <q>#{@params[:tag]}</q>" : "Our Messages" %></h2>
+ 
+  <% if @messages.empty? %>
+      <p class="intro">We haven't posted any messages yet. </p>
+  <% else %>
+    <%= render :partial => "messages_list", :collection => @messages %>
+    <%= render :partial => "shared/pagination_links", :object => @messages_pages %>
+  <% end %>
+
+</div>
+
+<div class="right narrow">
+  <%= render :partial => "related_tags", :object => @related_tags %>
+  
+</div>
+

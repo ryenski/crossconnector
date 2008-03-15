@@ -1,0 +1,40 @@
+
+
+<% if !@alert.nil? -%>
+<div id="system_alert">
+<%= content_tag("h4", "System Notice: #{h(@alert.title)}") %>
+<%= @alert.description_html %>
+</div>
+<% end -%>
+
+<%= logo %>
+
+<div class="left wide">
+
+	<ul id="highlights">
+    <li id="highlights_plan"><%= link_to("Plan <strong>Projects</strong> <small>Set up projects with events, teams, and messages.</small>", {:controller => "/admin/projects"}) %></li>
+    <li id="highlights_blog"><%= link_to("Blog <strong>Messages</strong> <small>Post messages to your blog.</small>", {:controller => "/admin/messages/"}) %></li>
+    <li id="highlights_share"><%= link_to("Share <strong>Files</strong> <small>Upload files for your group to download.</small>", {:controller => "/admin/files"}) %></li>
+    <li id="highlights_teams"><%= link_to("Manage <strong>Teams</strong> <small>Manage teams and people.</small>", {:controller => "/admin/teams"}) %></li>
+  </ul>
+
+</div>
+
+
+<div class="right narrow">
+  
+  <% if @recent_projects.empty? and @recent_messages.empty? and @recent_files.empty? %>
+    <%= render :partial => "welcome" %>
+  <% else %>
+  
+    <%= render :partial => "at_a_glance" %>
+  
+    <%= render :partial => 'info' %>
+    
+  <% end %>
+
+</div>
+
+
+<%= render :partial => 'subscription' %>
+

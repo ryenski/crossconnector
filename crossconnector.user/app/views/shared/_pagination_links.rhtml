@@ -1,0 +1,5 @@
+<div class="pagination_links">
+  <%= link_to "Previous page", { :page => pagination_links.current.previous, :tag => params[:tag] }, :class => "inline rewind_blue icon" if pagination_links.current.previous %> &nbsp;&nbsp;
+  <%= link_to "Next page", { :page => pagination_links.current.next, :tag => params[:tag] }, :class => "inline fastforward_blue icon right" if pagination_links.current.next %>
+  <% unless pagination_links.current.first? and pagination_links.current.last? -%><br />Jump to page: <strong><%= pagination_links(pagination_links, {:params => {:tag => params[:tag]}, :window_size => 4}) %></strong><% end -%>
+</div>

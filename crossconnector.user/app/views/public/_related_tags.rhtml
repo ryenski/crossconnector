@@ -1,0 +1,18 @@
+<% unless related_tags.nil? or related_tags.first.nil? %>
+  <hr />
+  <h3><%= image_tag("/images/icons/silk_gif/tag_mini.gif") %> Tags</h3>
+
+  <% if current_action == "project" or current_action == "message" or current_action == "file" %>
+    <%= content_tag("p", "This #{current_action} is tagged as:", :class => "small") %>
+  <% else %>
+    <%= content_tag("p", "Browse #{current_action} tagged as:", :class => "small") %>
+  <% end %>
+
+  <dl class="projects small_list">
+  <% for tag in related_tags %>
+    <% action = (/s$/).match(params[:action]) ? params[:action] : "#{@params[:action]}s" %>
+    <dd><%= link_to(tag[:name], :action => action, :tag => tag[:name]) %></dd>
+  <% end %>
+  </dl>
+
+<% end %>

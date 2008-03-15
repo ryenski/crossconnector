@@ -1,0 +1,27 @@
+<div class="left wide">
+  <%= image_tag("/images/blank_slates/projects.gif", :style => "margin:3em 0;") %>  
+  <%= link_to("New project.", {:action => "new"}, :class => "project_add icon") if user_can_edit? "project" %>
+</div>
+
+<div class="intro right narrow">
+  
+  <p><strong>You haven't created any projects yet.</strong></p>
+  <p><%= link_to("Create the first project.", {:action => "new"}, :class => "project_add icon") if user_can_edit? "project" %> </p>
+
+  <ul class="small_list">
+    <li>Manage projects for your church, organization, group, team, family, or yourself.</li>
+    <li>Keep track of events and schedules.</li>
+  </ul>
+
+  <p><strong>Need some ideas?</strong></p>
+  <ul class="small_list">
+    <li>Plan mission trips. </li>
+    <li>Organize building projects.</li>
+    <li>Coordinate church planting projects.</li>
+    <li>Make a project for each small group in your church.</li>
+    <li>Keep track of church administration meetings.</li>
+    <li>Coordinate with long-term missionaries.</li>
+  </ul>
+  
+</div>
+

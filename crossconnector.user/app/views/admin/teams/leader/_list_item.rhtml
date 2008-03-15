@@ -1,0 +1,15 @@
+
+<div class="leader_list_item"<%= " style=\"background:#FEF6DC;\"" if you?(list_item) %>>
+
+
+
+<strong><%= you?(list_item) ? "#{link_to(list_item.name.to_s, :controller => "/admin/account", :action => "your_info")} (that's you)" : link_to(list_item.name.to_s, :action => "edit", :id => list_item.id) %></strong><br />
+<small>
+
+
+Last logged on: <%= list_item.logged_in_at.nil? ? "never" : "#{time_ago_in_words(list_item.logged_in_at)} ago" %><br />
+Messages posted: <%= list_item.messages.size %><br />
+Projects posted: <%= list_item.projects.size %><br />
+Files uploaded: <%= list_item.files.size %>
+</small>
+</div>

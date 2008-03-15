@@ -1,0 +1,12 @@
+<li class="<%= short_file_type(file_list_item) %>"><%= filename_permalink_for(file_list_item) %> <br />
+  
+    <small>(<%= human_size(file_list_item.size) %> <%= long_file_type(file_list_item) %>)</small>
+    
+    <% if !file_list_item.tag_names.empty? %><br />
+      <small><strong>Tags: </strong> <%= content_tag("span", file_list_item.tag_names.join(", "), :id => "file_tags_#{file_list_item.id}") %></small>
+    <% end %>
+    
+    <% if file_list_item.project %><br />
+      <small><strong>Project: </strong> <%= content_tag("span", link_to(file_list_item.project.name, :action => "project")) %></small>
+    <% end %>
+</li>

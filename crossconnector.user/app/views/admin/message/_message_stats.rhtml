@@ -1,0 +1,67 @@
+
+<div class="stats info_box">
+<h3><%= image_tag("/images/icons/silk_gif/chart_line.gif", :valign => "middle") %> Message Stats</h3>
+
+<table class="stats">
+  
+<!--
+  <tr>
+    <th scope="row">Visitors</th>
+    <td><big><strong><%= pluralize(message_stats.access_logs.size, "visitor") %></strong></big> <%= message_stats.access_logs.size == 1 ? "has" : "have" %> seen this message. </td>
+  </tr>
+-->
+
+  <tr>
+    <th scope="row">Comments</th>
+    <td><big><strong><%= message_stats.comments.size %></strong></big>
+    <% if message_stats.disable_comments == 1 -%><br />(Comments are turned off)<% end -%>
+    </td>
+  </tr>
+  
+  <tr>
+    <th scope="row">Posted</th>
+    <td>by <%= link_to_user_name(message_stats.user) %><br />
+        on <%= localized_date(message_stats.created_at) %>
+            
+    </td>
+  </tr>
+  
+  <% if !message_stats.updated_at.nil? and message_stats.updated_at > message_stats.created_at -%>
+  <tr>
+    <th scope="row">Updated</th>
+    <td>by <%= link_to_user_name(message_stats.updated_by) %><br />
+        on <%= localized_date(message_stats.updated_at) %>
+  </tr> 
+  <% end -%>
+  
+  <% unless message_stats.project.nil? -%>
+  <tr>
+    <th scope="row">Project</th>
+    <td><%= message_stats.project.name || "no project" %></td>
+  </tr>
+  <% end -%>
+  
+
+  
+
+  
+  <% if message_stats.private? %>
+  <tr>
+    <th scope="row">Private?</th>
+    <td><%= yes_no(message_stats.private) %></td>
+  </tr>
+  <% end %>
+  
+  <% if message_stats.draft? %>
+  <tr>
+    <th scope="row">Draft?</th>
+    <td><%= yes_no(message_stats.draft) %></td>
+  </tr>
+  <% end %>
+  
+
+  
+
+
+</table>
+</div>

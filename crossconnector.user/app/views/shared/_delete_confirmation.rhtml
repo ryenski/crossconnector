@@ -1,0 +1,30 @@
+
+<% type = delete_confirmation.class.name.to_s.downcase %>
+
+<% 
+name = case type
+  when "message"
+    delete_confirmation.subject
+  else
+    delete_confirmation.name
+  end
+%>
+
+
+<div class="warning" id="delete_form_container" style="display:none;">
+
+  <h2 class="warning icon">Delete this <%= type %>?</h2>
+
+  <p>Are you sure you want to permanently delete the <%= type.to_s.downcase %> <strong><q><%= h name %></q></strong>?</p>
+  
+  <%= content_tag("p", "Consider #{link_to_function("archiving", {visual_effect(:blind_up, "delete_form_container", :duration => 0.2), visual_effect(:blind_down, "archive_form_container", :duration => 0.2)} )} this project rather than deleting it.") if type == Project %>
+  
+
+  <h4>There is no undo.</h4>
+  
+  <%= delete_confirmation.respond_to?(:permalink) ? form_tag(:action => "delete", :permalink => delete_confirmation.permalink) : form_tag(:action => "delete", :id => delete_confirmation.id) %>
+    <%= submit_tag "YES, Delete this #{type}", :class => "button" %> or 
+    <%= link_to_function("cancel", "new Effect.BlindUp('delete_form_container', {duration:0.1})") %>
+  <%= end_form_tag %>
+
+</div>

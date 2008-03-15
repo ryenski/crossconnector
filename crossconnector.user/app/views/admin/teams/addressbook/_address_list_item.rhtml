@@ -1,0 +1,13 @@
+
+<li id="item_<%= address_list_item.id %>">
+
+<%= link_to_remote truncate(h(address_list_item.email), 20), 
+        :update => "addressbook_detail", 
+        :loading => "loading_address();",
+        :complete => "new Effect.Highlight('addressbook_detail'),loading_address_done();",
+        :url => { :controller => "/admin/teams",
+                  :action => :get_address_detail, 
+                  :id => address_list_item.id 
+                } %>
+
+</li>

@@ -1,0 +1,38 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  message_id          :integer       
+#  name                :string(255)   
+#  email               :string(255)   
+#  url                 :string(255)   
+#  ip                  :string(15)    
+#  body                :text          
+#  body_html           :text          
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  updated_by          :integer       
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+first_comment_on_haiti_message:
+  id:             1
+  message_id:     20001
+  body:           First comment on first message
+  created_at: <%= Time.now - 2.weeks %>
+  
+second_comment_on_haiti_message:
+  id:             2
+  message_id:     20001
+  body:           Second comment on first message
+  url:            http://www.artofmission.com
+  name:           Ryan Heneise
+  email:          ryan@artofmission.com
+  ip:             192.168.1.111
+  created_at: <%= Time.now - 13.days %>
+
+first_comment_on_second_message:
+  id:             3
+  message_id:     20002
+  body:           Second Comment on First Message
+  created_at: <%= Time.now - 12.days %>

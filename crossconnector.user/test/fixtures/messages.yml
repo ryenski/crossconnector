@@ -1,0 +1,203 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  homebase_id         :integer       not null
+#  created_by          :integer       
+#  project_id          :integer       
+#  subject             :string(255)   
+#  body                :text          
+#  body_html           :text          
+#  keywords            :string(255)   
+#  private             :integer       default(0)
+#  disable_comments    :integer       default(0)
+#  draft               :integer       default(0)
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  updated_by          :integer       
+#  comments_count      :integer       default(0)
+#  access_logs_count   :integer       default(0)
+#  extended            :text          
+#  extended_html       :text          
+#  permalink           :string(255)   
+#  salted_password     :string(255)   
+#  salt                :string(255)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+haiti_message:
+  id: 20001
+  homebase_id: 1
+  created_by: 1001 # Created by Haiti
+  subject: Message about our Haiti Trip
+  created_at: <%= Time.now - 2.weeks %>
+  comments_count: 2
+  permalink: message-about-our-haiti-trip
+  
+vineyard_message:
+  id: 20002
+  homebase_id: 2
+  created_by: 1003 # Created by Alan
+  subject: Message about Ryan and Bethany, Vineyards Missionaries to Haiti
+  created_at: <%= Time.now - 2.weeks %>
+  comments_count: 1
+  permalink: vineyard-message
+  
+private_message: 
+  id: 20003
+  homebase_id: 1
+  created_by: 1001
+  subject: Private Message
+  private: 1 
+  created_at: <%= Time.now - 2.weeks %>
+  permalink: private_message
+  
+haiti_message_with_disallowed_comments:
+  id: 20004
+  homebase_id: 1
+  created_by: 1001
+  subject: Message with no comments allowed
+  disable_comments: 1
+  created_at: <%= Time.now - 2.weeks %>
+  permalink: message-with-no-comments-allowed
+
+private_message_from_haiti_leader:
+  id: 20005
+  homebase_id: 1
+  created_by: 1002
+  subject: Private Message should be visible only to Ryan and Haiti_Editor
+  private: 1
+  created_at: <%= Time.now - 2.weeks %>
+  permalink: private-message-from-haiti-leader
+
+draft_message:
+  id: 20006
+  homebase_id: 1
+  created_by: 1001
+  subject: Draft message about Haiti
+  draft: 1
+  created_at: <%= Time.now - 2.weeks %>
+  permalink: draft-message
+  
+draft_message_by_leader:
+  id: 20007
+  homebase_id: 1
+  created_by: 1002
+  subject: Second Draft Message
+  draft: 1
+  created_at: <%= Time.now - 2.weeks %>
+  permalink: draft-message-by-leader
+  
+message_with_permalink:
+  id: 20008
+  homebase_id: 1
+  created_by: 1001
+  subject: Message with permalink
+  created_at: <%= Time.now - 1.day %>
+  permalink: message-with-permalink
+
+
+
+pagination_message_1:
+  id: 30001
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 1
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-1
+
+pagination_message_2:
+  id: 30002
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 2
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-2
+
+pagination_message_3:
+  id: 30003
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 3
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-3
+
+pagination_message_4:
+  id: 30004
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 4
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-4
+
+pagination_message_5:
+  id: 30005
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 5
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-5
+
+pagination_message_6:
+  id: 30006
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 6
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-6
+
+pagination_message_7:
+  id: 30007
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 7
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message7
+
+pagination_message_8:
+  id: 30008
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 8
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-8
+
+pagination_message_9:
+  id: 30009
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 9
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-9
+
+pagination_message_10:
+  id: 30010
+  homebase_id: 1
+  created_by: 1001
+  subject: Pagination Message 10
+  created_at: <%= Time.now - 1.day %>
+  permalink: pagination-message-10
+
+message_that_might_screw_up_routing:
+  id: 300011
+  homebase_id: 1
+  created_by: 1001
+  subject: "Page"
+  created_at: <%= Time.now - 5.days %>
+  permalink: page
+  
+another_message_that_might_screw_up_routing:
+  id: 300012
+  homebase_id: 1
+  created_by: 1001
+  subject: "Page 2"
+  created_at: <%= Time.now - 5.days %>
+  permalink: page-2
+  
+message_in_private_project:
+  id: 300013
+  homebase_id: 1
+  created_by: 1001
+  subject: Private By Proxy
+  created_at: <%= Time.now - 5.days %>
+  permalink: private-by-proxy

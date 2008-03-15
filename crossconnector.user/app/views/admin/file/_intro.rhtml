@@ -1,0 +1,26 @@
+<div class="left wide">
+  <%= image_tag("/images/blank_slates/files.gif", :style => "margin:3em 0;") %>
+  
+  <%= link_to("Upload the first file.", {:action => "new"}, :class => "file_add icon") if @user.can_edit_files? %>
+</div>
+
+
+<div class="intro right narrow">
+
+  <p><strong>You haven't uploaded any files yet.</strong> </p>
+  <p><%= link_to("Upload the first file.", {:action => "new"}, :class => "file_add icon") if @user.can_edit_files? %></p>
+  
+  <ul class="small_list">
+    <li><strong>Share Files</strong> with everyone involved with your ministry.</li>
+    <li>You can upload just about any type of file for others to download.</li>  </ul>
+
+  <p><strong>Need some ideas?</strong></p>
+  <ul class="small_list">
+  	<li>Pictures from Mission Trips</li>
+		<li>Sermon Notes</li>
+		<li>Packing Lists</li>
+		<li>Forms and Contracts</li>
+  </ul>
+  
+</div>
+

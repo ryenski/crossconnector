@@ -1,0 +1,137 @@
+/* 
+   Crossconnector.com
+   
+   Copyright(c) 2005-2006 Art of Mission, Inc.
+   All rights reserved.
+   
+   Art of Mission
+   1450 Barton Rd #300
+   Redlands, CA 92373
+   USA
+   
+   http://www.artofmission.com
+   ryan@artofmission.com
+
+   Silk Icons
+   by Mark James
+   http://www.famfamfam.com
+   Silk icons licensed under a Creative Commons Attribution 2.5 License: http://creativecommons.org/licenses/by/2.5/
+
+*/
+
+/*
+  Icons
+*/
+
+
+.icon{
+  padding:0.5em 0 0.5em 20px;
+  display:block;
+  line-height:1em;
+  background-position:1px center !important;
+  background-repeat:no-repeat !important;
+}
+
+.icon.explanation{
+  background-position:1px 5px !important;
+}
+
+.icon.inline{
+  display:inline;
+  float:none;
+}
+
+.icon.right{
+  background-position:right center !important;
+  padding-right:20px;
+  padding-left:0;
+}
+
+
+.icon.accept { background:transparent url(../images/icons/silk_gif/accept.gif) }
+.icon.account { background:transparent url(../images/icons/silk_gif/wand.gif) }
+.icon.add{ background:transparent url(../images/icons/silk_gif/add.gif) }
+.icon.archive{ background:transparent url(../images/icons/silk_gif/database.gif) }
+.icon.archive_go{ background:transparent url(../images/icons/silk_gif/database_go.gif) }
+.icon.calendar{ background:transparent url(../images/icons/silk_gif/calendar.gif) }
+.icon.calendar_add{ background:transparent url(../images/icons/silk_gif/calendar_add.gif) }
+.icon.calendar_edit{ background:transparent url(../images/icons/silk_gif/calendar_edit.gif) }
+.icon.cancel{ background:transparent url(../images/icons/silk_gif/cancel.gif) }
+.icon.chart { background:transparent url(../images/icons/silk_gif/chart_line.gif) }
+.icon.check { background:transparent url(../images/icons/silk_gif/accept.gif) }
+.icon.copy { background:transparent url(../images/icons/silk_gif/page_copy.gif) }
+.icon.delete{ background:transparent url(../images/icons/silk_gif/delete.gif) }
+.icon.delete_user{ background:transparent url(../images/icons/silk_gif/user_delete.gif) }
+.icon.draft { background:transparent url(../images/icons/silk_gif/note.gif) }
+.icon.edit{ background:transparent url(../images/icons/silk_gif/pencil.gif) }
+.icon.email{ background:transparent url(../images/icons/silk_gif/email.gif) }
+.icon.email_edit{ background:transparent url(../images/icons/silk_gif/email_edit.gif) }
+.icon.event_add{ background:transparent url(../images/icons/silk_gif/event_add.gif) }
+.icon.event_delete{ background:transparent url(../images/icons/silk_gif/calendar_delete.gif) }
+.icon.event_edit{ background:transparent url(../images/icons/silk_gif/calendar_edit.gif) }
+.icon.feed{ background:transparent url(../images/icons/silk_gif/feed.gif) }
+
+.icon.team{ background:transparent url(../images/icons/silk_gif/group.gif) }
+
+.icon.file{ background:transparent url(../images/icons/silk_gif/page_green.gif) }
+.icon.file_add{ background:transparent url(../images/icons/silk_gif/page_add.gif) }
+.icon.file_delete{ background:transparent url(../images/icons/silk_gif/page_delete.gif) }
+.icon.info{ background:transparent url(../images/icons/silk_gif/information.gif) }
+.icon.link{ background:transparent url(../images/icons/silk_gif/arrow_go.gif) }
+.icon.lock { background:transparent url(../images/icons/silk_gif/lock.gif) }
+.icon.message{ background:transparent url(../images/icons/silk_gif/email.gif) }
+.icon.message_add{ background:transparent url(../images/icons/silk_gif/email_add.gif) }
+.icon.message_edit{ background:transparent url(../images/icons/silk_gif/email_edit.gif) }
+.icon.message_link{ background:transparent url(../images/icons/silk_gif/email_link.gif) }
+.icon.page{ background:transparent url(../images/icons/silk_gif/page_white.gif) }
+.icon.project{ background:transparent url(../images/icons/silk_gif/world.gif) }
+.icon.project_add{ background:transparent url(../images/icons/silk_gif/world_add.gif) }
+.icon.project_edit{ background:transparent url(../images/icons/silk_gif/world_edit.gif) }
+.icon.project_link{ background:transparent url(../images/icons/silk_gif/world_link.gif) }
+.icon.report{ background:transparent url(../images/icons/silk_gif/chart.gif) }
+.icon.rss { background:transparent url(../images/icons/silk_gif/rss.gif) }
+.icon.stop{ background:transparent url(../images/icons/silk_gif/stop.gif)  }
+.icon.tag{ background:transparent url(../images/icons/silk_gif/tag_blue.gif)  }
+.icon.tag_edit{ background:transparent url(../images/icons/silk_gif/tag_blue_edit.gif)  }
+.icon.tag_add{ background:transparent url(../images/icons/silk_gif/tag_blue_add.gif)  }
+.icon.textfield_rename{ background:transparent url(../images/icons/silk_gif/textfield_rename.gif) }
+.icon.user { background:transparent url(../images/icons/silk_gif/user.gif) }
+.icon.user_add { background:transparent url(../images/icons/silk_gif/user_add.gif) }
+.icon.user_edit{ background:transparent url(../images/icons/silk_gif/user_edit.gif) }
+.icon.vcard{ background:transparent url(../images/icons/silk_gif/vcard.gif) }
+.icon.vcard_add{ background:transparent url(../images/icons/silk_gif/vcard_add.gif) }
+.icon.vcard_edit{ background:transparent url(../images/icons/silk_gif/vcard_edit.gif) }
+.icon.vcard_delete{ background:transparent url(../images/icons/silk_gif/vcard_delete.gif) }
+.icon.warning{ background:transparent url(../images/icons/silk_gif/exclamation.gif) }
+.icon.world{ background:transparent url(../images/icons/silk_gif/world.gif) }
+.icon.world_add{ background:transparent url(../images/icons/silk_gif/world_add.gif) }
+
+.icon.fastforward{ background:transparent url(../images/icons/silk_gif/control_fastforward.gif) }
+.icon.rewind{ background:transparent url(../images/icons/silk_gif/control_rewind.gif) }
+.icon.fastforward_blue{ background:transparent url(../images/icons/silk_gif/control_fastforward_blue.gif) }
+.icon.rewind_blue{ background:transparent url(../images/icons/silk_gif/control_rewind_blue.gif) }
+
+
+.icon.dark.copy {         background:transparent url(../images/icons/silk_gif_dark/page_copy.gif) }
+.icon.dark.team{          background:transparent url(../images/icons/silk_gif_dark/group.gif) }
+.icon.dark.user_add {     background:transparent url(../images/icons/silk_gif_dark/user_add.gif) }
+.icon.dark.calendar_edit{ background:transparent url(../images/icons/silk_gif_dark/calendar_edit.gif) }
+.icon.dark.archive_go{    background:transparent url(../images/icons/silk_gif_dark/database_go.gif) }
+.icon.dark.delete{        background:transparent url(../images/icons/silk_gif_dark/delete.gif)}
+.icon.dark.message_edit{  background:transparent url(../images/icons/silk_gif_dark/email_edit.gif) }
+.icon.dark.event_add{     background:transparent url(../images/icons/silk_gif_dark/event_add.gif) }
+.icon.dark.project_edit{  background:transparent url(../images/icons/silk_gif_dark/world_edit.gif) }
+
+.icon.dark.project_add{   background:transparent url(../images/icons/silk_gif_dark/world_add.gif) }
+.icon.dark.message_add{   background:transparent url(../images/icons/silk_gif_dark/email_add.gif) }
+.icon.dark.file_add{      background:transparent url(../images/icons/silk_gif_dark/page_add.gif) }
+
+
+.bigicon_homebase{ background:transparent url(../images/icons/helsinki_gif/home_32.gif) no-repeat; }
+.bigicon_message{ background:transparent url(../images/icons/helsinki_gif/mail_32.gif) no-repeat; }
+.bigicon_project{ background:transparent url(../images/icons/helsinki_gif/calendar_32.gif) no-repeat;}
+.bigicon_file{ background:transparent url(../images/icons/helsinki_gif/save_32.gif) no-repeat; }
+.bigicon_teams, .bigicon_leader{ background:transparent url(../images/icons/helsinki_gif/contacts_32.gif) no-repeat; }
+.bigicon_account{ background:transparent url(../images/icons/helsinki_gif/security-lock_32.gif) no-repeat; }
+.bigicon_warning{ background:transparent url(../images/icons/helsinki_gif/stop_32.gif) no-repeat; }
+.bigicon_help{ background:transparent url(../images/icons/helsinki_gif/help_32.gif) no-repeat; }

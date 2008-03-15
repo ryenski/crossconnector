@@ -1,0 +1,18 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  name                :string(255)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+  id: 1
+  name: haiti
+  
+another:
+  id: 2
+  name: my tag
+  
+tag_that_might_screw_up_routing:
+  id: 3
+  name: page

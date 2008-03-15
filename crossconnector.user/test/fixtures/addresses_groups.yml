@@ -1,0 +1,26 @@
+
+# Group 1
+group_one_first: 
+  group_id: 1
+  address_id: 1
+
+group_one_second: 
+  group_id: 1
+  address_id: 2
+
+group_one_third: 
+  group_id: 1
+  address_id: 3
+
+group_two_first: 
+  group_id: 2
+  address_id: 1
+
+group_two_second: 
+  group_id: 2
+  address_id: 5
+    
+# Private Group
+group_private_one: 
+  group_id: 3
+  address_id: 6

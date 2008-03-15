@@ -1,0 +1,10 @@
+<% if flash[:notice] -%>
+
+<%= content_tag("div", flash[:notice], :id => "Flash", :class => (flash[:class] or "info")) %>
+
+<% if flash[:extended] -%>
+<%= content_tag("p", flash[:extended]) %>
+<hr />
+<% end -%>
+
+<% end -%>

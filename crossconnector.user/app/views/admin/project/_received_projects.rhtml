@@ -1,0 +1,10 @@
+  <div class="info_box">
+    <h3>Projects Inbox</h3>
+    <small>These are projects that other people have sent you. You can visit these other CrossConnector accounts to visit their projects. </small>    
+    <dl class="project_inbox">
+    <% for project in @received_projects %>
+      <dt><%= link_to_received project %></dt>
+      <dd>In <%= link_to_homebase(project.homebase) %>'s Homebase</dd>
+    <% end %>
+    </dl>
+  </div>

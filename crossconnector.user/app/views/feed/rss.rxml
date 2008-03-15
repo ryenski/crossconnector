@@ -1,0 +1,26 @@
+xml.instruct! :xml, :version=>"1.0"
+xml.rss(:version=>"2.0") do
+  xml.channel do
+    xml.title @feed_title
+    xml.link @link
+    xml.description h(@homebase.profile)
+    xml.language "en-us"
+    xml.ttl "40"
+    
+    if @projects
+      @projects.each do |project|
+        render :partial => "rss20_item_projects", :locals => {:item => project, :xm => xml}
+      end
+    end
+    if @messages
+      @messages.each do |message|
+        render :partial => "rss20_item_messages", :locals => {:item => message, :xm => xml}
+      end
+    end
+    if @files
+      @files.each do |file|
+        render :partial => "rss20_item_files", :locals => {:item => file, :xm => xml}
+      end
+    end
+  end
+end

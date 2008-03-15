@@ -1,0 +1,13 @@
+<fieldset id="tags">
+  <legend><%= image_tag("/images/icons/silk_gif/tag_red.gif") %> Tags</legend>
+<dl>
+  <dt>
+    <label for="tags">Tags: <small>(optional)</small></label> <br />
+    <%= text_field_tag("tags", tags.tag_names.join(", "), {:class => "regular"}) %>
+  </dt>
+  
+  <dd>
+    <small>Tags are like categories. Separate multiple tags with a comma.</small>
+  </dd>
+</dl>
+</fieldset>

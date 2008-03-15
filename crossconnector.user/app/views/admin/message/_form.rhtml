@@ -1,0 +1,53 @@
+
+<fieldset>
+
+
+  <dl>
+    <dt><label for="message_subject">Subject: </label></dt>
+    <dd><%= text_field :message, :subject, :class => "large" %></dd>
+  </dl>
+  
+  <dl>
+    <dt><label for="message_body">Message: </label></dt>
+    <dd><%= text_area(:message, :body, :rows => "10"  ) %>
+      <small class="notes">
+        <%= link_to_function("Toggle extended message", "Element.toggle('extended')") %>
+      </small>
+    </dd>
+  </dl>
+  
+  <dl id="extended"<%= " style=\"display:none;\"" unless @message.extended %>>
+    <dt><label for="message_extended">Extended Message:</label></dt>
+    <dd>
+      <small class="notes">The extended message only appears on the full message page. This part won't show up on the Messages Index page of your blog. This way, you can show a short introduction to your message on the index page of your blog. The extended part will also not show up in the email notification. </small>
+      <%= text_area("message", "extended", :class => "", :rows => "20"  ) %>
+    </dd>
+    
+  </dl>
+
+</fieldset>
+
+
+<div style="margin:1em 0;">
+  <%= submit_tag "Save this message", :class => "button" %> or select more options below...
+</div>
+
+<%= render :partial => 'shared/forms/tags', :object => @message %>
+
+<%= render :partial => 'shared/forms/project', :object => @message %>
+
+<%= 
+# render :partial => 'shared/forms/privacy', :object => @message 
+%>
+
+<%= render :partial => 'shared/forms/message_options', :object => @message %>
+
+
+<div style="margin:1em 0;">
+  <%= submit_tag "Save this message", :class => "button" %> or select more options below...
+</div>
+
+
+<%= render :partial => "shared/address_list", :object => @message %>
+
+

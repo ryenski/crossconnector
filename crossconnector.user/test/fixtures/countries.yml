@@ -1,0 +1,12 @@
+# Schema as of Fri Oct 06 12:31:46 CDT 2006 (schema version 37)
+#
+#  id                  :integer       not null
+#  code                :string(50)    
+#  name                :string(255)   
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first_country:
+  id: 1
+another_country:
+  id: 2

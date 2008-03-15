@@ -1,0 +1,4 @@
+#!/bin/sh
+/Library/WebServer/Rails/crossconnector/current/script/process/spinner \
+ -c '/Library/WebServer/Rails/crossconnector/current/script/process/spawner -p 7000 -i 10' \
+ -d

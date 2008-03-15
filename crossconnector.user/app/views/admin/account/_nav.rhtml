@@ -1,0 +1,7 @@
+
+<ul id="account_nav" class="tabbed_menu account_<%= @params[:action].to_s %>">
+  <%= content_tag("li", link_to("Account Summary", :action => "index"), :id => "account_index") %>
+  <%= content_tag("li", link_to("Site Profile", :action => "profile"), :id => "account_profile") unless User.current_user.class == Editor %>
+  <%= content_tag("li", link_to("Your Info", :action => "your_info"), :id => "account_your_info") %>
+  <%= content_tag("li", link_to("Change Password", :action => "password"), :id => "account_password") %>
+</ul>

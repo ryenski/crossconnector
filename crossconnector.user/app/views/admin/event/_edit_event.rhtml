@@ -1,0 +1,12 @@
+ 
+<%= form_remote_tag(:url => {:controller => "/admin/event", :action => "edit"}, 
+                    :update => "event_list",
+                    :loading => "Element.show('edit_event_indicator_#{@event.id}')",
+                    :complete => "new Effect.Highlight('event_list_item_#{@event.id}', {duration:4.0})"
+                    )%>
+
+<%= render :partial => "form", :object => @event %>
+
+<%= submit_tag "Save Event", :class => "button" %> <%= image_tag("/images/spinner.gif", :style => "display:none", :id => "edit_event_indicator_#{@event.id}") %> or <%= link_to_function("Cancel", "Element.show('event_body_#{@event.id}'), Element.hide('event_edit_form_#{@event.id}')") %>
+
+<%= end_form_tag %>

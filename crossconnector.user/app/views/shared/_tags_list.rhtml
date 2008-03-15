@@ -1,0 +1,7 @@
+<dl>
+  <% for tag in tags_list.tag_names %>
+  <dd><%= image_tag("/images/icons/silk_gif/tag_orange.gif") %> <%= tag %></dd>
+  <% end %>
+</dl>
+<% type = tags_list.class.name.to_s.downcase %>
+<%= link_to_function("edit tags", "Element.show('#{type}_tags_form'), Element.hide('#{type}_tags_list')", :class => "tag_edit icon") if user_can_edit?(type) %>

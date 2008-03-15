@@ -1,0 +1,11 @@
+<div class="info_box">
+      <h3>Message Inbox</h3>
+      <small>These are messages that other people have sent you.  You can visit these other CrossConnector accounts to read their messages.</small>
+    
+      <dl class="message_inbox">
+      <% for message in @received_messages %>
+        <dt><%= link_to_received message %></dt>
+        <dd>Sent <%= time_ago_in_words(message.created_at) %> ago by <%= link_to_user_name(message.user) %></dd>
+      <% end %>
+      </dl>
+    </div>

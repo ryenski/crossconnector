@@ -1,0 +1,23 @@
+<h2><%= image_tag("/images/icons/silk_gif/lock.gif") %> Please enter the password for this page</h2>
+
+<%= start_form_tag(:action => "login", :object => object.class.to_s.downcase.intern, :permalink => object.permalink) %>
+
+<dl>
+  <dt><%= object.class %>: </dt>
+  <dd><%= object.name %></dd>
+</dl>  
+
+<dl>
+  <dt><label for="password">Password: </label></dt>
+  <dd><%= password_field_tag("password") %></dd>
+</dl>
+
+<dl>
+  <dd><%= submit_tag("Sign in") %> or <%= link_to "cancel and go back", request.env["HTTP_REFERER"] %></d>
+</dl>
+
+
+
+
+<%= end_form_tag %>
+

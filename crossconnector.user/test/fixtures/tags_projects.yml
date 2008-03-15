@@ -1,0 +1,9 @@
+# Messages sent to groups
+
+haiti_project_tagged_as_haiti:
+  tag_id: 1
+  project_id: 1
+  
+second_project_tagged_as_haiti:
+  tag_id: 2
+  project_id: 3
